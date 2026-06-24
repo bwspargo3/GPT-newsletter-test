@@ -17,25 +17,20 @@ HEADERS = {
 }
 
 # Key NAIC pages to monitor
+#
+# NOTE: The previous config included two static PDF URLs
+# (cmte_a_latf_agenda.pdf / cmte_a_latf_minutes.pdf) and a second committee
+# page (cmte_a_life_actuarial.htm). All three 404 — NAIC does not publish
+# agendas/minutes at fixed filenames; they post a new, dated packet PDF for
+# every meeting (e.g. "LATF Materials SpNM 2026.pdf") under
+# content.naic.org/sites/default/files/national_meeting/, with no stable
+# "latest" URL. The committee page below already surfaces current agenda
+# items, exposures, and meeting links inline, so it's the single reliable
+# page to hash for change detection.
 NAIC_PAGES = [
     {
-        'url': 'https://content.naic.org/sites/default/files/inline-files/cmte_a_latf_agenda.pdf',
-        'label': 'NAIC LATF Agenda',
-        'category': 'REGULATORY',
-    },
-    {
-        'url': 'https://content.naic.org/cmte_a_latf.htm',
+        'url': 'https://content.naic.org/committees/a/life-actuarial-tf',
         'label': 'NAIC LATF Committee Page',
-        'category': 'REGULATORY',
-    },
-    {
-        'url': 'https://content.naic.org/sites/default/files/inline-files/cmte_a_latf_minutes.pdf',
-        'label': 'NAIC LATF Minutes',
-        'category': 'REGULATORY',
-    },
-    {
-        'url': 'https://content.naic.org/cmte_a_life_actuarial.htm',
-        'label': 'NAIC Life Actuarial TF',
         'category': 'REGULATORY',
     },
 ]
