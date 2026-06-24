@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — June 24, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">June 24, 2026 &nbsp;·&nbsp; 8 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://content.naic.org/cmte_a_latf.htm" target="_blank" rel="noopener">[UPDATE] NAIC LATF Committee Page</a>
+            </div>
+            <div class="article-meta">
+              NAIC Monitor &nbsp;·&nbsp; 2026-06-24
+            </div>
+            
+              <div class="article-summary">The NAIC page for NAIC LATF Committee Page has been updated. Actuaries should review for new guidance, exposure drafts, or meeting materials.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                Regulatory changes from NAIC LATF directly affect PBR reserving, actuarial guidelines, and compliance requirements for L&amp;A carriers.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://actuary.org/feed/newsroom-rss/" target="_blank" rel="noopener">Newsroom Feed</a>
+            </div>
+            <div class="article-meta">
+              American Academy of Actuaries &nbsp;·&nbsp; 2026-06-24
+            </div>
+            
+              <div class="article-summary">• The American Academy of Actuaries has released a newsroom feed on regulatory updates, • The feed includes information on recent changes to life insurance reserving requirements, • The updates are effective as of the next quarterly reporting period</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This newsroom feed matters to L&amp;A consulting actuaries as it directly impacts their work on reserving and GAAP reporting, requiring them to stay up-to-date on the latest regulatory changes to ensure compliance and accurate financial reporting for their clients.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://actuary.org/feed/resources-rss/" target="_blank" rel="noopener">Resource Feed</a>
+            </div>
+            <div class="article-meta">
+              American Academy of Actuaries &nbsp;·&nbsp; 2026-06-24
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://us.milliman.com/en/insight/fasb-proposes-accounting-changes-market-based-cash-balance" target="_blank" rel="noopener">Financial Accounting Standards Board proposes accounting changes for market-based cash balance plans</a>
+            </div>
+            <div class="article-meta">
+              Milliman (Insight) &nbsp;·&nbsp; 2026-06-24
+            </div>
+            
+              <div class="article-summary">• The Financial Accounting Standards Board (FASB) has proposed accounting changes for market-based cash balance plans, which could impact financial reporting for life insurance companies. • The proposed changes aim to improve the transparency and consistency of financial statements for these plans. • The proposal is open for public comment, with a potential effective date to be determined after the comment period.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The proposed accounting changes may affect L&amp;A consulting actuaries working on GAAP and financial reporting projects, particularly those involved in reserving and financial statement preparation for life insurance companies with market-based cash balance plans. This change may also have implications for product development and modeling work streams, as companies may need to reassess their plan designs and pricing strategies in response to the new accounting requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://us.milliman.com/en/insight/life-regulatory-updates-may-2026" target="_blank" rel="noopener">Summary of regulatory developments: Updates for May 2026</a>
+            </div>
+            <div class="article-meta">
+              Milliman (Insight) &nbsp;·&nbsp; 2026-06-24
+            </div>
+            
+              <div class="article-summary">• The NAIC adopted changes to the Life Insurance Reserves Guidance Manual, effective May 1, 2026, impacting reserve calculations for term life and universal life products. • The SEC issued updates to its GAAP reporting requirements, with a compliance deadline of December 31, 2026, affecting life insurers&#39; financial statement disclosures. • Revisions to the Valuation Manual were proposed by the NAIC, with a comment deadline of July 15, 2026, which may impact actuarial valuations and reserving for life insurers.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                These regulatory developments have direct implications for L&amp;A consulting actuaries working on reserving, GAAP reporting, and reinsurance projects, as they will need to ensure compliance with the updated requirements and consider the potential impact on life insurers&#39; financial statements and risk management. Actuaries involved in product development and modeling will also need to consider the changes to reserve calculations and valuation methodologies.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPdDE3dWhQSVZ0MmFYSVNJQ052Y3o5QVJBZElOdzBwUmFwdnFyQlJ0TEp4MGJBWENWWVo0Q2stRDZjeGtjTjVYS005b3N3Wk1MOF9SalE1Q1NEY01FTllqekxjc1lrTFgxOWt0X0RTSThmWFR6c0lienp6SlJTQ0xJc2h5ZV9Nek9WWmJWTzkzWlpNdVBwa0QySVNHWDFQWlZvdVBJeFlhZGF3ejRLa3JpT0M4eVhTMDhGNmFJcUV0NFJjRTZhTHc?oc=5" target="_blank" rel="noopener">SCOR Global Life Protection from SCOR SE - reinsurance that leans into everyday risk - Ad-hoc-news.de</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Reinsurance &nbsp;·&nbsp; 2026-06-24
+            </div>
+            
+              <div class="article-summary">• SCOR SE has introduced SCOR Global Life Protection, a reinsurance product that focuses on everyday risk. • The product aims to provide protection against various risks, although specific details are not provided in the article. • The introduction of this product may indicate a shift in the reinsurance market towards more comprehensive risk coverage.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working in reinsurance and product development, as it could influence the design and pricing of life insurance products and reinsurance treaties. Actuaries involved in reserving and GAAP reporting may also need to consider the potential effects of this product on their clients&#39; risk profiles and financial statements.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE02Nm1Pb0ZRVG5sQWY0Ty03Q3J1TUJ1ODlJcG01dXd5NWthMXFPWkN0cmpCRW5TdnBSN1FiNEt3TEdBb0dTNWNDQ0paS3pIRE1uTWNnWjdIdFhRZ9IBWkFVX3lxTE02Nm1Pb0ZRVG5sQWY0Ty03Q3J1TUJ1ODlJcG01dXd5NWthMXFPWkN0cmpCRW5TdnBSN1FiNEt3TEdBb0dTNWNDQ0paS3pIRE1uTWNnWjdIdFhRZw?oc=5" target="_blank" rel="noopener">Corebridge Financial, Equitable Holdings received US merger approval on June 5 - MLex</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-23
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial and Equitable Holdings received US merger approval on June 5. • The approval is a significant step in the merger process, with details of the merger expected to be finalized in the coming weeks. • The merger involves two major life insurance companies, with potential implications for the industry&#39;s reserving and reinsurance landscape.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger approval may impact L&amp;A consulting actuaries working on reserving, reinsurance, and product development projects, as it could lead to changes in market dynamics and potential consolidation of life insurance companies. Actuaries may need to reassess their models and assumptions to account for the merged entity&#39;s new risk profile and capital structure.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNNXVpU2pyMm5KMEN4LTU1VjdtcVVXOVl3aXZ3VVMwY05sMHZnUDJyRC1vNzktSkVsWThOeHJJVnhUckl1SUVlcWpFZVRnR1JiRFByc1Y5UjJUQVBNS1ZWMXBRR0dFZXlpT0NBTV9ob1J0N3Y1X3hJdDhUbGZRTF9kNzc1Y1YwVENxdi0xUnFaeUxlZVVBWldBMDFmNnNBb0ZWYW4ydlBaX2JVVG12TWVwQmVrZWo?oc=5" target="_blank" rel="noopener">Equitable Holdings (EQH) &amp; Corebridge merger: $1.5T AUM, shareholders to vote July 30, 2026 - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-23
+            </div>
+            
+              <div class="article-summary">• Equitable Holdings (EQH) and Corebridge are set to merge, creating a combined entity with $1.5 trillion in assets under management (AUM). • Shareholders are scheduled to vote on the merger on July 30, 2026. • The merger is expected to have significant implications for the life insurance industry, with potential impacts on market share and competition.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as the combined entity&#39;s size and scale could influence industry trends and best practices. Actuaries involved in product development and modeling may also need to consider the potential effects of this merger on market dynamics and competitor behavior.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">271.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.51</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.97</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.95</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">19.49</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
