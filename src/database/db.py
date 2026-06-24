@@ -26,10 +26,8 @@ def get_conn() -> sqlite3.Connection:
 def init_db():
     """Create tables from schema.sql if they don't exist."""
     schema = SCHEMA_PATH.read_text()
-    params = (source_name, source_type, now, now) if success else (source_name, source_type, now)
     with get_conn() as conn:
-        conn.execute(sql, params)
-
+        conn.executescript(schema)
     logger.info("Database initialized at %s", DB_PATH)
 
 
@@ -155,8 +153,9 @@ def record_source_health(source_name: str, source_type: str, success: bool):
                 last_attempt=excluded.last_attempt,
                 consecutive_failures=consecutive_failures+1
         """
+    params = (source_name, source_type, now, now) if success else (source_name, source_type, now)
     with get_conn() as conn:
-        conn.execute(sql, (source_name, source_type, now) if success else (source_name, source_type, now))
+        conn.execute(sql, params)
 
 
 def upsert_naic_page(url: str, label: str, new_hash: str) -> bool:
