@@ -1,0 +1,44 @@
+name: Weekly Digest
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 11 * * 1'   # 6:00 AM CT Mondays / 11:00 UTC
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore database
+        uses: actions/cache@v4
+        with:
+          path: data/articles.db
+          key: articles-db-${{ github.run_id }}
+          restore-keys: |
+            articles-db-
+
+      - name: Run weekly digest
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SEND_EMAIL: "true"
+          PUBLISH_ARCHIVE: "true"
+        # TODO: implement run_weekly.py (Phase 2)
+        run: echo "Weekly digest — Phase 2 implementation pending"
