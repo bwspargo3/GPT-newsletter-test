@@ -1,9 +1,0 @@
-
-requests
-feedparser
-beautifulsoup4
-jinja2
-rapidfuzz
-pandas
-lxml
-python-dateutil
