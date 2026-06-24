@@ -15,7 +15,6 @@ logger = logging.getLogger(__name__)
 
 FEEDS_CONFIG = Path('config/rss_feeds.yaml')
 
-
 def _parse_date(entry) -> str | None:
     """Extract and normalize a publish date from a feedparser entry."""
     # Try published_parsed first (already a struct_time)
@@ -49,7 +48,14 @@ def fetch_feed(url: str, source_name: str, category: str) -> int:
     """
     try:
         feed = feedparser.parse(url, request_headers={'User-Agent': 'LA-Intelligence/1.0'})
+
         if feed.bozo and not feed.entries:
+            content_type = feed.get('headers', {}).get('content-type', '') if hasattr(feed, 'headers') else ''
+            if 'html' in content_type.lower():
+                raise ValueError(
+                    f"Feed returned HTML instead of XML (likely a stale, "
+                    f"moved, or redirected URL) — open {url} in a browser to check"
+                )
             raise ValueError(f"Feed parse error: {feed.bozo_exception}")
 
         inserted = 0
