@@ -14,7 +14,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.database.db import init_db
-from src.ingestion import rss, google_news, economic, naic_monitor, edgar
+from src.ingestion import rss, google_news, economic, naic_monitor, edgar, web_scrape
 from src.processing.dedup import purge_duplicates
 
 logging.basicConfig(
@@ -51,6 +51,14 @@ def run():
     except Exception as exc:
         logger.error("Google News ingestion failed: %s", exc)
         totals['google_news'] = 0
+
+    # ── Tier 2.5: Listing-page Scrapers (RSS-less sources) ──────────────
+    logger.info("--- Web Scrape (SOA Research, etc.) ---")
+    try:
+        totals['scrape'] = web_scrape.run_all()
+    except Exception as exc:
+        logger.error("Web scrape ingestion failed: %s", exc)
+        totals['scrape'] = 0
 
     # ── Tier 3: NAIC Monitoring ────────────────────────────────────────
     logger.info("--- NAIC Monitor ---")
