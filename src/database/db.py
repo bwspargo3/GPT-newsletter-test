@@ -26,8 +26,10 @@ def get_conn() -> sqlite3.Connection:
 def init_db():
     """Create tables from schema.sql if they don't exist."""
     schema = SCHEMA_PATH.read_text()
+    params = (source_name, source_type, now, now) if success else (source_name, source_type, now)
     with get_conn() as conn:
-        conn.executescript(schema)
+        conn.execute(sql, params)
+
     logger.info("Database initialized at %s", DB_PATH)
 
 
