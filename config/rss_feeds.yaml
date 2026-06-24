@@ -1,30 +1,43 @@
 feeds:
   # Professional Organizations
+  # FIXME: verify — soa.org has been restructured and this path returns an
+  # HTML page, not an RSS feed. No working all-news RSS endpoint could be
+  # confirmed; check https://www.soa.org for a current feed link, or drop
+  # this entry and rely on Google News RSS for SOA coverage instead.
   - url: https://www.soa.org/rss/all-news.rss
     name: Society of Actuaries
     category: RESEARCH
-  - url: https://www.actuary.org/rss.xml
+  # FIXED: actuary.org runs on a feed-capable CMS (confirmed /feed/ paths
+  # resolve, e.g. actuary.org/feed/resources/) — rss.xml is not a valid path.
+  - url: https://www.actuary.org/feed/
     name: American Academy of Actuaries
     category: REGULATORY
+  # FIXME: verify — limra.com/rss/ returns malformed XML (likely an HTML
+  # landing page). Could not confirm a working replacement path.
   - url: https://www.limra.com/rss/
     name: LIMRA
     category: RESEARCH
 
   # Industry News
+  # FIXME: verify — returns malformed XML.
   - url: https://insurancenewsnet.com/feed
     name: InsuranceNewsNet
     category: MARKET_INTELLIGENCE
+  # FIXME: verify — returns malformed XML.
   - url: https://www.thinkadvisor.com/feed/
     name: ThinkAdvisor
     category: MARKET_INTELLIGENCE
+  # FIXME: verify — returns malformed XML.
   - url: https://www.investmentnews.com/feed
     name: InvestmentNews
     category: MARKET_INTELLIGENCE
 
   # Consulting Firms (research/insights pages)
+  # FIXME: verify — returns malformed XML.
   - url: https://www.milliman.com/en/rss
     name: Milliman
     category: RESEARCH
+  # FIXME: verify — returns malformed XML.
   - url: https://www.wtwco.com/en-US/rss
     name: WTW
     category: RESEARCH
