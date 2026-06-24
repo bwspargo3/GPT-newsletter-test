@@ -19,25 +19,45 @@ feeds:
     category: RESEARCH
 
   # Industry News
-  # FIXME: verify — returns malformed XML.
-  - url: https://insurancenewsnet.com/feed
+  # FIXED: confirmed live — insurancenewsnet.com exposes WordPress's default
+  # ?feed=rss on every topic archive page, even though the old bare /feed
+  # path is gone. Verified this returns real application/rss+xml content.
+  - url: https://insurancenewsnet.com/topics/top-stories?feed=rss
     name: InsuranceNewsNet
     category: MARKET_INTELLIGENCE
-  # FIXME: verify — returns malformed XML.
-  - url: https://www.thinkadvisor.com/feed/
+  # PARTIALLY FIXED, RISK FLAGGED: the real feed lives on FeedBlitz, not
+  # thinkadvisor.com itself (ALM Media's CMS doesn't serve its own RSS).
+  # FeedBlitz IP-reputation-blocks requests from networks with any history
+  # of abuse — this includes many shared/cloud IP ranges, which is exactly
+  # what GitHub Actions runners use. Expect this feed to intermittently
+  # fail with an "Access Denied" page (which will surface as a feedparser
+  # bozo error) for reasons unrelated to your code. If it fails
+  # consistently, that's FeedBlitz blocking GitHub's IP range, not a config
+  # mistake — there's no client-side fix for that short of self-hosting a
+  # proxy with a clean IP.
+  - url: https://feeds.feedblitz.com/thinkadvisor
     name: ThinkAdvisor
     category: MARKET_INTELLIGENCE
-  # FIXME: verify — returns malformed XML.
+  # UNRESOLVED: no working feed could be confirmed. investmentnews.com's
+  # homepage shows signs of heavy client-side rendering (stale cached
+  # event dates), and no feed URL could be verified live. Left as-is
+  # rather than guessing — recommend dropping this entry or replacing it
+  # with a Google News RSS query for "InvestmentNews" coverage instead.
   - url: https://www.investmentnews.com/feed
     name: InvestmentNews
     category: MARKET_INTELLIGENCE
 
   # Consulting Firms (research/insights pages)
-  # FIXME: verify — returns malformed XML.
+  # UNRESOLVED — see note in src/ingestion/web_scrape.py: Milliman's
+  # insight listing pages are Next.js apps with no content in the static
+  # HTML (confirmed by direct fetch — the article list only exists after
+  # client-side JS runs). Neither RSS nor a plain scraper can read this.
   - url: https://www.milliman.com/en/rss
     name: Milliman
     category: RESEARCH
-  # FIXME: verify — returns malformed XML.
+  # UNRESOLVED — same issue as Milliman: WTW's "All Insights" page is a
+  # Next.js app with an empty static shell. No feed or scraper will work
+  # without a headless browser.
   - url: https://www.wtwco.com/en-US/rss
     name: WTW
     category: RESEARCH
