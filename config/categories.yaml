@@ -1,0 +1,41 @@
+categories:
+  REGULATORY:
+    label: "Regulatory Pulse"
+    description: "NAIC, state DOI, actuarial guidelines"
+    priority: 1
+  PBR_VM20_VM22:
+    label: "PBR / VM-20 / VM-22"
+    description: "Principle-based reserving developments"
+    priority: 2
+  LDTI_GAAP:
+    label: "LDTI / GAAP"
+    description: "ASC 944, long-duration targeted improvements"
+    priority: 3
+  MARKET_INTELLIGENCE:
+    label: "Market Intelligence"
+    description: "Product trends, sales data, industry developments"
+    priority: 4
+  COMPETITOR_INSIGHTS:
+    label: "Carrier Watch"
+    description: "Major carrier news, filings, earnings"
+    priority: 5
+  RATINGS:
+    label: "Ratings & Capital"
+    description: "AM Best, Moody's, S&P rating actions"
+    priority: 6
+  RESEARCH:
+    label: "Research & Publications"
+    description: "SOA, AAA, consulting firm research"
+    priority: 7
+  M_AND_A:
+    label: "M&A"
+    description: "Mergers, acquisitions, block transactions"
+    priority: 8
+  TECHNOLOGY:
+    label: "Technology"
+    description: "Actuarial modeling platforms, insurtech"
+    priority: 9
+  ECONOMICS:
+    label: "Economic Snapshot"
+    description: "Interest rates, spreads, macro indicators"
+    priority: 10

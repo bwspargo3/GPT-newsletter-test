@@ -1,0 +1,49 @@
+# EDGAR carrier watchlist
+# CIK numbers for SEC filings
+carriers:
+  - name: MetLife
+    cik: "0001099219"
+    ticker: MET
+  - name: Prudential Financial
+    cik: "0001137774"
+    ticker: PRU
+  - name: Lincoln National
+    cik: "0000060086"
+    ticker: LNC
+  - name: Corebridge Financial
+    cik: "0001913144"
+    ticker: CRBG
+  - name: Brighthouse Financial
+    cik: "0001681819"
+    ticker: BHF
+  - name: Equitable Holdings
+    cik: "0001601712"
+    ticker: EQH
+  - name: Principal Financial
+    cik: "0001126328"
+    ticker: PFG
+  - name: Unum Group
+    cik: "0000005513"
+    ticker: UNM
+  - name: Athene Holding
+    cik: "0001527469"
+    ticker: ATH
+
+# Filing types to monitor
+filing_types:
+  - 8-K
+  - 10-Q
+  - 10-K
+
+# Keywords that flag a filing as relevant
+relevance_keywords:
+  - LDTI
+  - reserve
+  - reinsurance
+  - capital
+  - PBR
+  - VM-22
+  - VM-20
+  - actuarial
+  - mortality
+  - annuity

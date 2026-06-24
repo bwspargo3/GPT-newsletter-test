@@ -1,0 +1,66 @@
+# Google News RSS keywords - each generates a separate feed
+# Format: keyword: display_name
+google_news_keywords:
+  # Regulatory / PBR
+  - keyword: "VM-22 life insurance"
+    label: VM-22
+    category: PBR_VM20_VM22
+  - keyword: "VM-20 PBR life insurance"
+    label: VM-20 / PBR
+    category: PBR_VM20_VM22
+  - keyword: "LDTI ASC 944 life insurance"
+    label: LDTI / ASC 944
+    category: LDTI_GAAP
+  - keyword: "NAIC LATF actuarial"
+    label: NAIC LATF
+    category: REGULATORY
+  - keyword: "actuarial guideline life insurance"
+    label: Actuarial Guidelines
+    category: REGULATORY
+
+  # Products
+  - keyword: "fixed indexed annuity FIA sales"
+    label: FIA Market
+    category: MARKET_INTELLIGENCE
+  - keyword: "RILA registered index linked annuity"
+    label: RILA
+    category: MARKET_INTELLIGENCE
+  - keyword: "life reinsurance treaty"
+    label: Life Reinsurance
+    category: MARKET_INTELLIGENCE
+
+  # Carriers (Tier 1 watchlist)
+  - keyword: "Athene Holding annuity"
+    label: Athene
+    category: COMPETITOR_INSIGHTS
+  - keyword: "Global Atlantic life insurance"
+    label: Global Atlantic
+    category: COMPETITOR_INSIGHTS
+  - keyword: "Corebridge Financial"
+    label: Corebridge
+    category: COMPETITOR_INSIGHTS
+  - keyword: "Brighthouse Financial life insurance"
+    label: Brighthouse
+    category: COMPETITOR_INSIGHTS
+  - keyword: "Lincoln Financial life insurance reserve"
+    label: Lincoln Financial
+    category: COMPETITOR_INSIGHTS
+
+  # Actuarial / Tech
+  - keyword: "MG-ALFA actuarial modeling"
+    label: MG-ALFA
+    category: TECHNOLOGY
+  - keyword: "Prophet actuarial software"
+    label: Prophet
+    category: TECHNOLOGY
+  - keyword: "life insurance M&A acquisition"
+    label: Life Insurance M&A
+    category: M_AND_A
+
+  # Economics
+  - keyword: "SOFR interest rate insurance"
+    label: SOFR
+    category: ECONOMICS
+  - keyword: "mortality trend life insurance"
+    label: Mortality
+    category: RESEARCH

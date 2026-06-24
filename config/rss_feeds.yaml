@@ -1,0 +1,30 @@
+feeds:
+  # Professional Organizations
+  - url: https://www.soa.org/rss/all-news.rss
+    name: Society of Actuaries
+    category: RESEARCH
+  - url: https://www.actuary.org/rss.xml
+    name: American Academy of Actuaries
+    category: REGULATORY
+  - url: https://www.limra.com/rss/
+    name: LIMRA
+    category: RESEARCH
+
+  # Industry News
+  - url: https://insurancenewsnet.com/feed
+    name: InsuranceNewsNet
+    category: MARKET_INTELLIGENCE
+  - url: https://www.thinkadvisor.com/feed/
+    name: ThinkAdvisor
+    category: MARKET_INTELLIGENCE
+  - url: https://www.investmentnews.com/feed
+    name: InvestmentNews
+    category: MARKET_INTELLIGENCE
+
+  # Consulting Firms (research/insights pages)
+  - url: https://www.milliman.com/en/rss
+    name: Milliman
+    category: RESEARCH
+  - url: https://www.wtwco.com/en-US/rss
+    name: WTW
+    category: RESEARCH
