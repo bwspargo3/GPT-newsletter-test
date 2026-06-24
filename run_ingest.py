@@ -14,7 +14,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.database.db import init_db
-from src.ingestion import rss, google_news, economic, naic_monitor, edgar, web_scrape
+from src.ingestion import rss, google_news, economic, naic_monitor, edgar, web_scrape, playwright_scrape
 from src.processing.dedup import purge_duplicates
 
 logging.basicConfig(
@@ -59,6 +59,17 @@ def run():
     except Exception as exc:
         logger.error("Web scrape ingestion failed: %s", exc)
         totals['scrape'] = 0
+
+    # ── Tier 2.6: Headless-browser Scrapers (JS-rendered sources) ───────
+    # Milliman and WTW render their article lists client-side; this tier
+    # uses Playwright to execute that JS before scraping. Slower and more
+    # fragile than the other tiers by nature — see playwright_scrape.py.
+    logger.info("--- Headless Scrape (Milliman, WTW) ---")
+    try:
+        totals['headless_scrape'] = playwright_scrape.run_all()
+    except Exception as exc:
+        logger.error("Headless scrape ingestion failed: %s", exc)
+        totals['headless_scrape'] = 0
 
     # ── Tier 3: NAIC Monitoring ────────────────────────────────────────
     logger.info("--- NAIC Monitor ---")
