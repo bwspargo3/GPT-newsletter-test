@@ -1,4 +1,0 @@
-
-name: Daily Digest
-on:
-  workflow_dispatch:

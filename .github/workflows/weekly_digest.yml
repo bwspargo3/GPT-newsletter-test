@@ -1,4 +1,0 @@
-
-name: Weekly Digest
-on:
-  workflow_dispatch:
