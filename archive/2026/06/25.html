@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — June 25, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">June 25, 2026 &nbsp;·&nbsp; 6 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://content.naic.org/committees/a/life-actuarial-tf" target="_blank" rel="noopener">[UPDATE] NAIC LATF Committee Page</a>
+            </div>
+            <div class="article-meta">
+              NAIC Monitor &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">The NAIC page for NAIC LATF Committee Page has been updated. Actuaries should review for new guidance, exposure drafts, or meeting materials.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                Regulatory changes from NAIC LATF directly affect PBR reserving, actuarial guidelines, and compliance requirements for L&amp;A carriers.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxQWVZ0NjFUWUNSWENaX1JUOHhFQ015MzJkTkY4ZXpqbk5VRHN4aEJad2tNWGg3c0NodkVpWGFIdHVYTDFsRTNMT3VGSU4tQkhNY2FiVUpxNkF0VGIxRWhNY1VHUnI2eDgzNzkyQW1xam1tNjBHcGo2VTBDak9EY1dlRmxzSVdSNHZxbGFvVFVzRXBBRjVoM0tCU0dGVG82czdsUm40Z0k5RW1CZlRkX3M5aGE4WDI3REFUQVAxckVSc2I1R2kyaEpvQUNoZWtCSTJacVJtRUhZY2ktZw?oc=5" target="_blank" rel="noopener">FIDx and Beacon Research Bring Real-Time Annuity Rate Intelligence to the Point of Sale - StreetInsider</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• FIDx and Beacon Research have partnered to provide real-time annuity rate intelligence to the point of sale. • This partnership aims to enhance the annuity purchasing experience by providing accurate and up-to-date rate information. • The solution is expected to benefit insurers, distributors, and consumers by streamlining the annuity sales process.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in product development and reinsurance, as it may impact the design and pricing of annuity products. It may also have implications for reserving and GAAP reporting, as real-time rate intelligence could lead to more accurate and timely financial reporting.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNZDJuWHJYZXBXbE9ndGxGNUd6RndGVE5Ta1E3SnZLeFV6MlBZMDR6SFJwemZyR2pzY09md25vNUlVU2ZheHVMUHJlUnFaMGNTQlczWm10dWdwbWJjVHhWNzZJMzdPLWw2OHlHVmRIS1BMLThHcXVtSThtN3JlNGxZUkhNdklaT1IyRjVRQ2dsWC1TblY0UU1FT0lCNA?oc=5" target="_blank" rel="noopener">Price to book forward of Brighthouse Financial, Inc. – NASDAQ:BHF - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial, Inc. (NASDAQ:BHF) is being analyzed on TradingView for its price to book forward. • The article provides a link to further information on the company&#39;s financials. • The analysis may impact investor decisions and industry trends.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This market intelligence may affect L&amp;A consulting actuaries working on reserving, GAAP, and capital projects, as changes in Brighthouse Financial&#39;s financials could influence industry benchmarks and regulatory requirements. Actuaries involved in product development and reinsurance may also need to consider the potential impact of shifting market trends on their work.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNVZUOEVpYV9pZzZEdFFPZFVaSTVwR29nNzUwSjdtcTRHSTdrUGxJOHliTzRTS1AyM2Fta3FnZ3I0dVZ2aVF6elB4OHo3WnhfX3NXa0tnZklGOEtjRnZIVFRZUm81UnhNV2dwZ0xueXdBMGlYaDFtbmo5Z1p0QnRGV0lIb1RGbnRzcVctZVJoOWpvNDU1YXFNV2lhLUVta0tXMGxBWF9QLVc1dE95YURhWU9ReFIyekRhMmZjeER4aS0yNjQ?oc=5" target="_blank" rel="noopener">Life Insurance Stocks Q1 Results: Benchmarking Globe Life (NYSE:GL) - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• Globe Life (NYSE:GL) released its Q1 results, providing a benchmark for the life insurance industry. • The results can be used for comparative analysis with other life insurance companies, such as Brighthouse. • The Q1 results may reflect the current market trends and economic conditions, with potential implications for life insurance stocks and the industry as a whole.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The Q1 results of Globe Life (NYSE:GL) have direct implications for L&amp;A consulting actuaries working on reserving, GAAP, and financial reporting projects, as they provide a benchmark for industry performance and may inform assumptions and projections used in these work streams. This information may also be relevant for actuaries involved in product development and reinsurance, as it reflects current market trends and conditions.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1527469/000152746926000039/ahl-20260625.htm" target="_blank" rel="noopener">Athene Holding 8-K Filing – 2026-06-25</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Athene Holding &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• Athene Holding filed an 8-K on 2026-06-25 with the SEC, accessible via EDGAR. • The filing is categorized under Item 7.01, with an accession number of 0001527469-26-000039. • The specific details of the filing are not publicly disclosed in the provided information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This 8-K filing may have implications for L&amp;A consulting actuaries involved in reserving, GAAP, and reinsurance work streams, particularly those working with or advising Athene Holding. The filing&#39;s details could impact financial reporting, regulatory compliance, and risk assessment for Athene Holding and its stakeholders.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNRGlQWEN2eF9fdDZzT2x1XzJkVmlpS25YUWl4dXh0ZWpDUHQyb0hvYVp3dHVuUU9vLWRnT3VxX2dBQ20wOHVVSENqVmFiOVV1R19rSlpPRUw5S3M3WHVFNEw0a3E0cTJXSnluVU95YTdmc3dkOHZIbm8xYlotd21KV19pMFJEMWc1VVJmM1hIeWRiTC05VFR2VXlhUXM1LXd2RzVDSHpheVQtM3d5OXlv?oc=5" target="_blank" rel="noopener">BHF Outperforms the Industry: Operational Momentum Continues - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• BHF outperforms the industry, driven by operational momentum. • The company&#39;s strong performance is attributed to its strategic initiatives and effective execution. • Specific details on the company&#39;s financials and operational metrics are not provided in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects, as BHF&#39;s outperformance could influence industry benchmarks and best practices. It may also be relevant to actuaries involved in product development and reinsurance, as they may need to consider BHF&#39;s strategies and results when advising clients or developing new products.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">271.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.50</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.96</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.94</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.63</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
