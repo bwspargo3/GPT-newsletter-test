@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — June 26, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">June 26, 2026 &nbsp;·&nbsp; 7 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOV3lneUkySGxMWmtFaXZKak8zcWhUWFlJUmNPVGFSeTlXQW1iTURNTHJWYmtMWUNjUm96REJqVnl6a0h2M1F3NG9uYVNXbmstRVhqek4xZW1pb3Nldm1RdUc1WGU1b1JIcEhaVDJFbGFUWDJtWU5oNlIwWVJqbkl6cHY0ZUkxdW1zVU5nektBczZOb2FveDJ5ZTZPVTlZVGVfRTNLZEYzZFUtaGpmSVdZWjRfN2d6Zw?oc=5" target="_blank" rel="noopener">SEC Could Give More Life and Annuity Products Their Own Registration Forms - ThinkAdvisor</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• The SEC is considering assigning unique registration forms to more life and annuity products. • This change could impact the registration process for life and annuity insurers, potentially simplifying or complicating their regulatory filings. • The proposal may be part of the SEC&#39;s ongoing efforts to modernize and streamline the registration process for insurance products.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This potential change could directly impact L&amp;A consulting actuaries working on product development, as they may need to adapt to new registration requirements and forms. It may also affect actuaries involved in GAAP and statutory reporting, as changes to registration forms could influence financial reporting and disclosure requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/naic-criticized-over-network-flaws-and-communication-after-cyberattack" target="_blank" rel="noopener">NAIC criticized over network flaws and communication after cyberattack</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-06-26
+            </div>
+            
+              <div class="article-summary">• The National Association of Insurance Commissioners (NAIC) experienced a cyber breach on June 11, potentially exposing sensitive regulatory filings and data from credit rating agencies. • The NAIC confirmed that stolen data was published online by the responsible group, and they are working with an external cybersecurity partner to assess the scope. • The National Association of Mutual Insurance Companies (NAMIC) criticized the NAIC&#39;s security and communication, citing a lack of proper cyber guardrails, such as segmenting sensitive information systems.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This incident may impact L&amp;A consulting actuaries involved in regulatory filings and reserving, as it raises concerns about data security and potential breaches of sensitive information. Actuaries working on GAAP and statutory reporting may also need to consider the implications of this breach on their work streams, particularly if they rely on data from the NAIC or credit rating agencies.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQeTZoQUN5YVpZMFNQMUVUZm1fSnloRWIwYjZkWm9rSmNkdXc3emZWYVZPVjlrYzRTUl9pX0tVd0tyVnJzcDFmLUdzaVd6LTVwRjNVR3gwdU1QbnJrSXNOOVBnZWxldHFpN0dWQTg2ck1NZ1k2TDJ3Zk4zVmJnS1RMc0U4bC1CTHNsSkNxSmNaUW1UVUM5X1Q1OUd6dGIza1E?oc=5" target="_blank" rel="noopener">Price to earnings forward of Corebridge Financial Inc. – NYSE:CRBG - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-26
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc. is trading on the NYSE under the ticker CRBG. • The article provides information on the price to earnings forward of Corebridge Financial Inc. • The data is available on TradingView, a platform used for market analysis and intelligence.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries as it provides market intelligence that can inform reserving and capital work streams, particularly for clients invested in or reinsuring with Corebridge Financial Inc. The price to earnings forward data can also be relevant for GAAP and statutory reporting purposes.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPOHFGUWgxWkc5ZnFZenhIOENfOWV6OTliRm9SZFppOEVrNm1PZUFUSl92aW5aUUt3NFVUQlU3WEtpdlE4VVZHUEJvUldZdUtNQ1Q2NTNvdXRMWUVWNkloU0VEeVVxNHB2dVJGVU9yZ010MlptTjZFTmh6UGtzYUJEVlZwS0ZQdmJzaHJLNWZDaUpZZ0MyU284THE1S1o?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. Actuals &amp; Estimates (NYSE:CRBG) - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. (NYSE:CRBG) has released actuals and estimates on TradingView, providing insights into the company&#39;s financial performance. • The data includes historical and projected financial metrics, which can be used for analysis and forecasting. • As of the latest available data, Corebridge Financial&#39;s financials are subject to scrutiny by investors and analysts, with potential implications for the life insurance industry.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in life insurance reserving, GAAP/stat reporting, and product development, as it provides valuable market intelligence on a key industry player. The actuals and estimates can inform reserving and capital management decisions, as well as product development strategies, for clients operating in the life insurance space.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPbE5BRnZGNFk2Q0JjR0luVVI1YXRqUTZNQW1YXzAyenpJT1RaeTNXcnBiUzJLT3NkR0JTNGxPTjZlNjlLNl91M2J3YjZRb0xwSzJxZXB1SGpCako0bExXMi1tVDQzSUh1M0dORzNWVVpRdllrczY1dlNlMi15ZXI2dlpaRzlhLXF4WFZZVG1qeVduNlI4dTY2VENmNC1Xek1GdnhZMzJ2ZXdvcG9kUmQxTW1TNA?oc=5" target="_blank" rel="noopener">Brighthouse Financial (NASDAQ:BHF): What’s Driving the Latest Buzz? - Kalkine Media</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial (NASDAQ:BHF) is experiencing increased market attention, with specific details not provided in the article summary. • The article is from Kalkine Media, a source of market intelligence. • The full article is available via a link on GoogleNews, but the summary does not provide specific numbers, names, or dates.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving, GAAP, and product development projects, particularly those with clients in the life insurance industry. Actuaries should monitor developments related to Brighthouse Financial for potential implications on their work streams, such as changes in market trends or regulatory requirements.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1601712/000160171226000025/syf-20260624.htm" target="_blank" rel="noopener">Equitable Holdings 8-K Filing – 2026-06-25</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Equitable Holdings &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOVGZfSzFCb3NSMi02M3VZRFMwOXdKZVpqNldNWlJjckx4Vk1GZXQxTWRBLWloSVVxV2N0ZHpaTmt0TWstMWd0TE5abmt0RmZjZFZkc3RTMTJvRUZYelZWeFJsUVk1dWNWbTJ0SHJRYmFNUEpmUkRDM3Zwbm52NW5QOFdqWEJWbnUtbEtjRlhwMzB2WVdOVXV2YjZGTUM5MldVX2l6Z0R4UFpzVVdWLUhtU1FhSUR5dw?oc=5" target="_blank" rel="noopener">BHF Outperforms the Industry: Operational Momentum Continues - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-06-25
+            </div>
+            
+              <div class="article-summary">• BHF outperforms the industry, driven by operational momentum. • The company&#39;s strong performance is notable in the current market environment. • Specific details on BHF&#39;s outperformance are not provided in the article summary.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects, particularly those with clients in the life insurance industry, as it highlights the importance of monitoring industry trends and competitor performance. It may also have implications for product development and reinsurance work streams, where understanding industry outperformance can inform strategic decisions.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">278.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.41</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.87</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.86</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.89</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
