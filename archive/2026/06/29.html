@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — June 29, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">June 29, 2026 &nbsp;·&nbsp; 8 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxONV9MYy1QRHFVYlNpcFREbmVjaG1Ec3UyUGpQZ3dQMGZRbW5PM29lR3VJY1cwNGh2SGs5bHQ0Qkl4S3NiUGQ4V1Q3dzdrX0x1RnJxeE02SzBtUE5oT244RDJUdWptMGpFemhLekRSTGtoYjBWcTZCMl8xMkRtdlRLdnZTMExCVWRoVzJLNTNXamFXek9OVUJDdWhnNnF0RHBpTmtjeUwweEd4WE5wdndRV0p3MHR5OFJONllBd3hTTTA1bGF6OEt3NWlnUHZvYS1BYVYyVHVMbw?oc=5" target="_blank" rel="noopener">Corebridge Financial vs. F&amp;G Annuities &amp; Life: Which Financial Stock Is a Better Buy in 2026? - The Motley Fool</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial and F&amp;G Annuities &amp; Life are two financial stocks being compared for investment in 2026. • The comparison is based on various factors such as financial performance, growth prospects, and valuation. • The article aims to help investors decide which stock is a better buy in 2026.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This comparison matters to L&amp;A consulting actuaries specializing in product development and reinsurance, as it provides insights into the financial performance and growth prospects of two major players in the annuity and life insurance market, potentially informing product development and reinsurance strategies. The analysis may also have implications for reserving and GAAP reporting work streams, as changes in market conditions and competitor dynamics can impact assumptions and methodologies used in these areas.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUnI4ZkhtMUJ1UXB2Ym15eWlDUV9VWVNseW5lenAxX1hHLTBoMkszWGRlUngwX0NTTmMwU1VtVkNuM01sUlVXUGNhclVqUEU0Vkw3VDRZN1JaOFRUdHU1eFRzS05LYlZNTGRrNVJkb21wUGxfNDhfaXVmTHpGSk5XaFN2eTRoRm1rTDNnOFlHTWhZdXlnQ0F1MWJhdVg5bnVIWk9pWlM4SFVZTDhDcEdNVUZ6OHIwRXI2aXVyN3Vhamo?oc=5" target="_blank" rel="noopener">Corebridge adds Nasdaq-100, S&amp;P 500 options to life insurance product - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge has added Nasdaq-100 and S&amp;P 500 options to its life insurance product. • The move is likely aimed at providing policyholders with more investment options and potentially increasing sales. • The specific details of the product, such as the effective date and any associated fees, are not provided in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as they will need to consider the potential risks and benefits of these new investment options when designing and pricing life insurance products. It may also affect GAAP and statutory reporting, as the new options could introduce additional complexity in financial reporting and reserving requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPcm9JYVpMLUJiOV91TmZQMEtBbHg4Mm9IQVB1R3lkMnIzbEFmMFFmR0dqZnd4S0FPUnU3MFlEYXIzQmxLM2tjQ3BVUEZpT0lKQ3Z6aUh1dUxnSDZndkV0eWxMOVhaekdpcGcwNVNVNEFJU1N0ZlY1b2JqeFZyQmRaRkFVWldQdmQwZjRUUU80c0tTMmlpTnBqSW43U0c4RDBST1Q3ZFhJOA?oc=5" target="_blank" rel="noopener">Enterprise value to revenue forward of Corebridge Financial, Inc. – DUS:AS5 - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc.&#39;s enterprise value to revenue forward is available on TradingView. • The data is categorized under MARKET_INTELLIGENCE and sourced from GoogleNews:Corebridge. • The article provides a link to the TradingView platform for further analysis.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries as it provides market intelligence on a key industry player, potentially impacting work streams such as reserving, GAAP reporting, and product development. Actuaries can use this data to inform their analysis and recommendations for clients, particularly in the context of financial modeling and capital management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQR1VPZ3VJYjhBOV9sOW9YYU1UOTJYVnlOOHJGSUhTWHNlU1BiQ1d6UzlUeEZsN3ZvcnV3QzM3UjV5Vlp1VEgyaWE0Y3FHRTZxYXlOUmt6UWFhZVljd3dsQlZJbDhjYTFqUGJMbjNSaHZSOVRuUWozWWV0QnZrOFlYdkpWWEtVaWRtdGs5RkFsR0libWZUZERvdEt2LW8xSGNZODF6c1c2TFI0ZmpiejFQd2FubXNabjdQNElr?oc=5" target="_blank" rel="noopener">Corebridge adds index strategies to life insurance product By Investing.com - Investing.com Canada</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge has introduced index strategies to its life insurance product, expanding the investment options available to policyholders. • The move is likely aimed at attracting customers seeking potentially higher returns and more flexible investment choices. • This development may impact competitor life insurance products and the overall market landscape.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The introduction of index strategies to life insurance products by Corebridge may affect L&amp;A consulting actuaries working on product development, as they will need to consider the potential impact on pricing, reserving, and risk management. This development could also influence reinsurance and capital work streams, as actuaries assess the implications of these new investment options on policyholder behavior and insurer risk profiles.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1099219/000109921926000045/met-20260629.htm" target="_blank" rel="noopener">MetLife 8-K Filing – 2026-06-29</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:MetLife &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• MetLife filed an 8-K with the SEC on 2026-06-29, accessible via EDGAR with accession number 0001099219-26-000045. • The filing includes Item 7.01, which may contain material information about the company&#39;s operations or financial condition. • The specific content of the filing is not publicly disclosed in the provided information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This 8-K filing may have implications for L&amp;A consulting actuaries working on reserving, GAAP, or reinsurance projects, particularly those involved with competitor analysis or benchmarking. The filing&#39;s content could impact how actuaries assess MetLife&#39;s financial condition and operational strategies, potentially informing their own work on client projects related to these areas.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNaU5ZR05Kak80VktMbjJrdmFjSjZSNm1mbVk5WWFyWC15SXdnZjlfUlV5YThTYmw0UlFUTFoxTG1EZlpINzZzcF92eFUwSHR3QzVyU0JEd3BMLUtSdUhKb0d2SG5HQ2NXZlVpaGtDZjF1andoSkFXS0p4TWgzTkd4NkZxS2VpQmZQd0FoYnZSU0l0S3VpTm96V3ZRb3AyUHRkM3gya1NGeUFBTkluaFVvOWx3NjVhQTBzcFhVNWpyOVRuanlDdHlGbzN2WDU?oc=5" target="_blank" rel="noopener">Lincoln National with a clear strategy focus, stock in the US life insurer peer comparison - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-06-28
+            </div>
+            
+              <div class="article-summary">• Lincoln National has a clear strategy focus, with its stock performance compared to US life insurer peers. • The company&#39;s strategy is expected to drive growth and improve its market position. • The comparison highlights Lincoln National&#39;s strengths and weaknesses in the US life insurance market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries as it may impact their work on competitor analysis and market research for clients, particularly in the areas of product development and reinsurance. It may also inform their advice on reserving and capital management strategies for life insurance companies.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxPdERuVkg0RndZdGtXLTAwTDhJaHFabUZVTDdtOUtZWEd6NGttOU9qaldWRDNYRWRkMnl5X0t5MDJzWnhUbm1tTzFfam9naHZjS1BtU3dJYWE0UHpoQm00WGpYTExEdmhmTkkxazU4QUxwbW1GQ1pkQUhvamV5WTUxctIBlAFBVV95cUxQYVNxdWZVZWtWUngyaUtueUVibW5kOGJzeGNCQ0JhdWJYbVBObzFILXRGR19LRjhfc0ZkOTN5QWpQb1o3TnZ5SV91VmszNGdzRlRNSWd3Ry1xRzFJbGxZV2lUV3ByM3Z5d2cxRF9oR1Vlb2NHbVBSdjlEZ25YS25ac3lHVlpIUXpJaHVTXzdkT2ozTXly?oc=5" target="_blank" rel="noopener">Lowered prices spur Korea insurer M&amp;A as major players join bidding war - CHOSUNBIZ - Chosunbiz</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Lowered prices in the Korean insurance market are driving M&amp;A activity, with major players joining the bidding war. • The trend is expected to continue, with multiple deals in the pipeline, although specific details on the companies involved and the prices being discussed are not disclosed. • The increased M&amp;A activity may lead to changes in market share and competition among insurers in Korea.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and product development, as changes in market share and competition could lead to shifts in risk profiles and product demand. Actuaries involved in GAAP and reserving work streams may also need to consider the potential effects of M&amp;A activity on financial reporting and reserve requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNZTFBckRaM2premdaRlpNcDdVZ1FtMmNFS3F5aHlMamExVzhFZzk0S3JvMVVhdTJYa3htNjNIOVdXM0pmZFRXSDlVLVVBU1RPUTR2VzZfUVk4NE9kWGpydnVwaVlSeGg1RC14T2k2b1dmenNYanh2ZktPWEVjQ040ctIBlAFBVV95cUxOcVJTb2xvNFJuZTEzSGNUOG4wbVZjLTBKanZUQlYwM0d0VnM0eG9IWjllS3pkSHZBSktVd3N3bXlGVTZ1MlpGZmc1VHdxTE5FbUJuOE9zRTBpR2tFdVFGU2c3NndmOTYzR2plb1AxbzF4TU1XQ2pwVFZCaWNzZ3QyMWZSZWI3WEM4NFhwNGM2alVnaWpG?oc=5" target="_blank" rel="noopener">Lotte Insurance soars on takeover reviews by South Korea finance giants - CHOSUNBIZ - Chosunbiz</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Lotte Insurance&#39;s stock has increased due to potential takeover reviews by major South Korean financial institutions. • The review is led by unnamed finance giants in South Korea, with details of the potential acquisition remaining undisclosed. • This development may impact the South Korean insurance market, with possible effects on market share and competition.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This takeover review may impact L&amp;A consulting actuaries working on reinsurance and product development, as changes in market share and competition could lead to shifts in product offerings and risk transfer strategies. Actuaries involved in GAAP and reserving work streams may also need to consider the potential effects on financial reporting and capital requirements.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">278.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.40</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.87</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.86</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.41</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
