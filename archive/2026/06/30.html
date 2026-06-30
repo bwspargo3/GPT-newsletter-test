@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — June 30, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">June 30, 2026 &nbsp;·&nbsp; 11 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxPOFNHSVQ4Mml5QzdfdEFJU3huTlJmc1JvdDlKTE5lOTc1c2ZjZ3pCRzZwQzg4T2NFTnNka3F5UjltTXRXRl82YXF1WTk3Z0wwbURIS3pQSDdXOUJzUFM2ZnJiQ1o0VWRrWlZfc3VNOER5bkJILU1OMTl1VjNkb3BRT2Z6RXRObVJPbFJoYnlPLXdRSS00QlJpN1haenFNWXR6N2xyeTd4Vm41VWYwc0F6c3lGRVBFUmpBYngxTnF3NS1LM0pMdmh4V0ctTjVVcVkwMUtLSDlkeUZybUdnSEllc0F0M2lRd9IB6wFBVV95cUxNMXR0LURhVHRhelNJOHBTZE1RV3Bnb0hQNUpHWHlFR1RFQ2lyN2F2T3VMT1Vkd1RJa21adDRiNmROOTIwaUk3UERBRlNMcW9yVFB3VzJxcVBYZ3g3SE1zdHQ5WGV5ZHZpbFJDR3JPWVNVNHY2bFRqUWNHYzVNbWhwYm84VnBHclVUblFXM0dqajZYS0NXMnBVZVNqOTdub0M3U1hDVWxjeXZTQ3FPN2Vhb25kUHAyc3BmX2hlYjhtWmw5RC1HdHhKRGpMSkdOYTlmaDJ5MDBsUlM1dkZRMnVWM3czb0x6YUttc2pJ?oc=5" target="_blank" rel="noopener">Does Corebridge’s Enhanced Max Accumulator+ III Shift CRBG’s Protection‑Led Growth Narrative? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-30
+            </div>
+            
+              <div class="article-summary">• Corebridge has enhanced its Max Accumulator+ III product, which may impact CRBG&#39;s protection-led growth narrative. • The enhancement could lead to changes in sales and profitability for CRBG. • The shift may require adjustments to reserving and capital management strategies for life insurers.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may affect L&amp;A consulting actuaries working on product development, reserving, and capital management projects, as they will need to consider the potential impact of enhanced products on sales, profitability, and risk profiles. Actuaries involved in GAAP and statutory reporting may also need to assess the implications for financial reporting and disclosure.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOb2x3ZUNDV05CcWsyZXNqMFdfZnE3LUZRSE5uWFRKTThpR01VSnU4Qno0SnpXZkRReVJoeENRNi16aGwzbWlFblhuOGdoazhVcG9KaFNxX21XQzYtTWV1OEROMEFCcEpZZWdoUEpYUmdvTm5HYWFvenNpSkhlLXYwZV9jZUVRRDQ3bVdVcFR5YW0yWm01YU1yOU5OaDJnRGJSYWVwTExmX2VCWmJOeFlrenNUdVNuVGNUcGhOTEJ0UFhnczgyTlNyTQ?oc=5" target="_blank" rel="noopener">Corebridge Financial Brings New Index Strategies and Enhanced Growth Potential to Max Accumulator+ III - lifehealth.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has introduced new index strategies to its Max Accumulator+ III product, aiming to provide enhanced growth potential. • The updated product is designed to offer policyholders increased flexibility and potential for higher returns. • The launch of the new index strategies is part of Corebridge Financial&#39;s efforts to expand its product offerings and stay competitive in the life insurance market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as they will need to consider the new index strategies and their potential effects on policyholder behavior and reserve requirements. Actuaries involved in GAAP and statutory reporting may also be affected, as they will need to ensure that the new product features are properly accounted for and disclosed in financial statements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPSDUtNGZ4M0hyQUNQZjhXb29ibWg0UlhJQzJIc3FwZWVKZWR0SXlSa05UMGJOeEJ0cFktSW1ZdDc3LUs3M1oyXzJNcW5ESmFwUlVRODczUUhnVl9fNjZXT2wxMEZWZWxXd2xEeWUzSkplNnM2M3NrWXJFNXFEYm1LaEc2dmtpbEgtZ241dHZncXhPWFB3WEd0YVRFdm44SllLR2hxQS1WR2t6MlNldkZ3cEV2LU9Xdw?oc=5" target="_blank" rel="noopener">Corebridge adds index strategies to life insurance product - Investing.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge has introduced index strategies to its life insurance product, expanding the investment options available to policyholders. • The move is likely aimed at attracting more customers and increasing sales, although specific details on the product and its features are not provided. • This development may indicate a trend towards more flexible and dynamic life insurance products in the market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on product development, as it highlights the growing demand for innovative and adaptable life insurance products. It may also affect reserving and GAAP reporting work streams, as actuaries will need to consider the potential implications of these new index strategies on policy reserves and financial statements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNT0Q4UHBjQUdyVThLSTJuX2hlcGtDa2dMUDd3RkFNXy1ybnVUYVFkbUwzd3ZKNjhsMDl6cldCUzVSenk1VWpSR0RoQ0VrT2RVR3ZIVkE2dkdJb21fWExUZFpOR2JDTzdGM0hqaVdRYktXWk5BTnZfM29pYkJONEZCUl9PbGgtSzl6RnBDTTFzT0RuSUxUMWt5QlFULURVMV9vMFE1S0VMQ0J3UjNkYk1mLQ?oc=5" target="_blank" rel="noopener">Corebridge Enhances Max Accumulator+ III for Better Growth Poten - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge has enhanced its Max Accumulator+ III product for improved growth potential. • The enhancement aims to provide better growth opportunities for policyholders. • The updated product is expected to impact the life insurance market, with details on specific changes and benefits not provided in the initial announcement.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This enhancement may impact L&amp;A consulting actuaries working on product development and reserving, as they will need to consider the updated features and potential growth implications of the Max Accumulator+ III product when advising clients or modeling product performance. The changes may also have implications for GAAP and statutory reporting, particularly if the product&#39;s growth potential affects reserve calculations or financial statement disclosures.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxPTVVhYnRhdXVrUWs2TzlZaWU3a3NLSk0tVkJCT0Q0OVhMRWp6R1RWel8xTlFOWU9Cc05MZHd4eXl3ajdrUXNZcVlWN3B2NWZwa0NraUF4WDVyWS1vMGtpZkJaUkhENzdzQzdOVngxc2VVdU1nVmN0SW9FY18wOXlTQThWVkVEb0NjcUZudUk5bHV1UHFxZkR4VERRakx3RFZsanhVdXcyUnJZT1A4NzhQVUJ6Um5ncksxR1lxXzN5QjBBRDVYSmVJakV5dVc?oc=5" target="_blank" rel="noopener">Corebridge Financial launches new index strategies, shares tied to annuity growth push - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has launched new index strategies as part of its annuity growth push, although specific details on the strategies are not provided. • The launch is tied to the company&#39;s efforts to expand its annuity business. • No specific numbers or dates are mentioned in the article regarding the launch or its expected impact.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reinsurance, as new index strategies could lead to changes in product design and risk transfer mechanisms. Actuaries involved in reserving and GAAP reporting may also need to consider the potential effects of these new strategies on financial reporting and reserve requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1527469/000152746926000041/ahl-20260626.htm" target="_blank" rel="noopener">Athene Holding 8-K Filing – 2026-06-29</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Athene Holding &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Athene Holding filed an 8-K on 2026-06-29 with the SEC, accessible via EDGAR with accession number 0001527469-26-000041. • The filing includes items 1.01 and 1.02. • The specific details of the filing are not publicly disclosed in the provided information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This 8-K filing may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, particularly those with clients or partners involved with Athene Holding, as it could signal changes in the company&#39;s financial or operational structure. Actuaries should monitor such filings for potential implications on their work streams, especially in areas like financial reporting and regulatory compliance.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1601712/000160171226000027/syf-20260629.htm" target="_blank" rel="noopener">Equitable Holdings 8-K Filing – 2026-06-29</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Equitable Holdings &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxObUdjWUdmT1AyWEdFdnRGSk8xbHp6WnpwTm5sTHg3dzhQN21wa0JFOWxMNXFOSnc1WXM2cFMzS2JwTmZWMkNWbUJfUjZQYlZZLVVMbTlPdEdYeTFfaVNqMGtWTmc2ZUFUUEhOQm1KelNfMU1KU1FNdnRFenpjbHB3dUFMRHNuZlBaMWh2SjR0OHZfUXJUN3RRMmJFejFiUVA1b2xuSU1vXzBsanB5UC1OdXREUy1xbkVraFlDbnNHNTFiSkdnbHFhc2JXaw?oc=5" target="_blank" rel="noopener">Lincoln National consensus picture today, analysts cautious on the shares - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-06-30
+            </div>
+            
+              <div class="article-summary">• Lincoln National&#39;s shares are being viewed with caution by analysts, with no specific consensus picture provided. • The article does not provide detailed information on the company&#39;s financial performance or future outlook. • Analysts&#39; cautious stance may be related to various factors, including market conditions and industry trends, although specific details are not available.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The cautious stance on Lincoln National&#39;s shares may impact L&amp;A consulting actuaries working on competitor insights, particularly those involved in reserving and GAAP reporting, as it could influence industry trends and market conditions. This may also affect actuaries working on product development and reinsurance, as they need to consider the overall market landscape and competitor activity.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9YRzFkRmhhb1V0X1VlWlE0Q2R6T0pqRDlJWUZQNTdKOEtOYVNScTlnX0VlM2laN1VyNFlzcXpOdld4TUh6UXE3SVdlX0NucXpBQTdlTlQ2UFcyWVhMRmJBYVE2cXBEbm1ZR1RGbHdJM09pWjZ0dVE?oc=5" target="_blank" rel="noopener">Insurance M&amp;A Market Heats Up: Major Financial Firms Eye Lotte Non-Life and KDB Life - BigGo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Major financial firms are eyeing Lotte Non-Life and KDB Life for potential acquisition, indicating a heating up of the insurance M&amp;A market. • The move is expected to impact the market landscape, with possible changes in market share and competition. • The exact terms and timeline of the potential deals are not disclosed.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and product development, as changes in market ownership and competition could lead to shifts in reinsurance treaty terms and product offerings. Actuaries involved in GAAP and reserving work streams may also need to consider the potential implications of these deals on financial reporting and reserve requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE16SmFvcTRZdjdRU0lQamcyRmNRSzhTdE9aZkpGMjA5dDNDOWNlWldJWkI0bUh4QjdqWkdHTFlWaUoyMDl3TlVERUd6ZWNQbEh0X3ZrYnd2ME5KdjVReF9Hb0VGS3N2UDJJeVNzNlVvenNsWklzU0E?oc=5" target="_blank" rel="noopener">Lotte Non-Life Insurance Sale Heats Up Again — Shinhan, Korea Investment Eye approximately $649 Million Price Tag - BigGo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-06-29
+            </div>
+            
+              <div class="article-summary">• Lotte Non-Life Insurance is up for sale with a potential price tag of approximately $649 million. • Shinhan and Korea Investment are eyeing the acquisition. • The sale is expected to heat up again, although no specific timeline is mentioned.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This acquisition may impact L&amp;A consulting actuaries working on reinsurance and M&amp;A projects, particularly those involved in due diligence and valuation of non-life insurance portfolios. It may also have implications for actuaries specializing in GAAP and statutory reporting, as the sale could lead to changes in financial reporting and reserving requirements.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Technology</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNYWJ1VFJTd1R0TGhaMDg5YTJMRFRGcnpDak1ORTlBTXJGV09qTUVLWlNLQmF5X0QxMXpQSXlHSUtnaTZ2ajlLejJCYm9nMlI1dlRpZWx6WWdDWm5FS1NuVDZWUjRxM1BnRDFDOGNBNmhZd04xMmhRVFB1SUhoekRhOExNVjdRWEJNUzg2ZTRtZGtNa2NFalliV0RUSUVXZw?oc=5" target="_blank" rel="noopener">WTW speeds strategic life insurer decisions with addition of GPU-support in RiskAgility Financial Modeller - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:VM-22 &nbsp;·&nbsp; 2026-06-30
+            </div>
+            
+              <div class="article-summary">• WTW has added GPU-support to its RiskAgility Financial Modeller, enhancing the speed of strategic life insurer decisions. • This addition is expected to improve the efficiency of financial modeling and risk assessment for life insurers. • The enhanced model is likely to support more complex simulations and larger data sets, allowing for more accurate and detailed analysis.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The addition of GPU-support in RiskAgility Financial Modeller is likely to impact L&amp;A consulting actuaries working on modeling and reserving projects, as it enables faster and more complex simulations, potentially streamlining the financial modeling process and improving the accuracy of reserve calculations. This development may also affect product development and reinsurance work streams, as more efficient modeling capabilities can inform product design and risk transfer decisions.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">283.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.38</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.87</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.87</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.41</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
