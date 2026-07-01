@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 1, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 1, 2026 &nbsp;·&nbsp; 6 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOUUhxejF3ZHhrUXVaaVd1V2p5eHlNV3BrT3BKbVFHLUV2MmZxcGRIdXJhSHg1dzNsZlVsWVNiWkU4VGx4OW5ON2xRd1QwLXYxWkt6SFpBVm9Qc1A4bktvd2ZLb3h4cE1Gb3B1dE8xRy05SGEwWklfOVo2bm13M0RYSmtNUUZucXUzRG9Pc09lc2hXaV9fS2hJYQ?oc=5" target="_blank" rel="noopener">Regulators tackle controversial annuity illustrations - InsuranceNewsNet</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Actuarial Guidelines &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Regulators are addressing controversial annuity illustrations, although specific details are not provided in the article. • The article does not mention specific numbers, names, or dates related to the regulatory actions. • The InsuranceNewsNet article is the source of the information, with the full story available via a GoogleNews link.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as changes to annuity illustrations could affect the design and pricing of new products, as well as the reserve requirements for existing business. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of these regulatory actions on financial statements and disclosures.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/whats-fueling-record-annuity-growth" target="_blank" rel="noopener">What’s fueling record annuity growth?</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• U.S. annuity sales reached $107 billion in the first quarter of 2026, a 1% increase over the same period last year. • Traditional variable annuity sales rose 17% to $17.2 billion, while registered index-linked annuity sales increased 20% to $21.1 billion. • Single premium immediate annuity sales reached $3.7 billion, a 22% increase from prior year results, with Kush Kotecha, president of Nationwide Annuity, citing strong market trends.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This record annuity growth has direct implications for L&amp;A consulting actuaries working on reserving, GAAP reporting, and product development, as they will need to consider the increased sales and changing product mix in their reserve calculations, financial statements, and new product designs. The growth in annuity sales may also impact reinsurance strategies and capital management for life insurers.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPUkJtaVVjaUd6M1R0Y0J6cEROOVMxWkJqeFlmZVVxUXk4MXN1bDMwWGZjUHN0djFnaXEwRVpCbzRXRlZPckhaT2lVYU9ta1ROU25CeldZUkNubDM2WEwwZFZ1c2Y4bTBYTmpseUdLanpaeXZqemlqUUlxSEZ4UmhXQ3JtOVFTWGN1S1U3bi01UlVsak41bkM0?oc=5" target="_blank" rel="noopener">Price to book forward of Corebridge Financial, Inc. – SWB:AS5 - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. is trading with a price to book forward ratio on the SWB:AS5 index. • The article provides a link to TradingView for further analysis of the company&#39;s financials. • The price to book forward ratio is a key metric for investors and analysts to assess the company&#39;s valuation.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in life insurance reserving and GAAP/stat reporting, as it provides insight into the market valuation of a major industry player, Corebridge Financial, Inc. This can inform their work on financial modeling, reserving, and capital management for similar clients.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNRVljUDVvRUNUYzBscGxlckE0eTNIdlNzWjdHRzBTV2pkZThzdnRrZ1lnNFNSSlB5OTN4VVEyM0lYOTRDQWVmdVU5OWtRc3h2WEM1VVN2UzZqWmNQWmtCV09EUVllYnZseVQ1VXY1alVxc24xOEVXdDVwZmJwMVRMazZSc3d0c3pCYjdOeXhNR2l0YmpsOUpfNjFBczB2THFYMkE?oc=5" target="_blank" rel="noopener">Dimensional VA U.S. Targeted Value Portfolio&#39;s Corebridge Financial Inc(CRBG) Holding History - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-06-30
+            </div>
+            
+              <div class="article-summary">• Dimensional VA U.S. Targeted Value Portfolio has a holding history in Corebridge Financial Inc (CRBG), a company involved in the life insurance industry. • The portfolio&#39;s holding history is tracked by GuruFocus, providing insights into the investment decisions and strategies of Dimensional VA. • Corebridge Financial Inc (CRBG) is a relevant company for L&amp;A consulting actuaries to monitor, given its presence in the life insurance market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in life insurance reserving, GAAP/stat reporting, and product development, as it provides insight into the investment strategies and market trends that may impact their clients&#39; portfolios and product offerings. Actuaries working on reserving and capital projects may also need to consider the potential implications of Corebridge Financial Inc&#39;s (CRBG) performance on their clients&#39; overall financial position.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi3gJBVV95cUxQRXp0bWZDM01UcGMtM0JXaW5xREFDeUVEUXduTkFnNnBkcWNWdmhqSVUyUGx4cFotWmxjZlhad0QySWhjT1draHhQWEVwTk1EdWlPWW9LQ092QnI3RXJqaHhVSVg3RkdGOWxkaEgxZWlZemI4bEt2a2xTWnlkTUhzdlZacUtqMmswNkdvRzBnNFprbEtjZVo5dmNxMHhQaHBueTNBN3V6akhCS2hjYmhTTVROT2ppNVk0RXV3a3oxOW55ZjBSMXNoaUpDUGtBVHNvX2NucE5zUllUWGw2TlZ5SzhWU1BLSWFEUjRlUzJlcTcxemhRaVJWVDVjR19NM0lCOEQybDJ0N2JlYkkwMTJVMENsbGoxc1lnclZKeURldFJleUJCZ2hqVWJTTUhsRHgzTk9iVUZHdkJuUzNDN2xjNEExLVJwT1RxM0IwelVvbHFkSW1hX0pxU0RMdlQyQQ?oc=5" target="_blank" rel="noopener">Aquarian seeks more backers for $4.1 billion Brighthouse deal - MSN</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-06-30
+            </div>
+            
+              <div class="article-summary">• Aquarian is seeking additional backers for its $4.1 billion deal to acquire Brighthouse. • The deal&#39;s success may depend on securing more investors to support the acquisition. • The acquisition amount of $4.1 billion is one of the key factors in the deal&#39;s complexity.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This deal may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as changes in ownership and capital structure can affect the target company&#39;s financial reporting and risk management strategies. Actuaries involved in M&amp;A due diligence and integration may also be affected, particularly in assessing the target company&#39;s assets, liabilities, and capital requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE84bnlaS0FBSGRMYi1sc1V1cGhIelhoVUVBVjZacXdMNGRkWEc3WkJPdEdIMTBpMngtNDFibV8zR0dqWmN2Y3JFdlp4NEhudjc5U0c4U01kRVR0anZ6OTExLVJ6alFMNGg4TVBQMXFWZ3g5RENJ0gF0QVVfeXFMTzhueVpLQUFIZExiLWxzVXVwaEh6WGhVRUFWNlpxd0w0ZGRYRzdaQk90R0gxMGkyeC00MWJtXzNHR2paY3ZjckV2Wng0SG52NzlTRzhTTWRFVHRqdno5MTEtUnpqUUw0aDhNUFAxcVZneDlEQ0k?oc=5" target="_blank" rel="noopener">Insurance M&amp;A Focus Shifts to Shinhan - IT조선</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• The insurance M&amp;A focus has shifted to Shinhan, with details of the deal not specified in the provided article. • The article does not provide specific numbers, names, or dates related to the M&amp;A. • The shift in M&amp;A focus may indicate changes in the insurance market, potentially impacting various companies and their strategies.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This shift in M&amp;A focus may impact L&amp;A consulting actuaries working on reinsurance and product development, as changes in the insurance market can lead to new opportunities or challenges for clients. Actuaries involved in reserving and GAAP reporting may also need to consider the potential effects of M&amp;A activity on their clients&#39; financial statements and reserve requirements.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">280.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.38</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.86</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.86</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.68</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">17.65</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
