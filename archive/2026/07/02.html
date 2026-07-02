@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 2, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 2, 2026 &nbsp;·&nbsp; 10 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/phl-variable-liquidation-pushed-out-to-2027-connecticut-regulators-say" target="_blank" rel="noopener">PHL Variable liquidation pushed out to 2027, Connecticut regulators say</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• The liquidation of PHL Variable Insurance Co. has been pushed out to 2027, according to Connecticut Insurance Commissioner Josh Hershman. • State insurance guaranty associations will seek bids from insurers to assume portions of PHL&#39;s business, with the National Organization of Life and Health Insurance Guaranty Associations handling the request for proposals. • The RFP process is expected to commence in the third quarter of 2026, with critical next steps depending on the proposals received.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development directly impacts L&amp;A consulting actuaries involved in reserving, reinsurance, and GAAP reporting, as it affects the timing and scope of potential assumption transactions and the associated financial reporting. The delay in liquidation may also have implications for actuaries working on product development and capital management, as it influences the overall market landscape and competitor dynamics.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPb3JNdFpCbkVZdjduRWhOV2wxb0xneTZINFJsSlhPUGZjamhibzREdk05SXZiWFFLbm9JNy1IZWNjR1V6NmZSaG9pUE9BOU9KbTF2eWVhYjYzcjFyYUFRb0x1cE9lRE42eGJ3ODhjUXRJX1R5c2hwMU5hWWd2Y3pfbzE3ZTNwX1lKTDBzU1dzSmhMYlljLThvYUdsM1lYNTZVdzI0NXVwN3NPVFdWOU9EOW9GOA?oc=5" target="_blank" rel="noopener">[8-K] Corebridge Financial, Inc. Reports Material Event - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. filed an 8-K report with the SEC to disclose a material event, although the specific details of the event are not provided in the article. • The report was filed with the SEC, indicating a significant development that may impact the company&#39;s financials or operations. • The event may have occurred on a recent date, but the exact date is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This material event reported by Corebridge Financial, Inc. may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and financial reporting projects, particularly if the event affects the company&#39;s financial statements or requires updates to reserve calculations. Actuaries involved in reinsurance and product development may also need to consider the potential impact of this event on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxQMmhOUloxUUlOeEtwY2JuM0lrcDdqN01MOXNMaGFMRzJReTJNNWQ5NnlHUlhoMEZwMEF2bVJGcUdObHBUX29EdTJ5Y2JaR3FpRml2WU5Zc29wMGYtUWo3dW9vdkptQnVVZDNWYXRwckVuQkhPUFN5ZGVWSEtvb3VJNno1ektVa0F0anNpMXlrQmFlczI2NmR4S204Q3dqUQ?oc=5" target="_blank" rel="noopener">Pacific Life Launches New Registered Index-Linked Annuity In New York - lifehealth.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Pacific Life has launched a new registered index-linked annuity in New York, expanding its product offerings in the state. • The new annuity provides policyholders with potential for tax-deferred growth based on the performance of a registered index. • This launch is part of Pacific Life&#39;s efforts to increase its presence in the New York market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This launch may impact L&amp;A consulting actuaries working on product development and reserving, as they may need to consider the new annuity&#39;s features and potential risks when advising clients. The introduction of this new product may also have implications for GAAP and statutory reporting, particularly in terms of accounting and disclosure requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9Zbi1hTThIQmlYSHpUZnUtUlZWVlJwZk5HS0xZRndleFdxU3pjTEZodUE0OGcxOUh3bU14VjFacjdCX1o5OTFBcHpaRG9zX1RMSV9WN1RyckRqZ2tySGk4OE1LMnpVREU?oc=5" target="_blank" rel="noopener">Pacific Life Launches New Registered Index-Linked Annuity in New York - Business Wire</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Pacific Life has launched a new registered index-linked annuity in New York. • The product is designed to provide policyholders with potential for growth linked to market performance. • This launch expands Pacific Life&#39;s offerings in the New York market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This launch may impact L&amp;A consulting actuaries working on product development and reserving, as it introduces a new product to the market that may require analysis and consideration for clients. Actuaries involved in GAAP and statutory reporting may also need to assess the implications of this product on financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxNa0NwTDZTZEYwUlgxTHJZZWtfaVNNeHphbnllU2k1aEhsdGh3MkRlRTMtTFNZYVUzU213SndQNEdfRWdUb2ZxQVJKVjBYQlA5MEpXblRaVW9TRmFNRFRkMV9La2hrMnRYUE0zbUZKRFo4bmtTc3VQMWxLXzF6RENibkdTU1hVYVV4YThGOTh4bXE5YkZTTnRxWnRGQnRYMHBkamxhMEd5enRvVUdaOW1GaFNPQno5MkphM2NvOHNFeU9zTnoxV2R3VnZDdENsaWM3d0VHb3dDTVA?oc=5" target="_blank" rel="noopener">Corebridge Financial Schedules Announcement of Second Quarter 2026 Financial Results - Business Wire</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has scheduled an announcement of its second quarter 2026 financial results. • The announcement is expected to provide insights into the company&#39;s financial performance during the second quarter of 2026. • The exact date of the announcement is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This announcement may impact L&amp;A consulting actuaries working on GAAP and statutory reporting projects, as well as those involved in financial modeling and analysis for life insurance companies like Corebridge Financial. The results may also have implications for reserving and capital management work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxObHZYdEVwdHNpN3hqb3hiejhwaDd3UDhSb29KZEdlQVNXZDRqZ2E0d2JsSzVscUdvWEF0WVRITmtPQmpXV0thS0NLNExnRXhlLTBUS2V1eWh1ZGRLbWhkaWhPNlduaThPdVlCMlRHR19sQWhTR05kbl9ZOFBQY1pNRFBFRmlnMkw4WXc?oc=5" target="_blank" rel="noopener">Should You Buy Brighthouse Financial, Inc. (BHF)’s Shares? - Yahoo Finance UK</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial, Inc. (BHF) is a company of interest for potential investment, with its shares being considered for purchase. • The article from Yahoo Finance UK provides an analysis of the company&#39;s performance and prospects. • As of the current date, no specific financial data or recommendations are provided in the given article content.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in life insurance reserving, GAAP/stat reporting, and product development, as it may impact their work on financial modeling, capital management, and reserving for clients invested in or considering investment in Brighthouse Financial, Inc. The potential investment in BHF&#39;s shares could have implications for the financial health and stability of life insurance companies and their products.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/5513/000000551326000066/unm-20260701.htm" target="_blank" rel="noopener">Unum Group 8-K Filing – 2026-07-01</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Unum Group &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1527469/000152746926000043/ahl-20260701.htm" target="_blank" rel="noopener">Athene Holding 8-K Filing – 2026-07-01</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Athene Holding &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOUzVLS3hTRzR0V0UwbjhrZzFRR1FmdlB6ZzdsTnNoN3ZSRkFRUTlLVFRfaDZqSVY0cmVBT2NSeHdxRVlibFZVUDVEV0hDR25yT2gzU2ZraWhyOWtnZTJrcXg5WEpEMTdFd2VFNnRIc0x0ekNqT1FaWUx6ZWt4Y2V2d3ozZmFETV9KTmloZmNsYlkzQTlIR2oxUVY3VHJkMEJWWU03aWNZOGpuQ3FjMmxhU3FtX3dPVTVBZVRackJTMA?oc=5" target="_blank" rel="noopener">Exclusive | Aquarian Nears Deal for U.S. Insurer Brighthouse - WSJ</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-01
+            </div>
+            
+              <div class="article-summary">• Aquarian is nearing a deal to acquire U.S. insurer Brighthouse, with terms of the deal not yet disclosed. • The acquisition would mark a significant expansion of Aquarian&#39;s presence in the U.S. life insurance market. • The deal is expected to be announced in the coming days, although the exact timeline is uncertain.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This acquisition may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as the combined entity may require revised reserve calculations, financial reporting, and reinsurance treaty negotiations. Actuaries involved in product development and modeling may also be affected as the acquisition could lead to changes in product offerings and risk management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQQXN2MEhNN3Y2ME5fVU0xTFJWWjltLTFBNWM5R0dMVktXaGJYQURSaTdkSnk3dHE4MlZDSVZISUlpWER0RWloc2E5cjdWZHowSjEycW9HSGFrUFFFUGYzMWVjeTRXNzZWVnVJNlA2bnhFc2RnZGNHYTQtdkpJTU56T9IBlAFBVV95cUxNbWh6T0lfUVFUSHFHUUs0T1VudVJCNUN1YjBDdUgtbTloUXZqVXBvdGFsZTZZYl9LdVNOdHl3Yi1mWV83U21HaS1KUzhRQmRfRHJnS1B1Z0p1S1d1ZUFTOUJ3dkNicEVCeG9EOEdiOTY4b3kyeVp6U2h5UUdld0VTeWUyLTBMTGRLa001cWFyQ01sNDVf?oc=5" target="_blank" rel="noopener">KDB Life sale gains momentum as bidders advance through management talks - CHOSUNBIZ - Chosunbiz</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-07-02
+            </div>
+            
+              <div class="article-summary">• KDB Life sale is gaining momentum with bidders advancing through management talks, although specific details are not provided. • The sale process is expected to attract multiple bidders, but no official timeline or bidder names have been disclosed. • The outcome of the sale may impact the South Korean life insurance market, potentially leading to changes in market share and competition.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on M&amp;A projects, particularly those involved in due diligence and integration efforts for life insurance companies. The sale of KDB Life could also have implications for reserving and capital work streams, as the new owner may introduce changes to the company&#39;s risk management and capital allocation strategies.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">275.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.44</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.93</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.91</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.66</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">16.45</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
