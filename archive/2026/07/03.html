@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 3, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 3, 2026 &nbsp;·&nbsp; 5 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxPVVJXcFNnSkp5c1VneXVaZm9IaC1yZXpjcFRNQnRDZllUT1dSMFhsakxpTTNGWElSd3BKNXczWHBCRF9ia3FpdlNjdURkd3dMRWpIeEpIV3I0elZwVlZKbTdjaklmbWgtMVJ5bEFwSXYzZWluSjlnWUQ3ZVBwaVc1Y3owcXlDR2ZKMl9XN3JIZ0lFTHRVWmxEclp1ay1SYmNrQzc2YkI2enFzeDU0NUl6R2FzaHVLU3JjX0QydlBNc0g0a2ZUZGhTc01waXk5YUx5dm9VdmlUX2dwRndjTmJtMlhGMU8wZ9IB6wFBVV95cUxQWW9wdzQtX2FhTkEweWk4ekFVYjlxX3pFcGliVEdGb2xXbnJrV29ySExTUjZEZm93ZVhmSXJuTUowVllPYnFMelVUSGctaGI3amF3WGoxaE01WV9Ba0tZeUhQelV0Y0syYW5zTnZwMG00Q0ZDRUJGUUtmYnBhZEYzNExhU0pUQk5KaUpfZTJpWGhYSWhxaGVyMVcyZ3RkVnB6eXRJMmRuNHV4VGZUWVRBZlR4bDg0ZGJ4ai1IajgzVEhISUVpc1drODNrX3RBZ0ZNejAyQUpuTVY1d0g4QnlnZmprTmM2LWlBcVFr?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Expands Max Accumulator Plus III, Is The Upside Already Priced In? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-02
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) has expanded its Max Accumulator Plus III product, with details on the expansion not fully disclosed. • The article questions whether the upside of this expansion is already priced in, implying potential impact on the company&#39;s valuation. • The expansion may be relevant to Corebridge&#39;s overall product development and market strategy, with potential implications for competitors and industry trends.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as it could influence industry trends and competitor activity. Actuaries involved in GAAP and statutory reporting may also need to consider the potential financial implications of this expansion on Corebridge&#39;s financial statements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxOeDhXQVFWb1V2Mm9EMmhXUXZuVkk4eTllOUMzbTZpY1AwN0o4REMwMWR4aFdJbTY0Z3gtRnJ2MXZQdXFQazZ2LWZoa2FFUE84VXo4S3VDWmVINmRqTVA5RV9rNjg5UW1VQnB2dElOdFFjQ0VNam44V0NCUDdaSVBoSlV2Y0txNy04b0tDWmE0b0VFN25DY2R3WlZoVW9LdkZTWjU4elRvc2RhUjFuZElnTzVZVk1jVlBOYndDQVltWVJVOW9FQXlLbjhtYw?oc=5" target="_blank" rel="noopener">Corebridge Financial stock and operations context as investors track the US insurance market - Ad-hoc-news.de</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-02
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s stock performance is being closely monitored by investors as the US insurance market continues to evolve. • The company&#39;s operations and financials are under scrutiny, with investors tracking key metrics and trends. • As of the latest available data, Corebridge Financial&#39;s market position and strategy are being assessed in the context of the broader US insurance landscape.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as changes in Corebridge Financial&#39;s stock and operations may impact industry trends and regulatory requirements. Actuaries involved in product development and capital management may also need to consider the implications of these changes on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxON0dtdmNFSHNCZlVJNHFrRERxVTVGSHI5R2M0SXM2TkxKZEIzZVBoR3dTd0Y3OXpLeDdBbXBQc3pYVTFkS3VTTkpzMG9sa3pic0F3Zl9nd0JNamd5dVdyRnA0N2NqTVktRlRoNVdwWld2LW40dkJxZmRsTU5ZOHcwX0thTTkxM1ZkSUtEb3k5Z0Z6akZROEhjZWJhQnNUVE1oTWZQbVFqcWhvTFJDSzRNNFhKZnQxeW9FQjRNYndoUjI?oc=5" target="_blank" rel="noopener">Lincoln National adjusts strategy in a changing insurance market - Ad-hoc-news.de</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-02
+            </div>
+            
+              <div class="article-summary">• Lincoln National is adjusting its strategy in response to changes in the insurance market, although specific details of the new strategy are not provided. • The company&#39;s move is likely driven by shifting consumer needs, regulatory changes, and market competition. • The adjustment may involve changes to product offerings, pricing, or distribution channels, but exact plans are not disclosed.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development, as they will need to consider the evolving market landscape and competitor strategies when designing and pricing new products. It may also affect reserving and GAAP reporting work streams, as changes to product offerings or business mix can influence reserve requirements and financial reporting.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxOQTI4SlBIdnA1TDBnc25zdmVBaW00NldzNURxUzNuVjFobWJnN2l0bm4yTnZfNk1IRmV2Zi1NbHpXZmd1c2FoS1pCbGhqZVJOc25QVlpkRTJkeFNFUFp0bUVEVEtNZG85TnhNYWY0R1B6SGVWRkd2SG5ocmc5NW84VUpEWHZoR0YzMzZYUElCdTROZ2tsaXNjTU40M3NreThEVlVmeW9RMUpyMlRnUUswMFl2d2tNaEU2S1JET1ViWG54N2pfRlNF?oc=5" target="_blank" rel="noopener">Are CRBG, TBRG, GBTG, RAMP Obtaining Fair Deals for their Shareholders? - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-02
+            </div>
+            
+              <div class="article-summary">• The article discusses whether companies like Corebridge (CRBG), Talcott Resolution (TBRG), Global Atlantic (GBTG), and Reinsurance Group of America (RAMP) are obtaining fair deals for their shareholders. • The article is published on TradingView, a financial news platform, and is categorized under Mergers and Acquisitions (M_AND_A). • The article does not provide specific details on the deals or the companies&#39; financial performance, but rather poses a question about the fairness of the deals for shareholders.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This article matters to L&amp;A consulting actuaries specializing in reinsurance and M&amp;A work streams, as it may impact the valuation and reserving requirements for these companies. The fairness of deals for shareholders can have implications for the companies&#39; financial reporting, including GAAP and statutory reporting, which may require actuaries to reassess their reserving and capital management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQ0VuUV9TSHlsYVNka0J5QkNXTGdpT0R3ckRkYWFyZVhydjZuUmd6SHBxa0x6SFlRM05qUy1ZZzQ0V1F6Vlc3c0VvU0ljUzVuQTktTGtqSENxTkVxMlVTa3g0SFY4dHdJTUZoem9TSFNrRElzdi1MRzBzaFhEVjRjYVJFRUMzcFZI?oc=5" target="_blank" rel="noopener">Small Cap Opportunities Trust&#39;s Corebridge Financial Inc(CRBG) Holding History - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-02
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) is a holding of Small Cap Opportunities Trust, with a reported holding history available on GuruFocus. • The article provides insight into the trust&#39;s investment activities and portfolio composition, including CRBG. • As of the latest available data, specific details on the holding history and investment amounts are accessible through the provided link.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in reinsurance and product development, as it may impact their assessment of Corebridge Financial Inc&#39;s financial stability and market presence. It could also affect actuaries working on GAAP and reserving projects, particularly those involving Corebridge Financial Inc or similar entities.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">274.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.48</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.97</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.97</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.66</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">16.59</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
