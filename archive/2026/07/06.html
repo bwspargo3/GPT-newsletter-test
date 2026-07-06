@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 6, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 6, 2026 &nbsp;·&nbsp; 4 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/built-in-guaranteed-annuities-what-advisors-should-know" target="_blank" rel="noopener">Built-in guaranteed annuities: What advisors should know</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• Fidelity Investments plans to launch Fidelity Freedom Lifetime, a suite of target date collective investment trusts (CITs) with a built-in guaranteed income option, in early 2027. • The product is being launched in partnership with top insurance companies like New York Life and Nationwide. • This move aims to make guaranteed lifetime income solutions available to employees through employer-sponsored retirement plans, allowing them to engage with retirement income concepts earlier in their journey.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in product development and reserving, as it introduces a new type of guaranteed annuity product that may require updated modeling and reserving approaches. Actuaries working on GAAP and statutory reporting may also need to consider the accounting implications of these built-in guarantees.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQmI5bGJRTkllWndReUJlZ0hxeExZR0hWcHhfY2NpZG5NeURiUFcyN2M5YjlNZk41UGhwUUN2WUFqVjdOOF9GYVp4ZExqMEs3QThHaTBoNFlERlJxdWFTYXljeEE5S2FkRXVTRU1oWjBYdVpEdUllSUlEQ01LUXcwZTVaQVFMMFQyRzNVRXUyX3dIZTZPT2RlbmZ1bG9VTW4tX2UxSHlaNG5kTXJ3Um44VHV4RzFzNXNrTmdCVU0wckh1dmc?oc=5" target="_blank" rel="noopener">SCOR SE highlights its reinsurance role amid global risk landscape - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Reinsurance &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• SCOR SE emphasizes its role in the global reinsurance market, • The company operates amidst a complex risk landscape, • SCOR SE&#39;s position highlights the importance of reinsurance in managing global risks</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in reinsurance, as it underscores the significance of reinsurance in managing global risks and may impact their work in reinsurance treaty design, pricing, and reserving. It also has implications for actuaries involved in product development, as they need to consider the reinsurance market landscape when designing new products.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/5513/000000551326000069/unm-20260702.htm" target="_blank" rel="noopener">Unum Group 8-K Filing – 2026-07-06</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Unum Group &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRTdqMEVYSTQ0eXlXUVd0SnM5akdYX2NDY0NtVmFrazNXdmtCRGpQRGxGRWNRT01UOXgyUlBSUWZxZXZyanlwNHVKV0tkbVdoMUVqWHJ4dHl3NmZobDd2RE5pVXY1Z1oxUTdEM2JYSGh6OW05blR0VUdTWVcyZmJoanBvRTlqbk0yYlMwVV9ySHBWVFY4cDZRNXpSd2hMYUpXdDRsbVhxZHJuSlUzMGVDc3J0dTFYU1A3MjR1azZaLWRONzg?oc=5" target="_blank" rel="noopener">Lincoln National focuses on protection and retirement solutions as investors weigh long-term value - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• Lincoln National is focusing on protection and retirement solutions, • the company is being evaluated by investors for its long-term value, • no specific numbers or dates are provided in the article</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as Lincoln National&#39;s strategic focus could influence industry trends and competitor behavior. Actuaries involved in GAAP and statutory reporting may also need to consider the potential implications of this shift on financial reporting and disclosure requirements.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">275.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.48</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.97</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.97</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.81</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
