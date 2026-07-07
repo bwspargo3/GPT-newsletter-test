@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 7, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 7, 2026 &nbsp;·&nbsp; 7 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxONlZ4aUxzbnhLV3JJYVJaMjViNlJDTTNwZEQ3XzBLdnFkUEpIbGxnWl9HN1AxUlpyd1ZVa1lLbGZaYVpNLVZESTBBTVdCSndkdkxVeWJuNHgtd1dUYmtMSHUwVTBmZ2xWblQwU2MxVVJTMldJVFJ4bmlmNk1wbE9sc1kwa0FaQkY0ZDV1Q3VSOXMwbEVYUjI5WGU5MWI3aElLVGxwWTF5UTFXd3N6TmNwX0RJOA?oc=5" target="_blank" rel="noopener">Form 144 Corebridge Financial For: 6 July By Investing.com - Investing.com South Africa</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-07
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial filed a Form 144 on July 6, as reported by Investing.com. • The filing is related to insider transactions, but specific details are not provided in the article. • The news was published on Investing.com South Africa, indicating potential global interest in the company&#39;s activities.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects for Corebridge Financial, as changes in the company&#39;s financial structure or leadership could influence their financial reporting and reserving requirements. Actuaries involved in product development and reinsurance may also need to consider the potential implications of these changes on the company&#39;s overall risk profile and strategic direction.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQcTVwaVNOVC1UazlzQkhXaHhHOTRJZWVCWWxtLWVoX0d3VDhtU0h2WUI0VGc2bmxvaWN1N3FZbW5oaGNoY1BHWFh1Z0hxSFFrWGt3NkhrdlduVDZHRjZldGMzVmRBaktDaWtVMjlBNzlDbE5tbkI3RnNXTFlaeExweXQtWEV4Z2ozWFRMMzhSUUpGSjZ3SFNYQjgzNHZMeUNk?oc=5" target="_blank" rel="noopener">Pacific Life Launches New Registered Index-Linked Annuity in New York - lifehealth.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• Pacific Life has launched a new Registered Index-Linked Annuity in New York, expanding its product offerings in the state. • The launch is part of the company&#39;s efforts to provide customers with more investment options and flexibility in their retirement planning. • This move may indicate a growing trend in the demand for registered index-linked annuity products in the market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This launch may impact L&amp;A consulting actuaries working on product development, as it highlights the growing demand for registered index-linked annuity products and may prompt other insurers to follow suit. It may also affect actuaries involved in reserving and GAAP reporting, as they will need to consider the potential impact of these products on their clients&#39; balance sheets and financial statements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPWHNxb0V1NDViTjNyWUFUZFVnSXBNbFE1aHU0bERna1hsT0RXY21kMmVlOXdHa2gtQTFlVkQ4S2dwTEMyN3d3bS1yU0ZxOU1IS0J5WFNZRGQybWRJbS1ja0o0Nld6RlJQelg5WG16ZncwcUtJWUJ0a2FmU0d3ckY0aFp2SDZUQk9SUVAyV0l4bThvbjN2cl9v?oc=5" target="_blank" rel="noopener">Pacific Life brings Rila to New York - SRP (Structured Retail Products)</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• Pacific Life is introducing Rila to New York, expanding its presence in the state. • The product is categorized as a Structured Retail Product (SRP). • This move may indicate a growing trend in the life insurance market towards more complex and customized retail products.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as they may need to consider the implications of SRPs on their clients&#39; product portfolios and risk profiles. Actuaries involved in GAAP and statutory reporting may also be affected, as they will need to ensure compliance with relevant accounting standards and regulatory requirements for these products.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNWUwyMjZnQlFWbG9FUW9SZlB5R1k3WkdwMTdXOG5BcHltYlJDbVhaRGkwN1YzM25JT0xvbXVISVJVTWlkMTJZNVdPZXlDV3N5cFBGX2VaWGRuNlBRQ2VhVFNvWVU1QmlGMjVOTDVMRVRWWS1USW45YmFRc0E0NmhkSnNn?oc=5" target="_blank" rel="noopener">Reinsurance Market Size | Industry Trends [2035] - Market Growth Reports</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Reinsurance &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• The reinsurance market is projected to grow significantly by 2035, with a forecasted market size that will impact life insurance companies&#39; risk management strategies. • The growth is driven by increasing demand for reinsurance products and services, with a focus on emerging markets and new technologies. • The market trends are expected to shape the reinsurance industry over the next decade, with potential changes in market share and competition among reinsurers.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The growth and trends in the reinsurance market have direct implications for L&amp;A consulting actuaries working on reinsurance and reserving projects, as it may impact the availability and pricing of reinsurance products, and ultimately affect life insurers&#39; risk management and capital management strategies. This may require actuaries to reassess their reinsurance assumptions and modeling approaches to ensure accuracy and compliance with GAAP and regulatory requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQRE1jbndFcTlWbGROelFFYnZOX0tlS1dhRHUxUnZWbHpwNlJZcHI2R1JWeHoxeVhBN1ZocmF6SW9id29OWnV3Sk9sNGhrMkVuV0d0QTFacGQtUWkxMFpybzRSVG0zS0ZoYTN4NWR0SE5ybzhQbW9TTjFvcGtwSnhtd05IWEV3b3gzMEFQSDFLUkthYzlEN2RMSUVRZ0w1U213ampNTGZST0FvaVZQZFh1eTMzOHJTdDVUdEY0UTdZdFNlLWNLNlVSR2R6aw?oc=5" target="_blank" rel="noopener">Corebridge Financial focuses on retirement and insurance solutions as US market eyes long-term deman - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial is focusing on retirement and insurance solutions, • the US market is expected to have long-term demand for these products, • no specific numbers or dates are provided in the article</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as Corebridge Financial&#39;s focus on retirement and insurance solutions could lead to changes in market trends and consumer demand. Actuaries involved in GAAP and statutory reporting may also need to consider the potential effects on financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://us.milliman.com/en/insight/milliman-hedge-cost-index-june-2026" target="_blank" rel="noopener">Milliman Hedge Cost Index June 2026</a>
+            </div>
+            <div class="article-meta">
+              Milliman (Insight) &nbsp;·&nbsp; 2026-07-07
+            </div>
+            
+              <div class="article-summary">• The Milliman Hedge Cost Index for June 2026 provides insights into the current hedging costs for life insurers, with a focus on interest rate and volatility risks. • As of June 2026, the index value is not explicitly stated, but it typically reflects the cost of hedging as a percentage of statutory reserves. • The index is used by life insurers to inform hedging strategies and manage risk, with potential implications for product development and reserving.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The Milliman Hedge Cost Index has direct implications for L&amp;A consulting actuaries working on reserving, product development, and reinsurance projects, as it informs hedging strategies and risk management decisions. Accurate and up-to-date information on hedging costs is crucial for actuaries to provide effective guidance to life insurers on managing interest rate and volatility risks.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Ratings &amp; Capital</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNRVpsT0g2REZ4SXpmR21QcFo3UldlREtMSGp2TWpncy1MdWN5eU92ZU4xNmN0YW8zY2V0ZXozbXdVYjN1WC1POVFNWHB4bTVGbHlPLVJMTjBCMVdkMGZJbDlndXNCczhteEF0dUJkbHlZVnNJZkZISU5Db2ZzYmIwTEZ6RGQ4aUZIa3BJZFZYNFB5X2swV3R5QmxQa0VWOTdSQVJuWVFiSXg0UFpZX0lWX0dwUGlOUHd0cnRRcW5mNTJ3TjFL?oc=5" target="_blank" rel="noopener">Barclays upgrades Lincoln National stock rating on capital outlook - Investing.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-06
+            </div>
+            
+              <div class="article-summary">• Barclays upgrades Lincoln National stock rating due to a positive capital outlook. • The upgrade is based on Lincoln National&#39;s strong capital position and outlook. • The exact rating change and date of the upgrade are not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This upgrade may impact L&amp;A consulting actuaries working on capital and reserving projects, as it reflects a positive assessment of Lincoln National&#39;s financial strength and stability. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of this upgrade on their work.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">274.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.49</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.99</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.98</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.63</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.81</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
