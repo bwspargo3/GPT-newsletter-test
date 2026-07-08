@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 8, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 8, 2026 &nbsp;·&nbsp; 4 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQTW5iT2gtNng5elk0ZWhVNTlFTkVsNE9HY09SRjNxbjFKZVZtdGJvSnJiUlFrTGhQOFJ5RUxFX2tsM3NseVlpb2ZyY3o2ZHRXRm5KVXExXzQyNDI3dEdycHlvM1Frc0FyTjgwTjBpSFkzR3lsUmZDbFhtRlVZT0ktWEx0OHdRbFNfX2p2NElWcTZuSzV4MUlSbUcwdzFUbm04ek00dG53?oc=5" target="_blank" rel="noopener">Resolution Life expands UK PRT activity through new reinsurance agreement - Reinsurance News</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Reinsurance &nbsp;·&nbsp; 2026-07-07
+            </div>
+            
+              <div class="article-summary">• Resolution Life has expanded its UK PRT activity through a new reinsurance agreement, although specific details of the agreement are not provided. • The agreement is expected to increase Resolution Life&#39;s presence in the UK PRT market. • No specific numbers or dates are mentioned in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact reinsurance work streams for L&amp;A consulting actuaries, particularly those involved in PRT transactions or advising clients on reinsurance strategies. It may also have implications for reserving and capital work streams, as changes in reinsurance agreements can affect risk transfer and capital requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQbVZiR3Znal9McWdibHNDMEVEUC1TYVRteUNnZ2dvcEN1VDBfam9IMkNHZ0lWYWVnb2NfaC1lWUp1bDI5TU9hVl92Z1hrbHhTUVhjUmpyU3RMbzd5dFEtYVRiZEVOWjVBbVVzdTRGMkxGb01JMGNXV1dzYUlQa19QQktJYUdMd195Zzg3N3k1ZS1Ndm0wOENsYXc3VjE0ampQaGh1ZV9CRVdvRHZhdFRQUzk1TWZrWGhWNmJleEJUbWtzTnYyemIw?oc=5" target="_blank" rel="noopener">Hannover Rück SE highlights reinsurance role in global risk transfer - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Reinsurance &nbsp;·&nbsp; 2026-07-07
+            </div>
+            
+              <div class="article-summary">• Hannover Rück SE emphasizes the significance of reinsurance in global risk transfer, • The company highlights its role in providing risk management solutions to clients worldwide, • No specific numbers or dates are mentioned in the article</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news matters to L&amp;A consulting actuaries specializing in reinsurance, as it underscores the importance of reinsurance in managing global risks and may impact their work in reinsurance treaty design, pricing, and risk assessment. It may also have implications for actuaries involved in reserving and capital management, as the role of reinsurance in risk transfer can affect the overall risk profile of life insurers.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQWTduajRaRThCZ3JHTGUtWEN6dzltNDVGVVVnQlBUempUZzJCSlpIVG9SUldYVGtXd1dYZ29zTTE0WTNNNlFJY2pHUFlydG4yOEpVbTEzX1I5aTlDYWJZZFI2RG1CbHFBdjh2Vk9pQVBhc25kb0dXdHBjU1czMHo0aHhfbEZKaGJJYWpDcnpIUWYtbGJuRmtWWWZEWjB3eEVYeXdzS1FDb2lKRkUwekFHaA?oc=5" target="_blank" rel="noopener">Insider Sell: David Ditillo Sells Shares of Corebridge Financial Inc (CRBG) - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-07
+            </div>
+            
+              <div class="article-summary">• David Ditillo sold shares of Corebridge Financial Inc (CRBG), with specific details of the sale not provided in the article. • The sale is reported as an insider sell, implying that David Ditillo is an insider at Corebridge Financial Inc. • The article does not provide the number of shares sold or the date of the sale, but it is reported by GuruFocus.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This insider sell may have implications for L&amp;A consulting actuaries working on reserving and GAAP reporting projects for Corebridge Financial Inc, as it could be an indicator of potential changes in the company&#39;s financial situation or strategy. Actuaries involved in reinsurance and product development work streams may also need to monitor the situation for potential impacts on their work.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Ratings &amp; Capital</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPSWJ5TzdQMThpbjM4THk5R2dUaURCb290NFRYSmdwa1dxMkJuaFJLYkZGSFJtUk5oSFlfemJXbUlaMTlEZkxaaWxXOXBIZkx3ak9XNjQxV1hDTXhNcFJMVjhoU0V0WUxlTEFvd3IzaGxzeERFVWxKbGxiQUlzY0pmUzhaZEZ5NHo2OWhEYzlia0UxVE1KS3hlbDRKZ1FSUkFkeWhzN3lvdllmOGJNNnc?oc=5" target="_blank" rel="noopener">CRBG Maintains Overweight Rating by Barclays -- Price Target Rai - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-07
+            </div>
+            
+              <div class="article-summary">• Barclays maintains an overweight rating for Corebridge (CRBG). • The price target for CRBG has been raised. • This update is as of the latest available information from GuruFocus.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on reserving and capital projects, as changes in ratings and price targets can influence financial modeling and reporting for life insurance companies like Corebridge. It may also affect product development and reinsurance work streams that rely on the financial health and stability of such companies.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">272.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.48</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">4.99</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">4.99</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.63</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.57</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
