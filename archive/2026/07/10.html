@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 10, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 10, 2026 &nbsp;·&nbsp; 4 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxOVGhqVXFiVGQ0alBiSU9WcWxzaUlmSktjLXI3RWpmYUt0NG1PajR3TVB0ZWg4VTNBLXhINDJyTUdFWXNFS1dNUmZCQjV4TmYxc09qWWhVS0thY0c3MkR6Y0czd1RIenotZlRLSjljMUtqaExCQ3gyNmFyV09YbVBtLW10MGR6M0N4NVR0UzVRV2dpdkNlRi1OOEdUQkpHamJ5Sy1vTXVwT19lQS1OdklieHBRNGRPOXp4WG5hMVlwZXVEbEt5QnkyRkxJaV9FU2hfNUNRTThIdU9CdmE0LXlvblhB?oc=5" target="_blank" rel="noopener">Privately-owned insurers now hold nearly 20% of US life industry assets – ALIRT - Insurance Business</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Actuarial Guidelines &nbsp;·&nbsp; 2026-07-10
+            </div>
+            
+              <div class="article-summary">• Privately-owned insurers now hold nearly 20% of US life industry assets. • This shift in ownership may impact the competitive landscape and market dynamics. • The change is reported by ALIRT, although specific details on the timeline and affected companies are not provided.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may affect L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as the shift in ownership could lead to changes in business strategies and risk management practices among life insurers. Actuaries involved in product development and capital management may also need to consider the implications of this trend on the overall market and their clients&#39; businesses.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaWE3Y1BERnlzSnFLSEtRREhYR2xLdG9IeFpoNHFNYWVMSC1YVWtZcExBd1k2OEtlV05IaVpiSXRnbEx5WE83YmdHWG1iNzRTYWZ0aVZ0NW4yV0hoQ29RdFhnZ2V0VXgtaVE0Y3RGZTZBck9FOTdGaDJ4d2JTMnQ0RDJZZ01ZTXNDTGJvZWVPTkhUZXhOTkhpZjd6NkNjQU5DZjc1RjVjd0Ewdkt6UXZPRzhaU1c5dTZUbTlYdlAtaEtxTVkxNWRncTN6a0J4S1J1aV84LURDWQ?oc=5" target="_blank" rel="noopener">Corebridge Financial Is Maintained at Overweight by Wells Fargo - Moomoo</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-09
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s rating is maintained at Overweight by Wells Fargo. • The rating is based on an analysis by Wells Fargo, with no specific details provided in the article. • The article is sourced from Google News and Moomoo, with no specific date mentioned.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ratings can influence reinsurer credit risk assessments and capital requirements. It may also affect actuaries involved in product development, as a maintained Overweight rating could influence product pricing and risk management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQV2ZPX1dndGVyNVhmeGpDZXkwUmVtck1sVDBUQ3NnS0R6X3FXTk1DejV6Q3JhUG1oU28xemxwVXpXa1YyU0pOaXNLaEdVZkxkRnBheE16TkUzcm1VYk9HODlkVi0yYnk1WEVTdEtzR0xiQU9hYVhfVU5hUkVDcVUweVByaUpMbDQ4aXEtcmo1V0pMU3VudmtsM0kyYVAzNzUzejlINElRcUd1R2xkMndyOA?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE:CRBG) Price Target Raised to $36.00 - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-09
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s (NYSE:CRBG) price target has been raised to $36.00. • The update was reported by MarketBeat. • The change may impact the company&#39;s valuation and potentially influence decisions related to investments, partnerships, or other business activities.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may have implications for L&amp;A consulting actuaries involved in reserving, GAAP reporting, and reinsurance work streams, particularly those working with or advising Corebridge Financial. The updated price target could influence financial modeling, product development, and capital management decisions for the company and its stakeholders.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Ratings &amp; Capital</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQOGN0OWllZTJPNElVZHZpQ2IwSmVSUEp1NGpHcmhOVTZ6WU1MWkJKX3I4OXVyd3dxX0hiZlJJa0tvQk1UaXZsVXF0d29tTDM1RENFcF91WFlKb0I2dDZuMEJKX0tVU2JmcXJyM2xpUGFMVzNLRUxyRFUyY3ZUbEh0SDEwQ3doNm90b3kxY0NIT3RjbjZGTmttNnh0ZFVIb2lFY1ItRWd2N1RKbnVqbU1QaFVTdzU?oc=5" target="_blank" rel="noopener">CRBG Maintains Overweight Rating -- Price Target Raised to $36.0 - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-09
+            </div>
+            
+              <div class="article-summary">• CRBG maintains an overweight rating. • The price target is raised to $36.0. • The update is reported by GuruFocus.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects, particularly those involved with Corebridge, as changes in ratings and price targets can influence financial modeling and reporting. It may also have implications for product development and reinsurance work streams that rely on Corebridge&#39;s financial performance.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">270.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.56</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.07</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.06</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.53</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">16.90</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
