@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 14, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 14, 2026 &nbsp;·&nbsp; 10 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPcHlSTzM0a0MwbThpOU55OFBkX1loLXpMRWNZWUZaOTBZVHlqNGhiWDJQb0E3bnFkbDhjY3dTc1Bzc2pDS3RERHYwNUdldnY3Y1REWWxJOHU2QllaZUhoVl80dGxSWVVKaUxDM2gzd3oybkI0ZEVYQmlTeDgySlVYdjI0Sl9HanE3WUpqaVNPMmpKSVFjVUlPOEwwS09Oc1I4UFl5eVpiQmxqMHlhT1FiQkJUWmM?oc=5" target="_blank" rel="noopener">Lincoln National (LNC) Nears $5B Reinsurance Deal with Talcott F - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Lincoln National (LNC) is nearing a $5 billion reinsurance deal with Talcott F. • The deal&#39;s specifics, including the terms and the lines of business affected, are not yet publicly disclosed. • The transaction is expected to be one of the largest reinsurance deals in recent history.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This deal has significant implications for L&amp;A consulting actuaries specializing in reinsurance and reserving, as it may impact the risk transfer landscape and require adjustments to reserve calculations and GAAP reporting. Actuaries working on reinsurance and reserving projects for Lincoln National or Talcott F will need to closely monitor the deal&#39;s developments and assess its potential impact on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTk9tb192YnZURTRENkZsX0wyWjJkS0pTWDgtMHR4X2xXdjJ4RnlvbXJsZDRwdUtiNjI2NHpvNVI5NzY2RjM1SUJSckYzVE00bFNSU2NYeGc4WjFpYjVZVktybTBYdnlnOEhBblUyQUhSR1poUkpENXVFcGhLY0JEYWtjNDRzR2k5Um9NOWppZ1dyTUw5enV2ZTJhcmxtc1c2LWtzZy11Vm5aMUJqbjhxU3RKYjdtZzZhOV9DVGNFNm1CcEJ3eERKclkzclM2SDNz?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE:CRBG) Given New $40.00 Price Target at Keefe, Bruyette &amp; Woods - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (NYSE:CRBG) has been given a new price target of $40.00 by Keefe, Bruyette &amp; Woods. • The updated price target indicates a potential shift in market expectations for the company&#39;s performance. • This change may impact the company&#39;s valuation and potentially influence decisions related to investments, reinsurance, and product development.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may affect L&amp;A consulting actuaries working on reinsurance and product development, as changes in market expectations can influence the pricing and structuring of life insurance products. It may also have implications for reserving and GAAP reporting, as the company&#39;s valuation and financial performance are closely tied to these areas.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPc1hzUDE5VWtnMmVkazhjcjF1UTBJNUJxWDBaamlPUWtwRkFJalZUaDlCN0dZWTI3YlFja2Z6T3huZWM1YWo5b2Y2bnNUcGZOZjlpVm9CQVI1MHJ2Z1J0MVhvTmxVckhoa3EycWg3bnhEa3lKM3hkb0hDbXZuODhOY05ialVUZVdYQm1oZUY0c0xvZjB4NEZGMTIwbVVPQ08wWUtaSDlR?oc=5" target="_blank" rel="noopener">CRBG Maintains by Keefe, Bruyette &amp; Woods -- Price Target Raised to $40 - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Keefe, Bruyette &amp; Woods has maintained its rating for Corebridge (CRBG) and raised its price target to $40. • The updated price target indicates a potential increase in the company&#39;s value. • This change may impact the financial projections and valuations used in life insurance reserving and GAAP reporting for Corebridge.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may affect L&amp;A consulting actuaries working on reserving and GAAP reporting projects for Corebridge, as they will need to consider the revised price target in their financial models and valuations. The change may also have implications for product development and reinsurance strategies, as it reflects shifting market expectations for the company&#39;s performance.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRnZqVTFraTdtNzNMbkVHbW56dlI3MFRxWGRWRXVrd0hjUXVjbUx4cEloRnhkUGVmVjN4aWN3WHZkOTNYSFlLOWdReHI3ZjVqcEJhU0ZNVEw0bjFyWUVTM1VhbnNQNUlPTE9qWXdWbGJ4NC1jWDlkS0ltSXJRa01nTS1laWNVWlV3TUJIcDRzLWIzT0VqOXVHYWRJZjhWem4yM3lhYmpzVjdzRDFEaDEtZmp6N1V3eGFuUklEVlpYcU9YNEU?oc=5" target="_blank" rel="noopener">Lincoln National stock reflects insurer’s long-term challenges and retirement focus - Ad Hoc News</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Lincoln National&#39;s stock performance is influenced by the company&#39;s long-term challenges, • the insurer is focusing on retirement products, • no specific numbers or dates are provided in the article</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on product development and reserving, as Lincoln National&#39;s focus on retirement products could lead to changes in product offerings and reserving requirements. Actuaries involved in GAAP and statutory reporting may also need to consider the potential effects of these changes on financial reporting.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxObGthYnlxQW1oSjNHN2dTaFVXRHlnRzh1ZEo4YkZHQXU3TmdhN21WWl9kRWI0UE1fU3U4SzJPNW1Fb2pNV0Ffa21uZHc1QjNSWHhJWnFacU9JNXFNbEVmWE5IYkJ0blBTeWJWNUJQUS16MlpLUXVMVjU1N1RvQi1YZVY1eEVValBLc1VVcEVGdUFiUk9lVHNFalN5dXdxaHRoOE04b0o1ejFCaldBalNlemFXVmJIR2hSMGFPbjFKdWZSbnFjQTd2VF9ZZEo5enNrZG5n0gHTAUFVX3lxTE5sa2FieXFBbWhKM0c3Z1NoVVdEeWdHOHVkSjhiRkdBdTdOZ2E3bVZaX2RFYjRQTV9TdThLMk81bUVvak1XQV9rbW5kdzVCM1JYeElacVpxT0k1cU1sRWZYTkhiQnRuUFN5YlY1QlBRLXoyWktRdUxWNTU3VG9CLVhlVjV4RVVqUEtzVVVwRUZ1QWJST2VUc0VqU3l1d3FodGg4TThvSjV6MUJqV0FqU2V6YVdWYkhHaFIwYU9uMUp1ZlJucWNBN3ZUX1lkSjl6c2tkbmc?oc=5" target="_blank" rel="noopener">Is Lincoln National (LNC) Using Reinsurance to Quietly Redefine Its Risk and Capital Profile? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-14
+            </div>
+            
+              <div class="article-summary">• Lincoln National (LNC) is reportedly using reinsurance to redefine its risk and capital profile, although specific details are not provided in the article. • The company&#39;s strategy may involve transferring risk to reinsurers to reduce its capital requirements and improve its financial position. • The article suggests that LNC&#39;s approach could have implications for its competitors and the broader life insurance industry, but does not provide further information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as it could influence industry trends and best practices in risk transfer and capital management. Actuaries involved in reserving, GAAP reporting, and product development may also need to consider the potential implications of LNC&#39;s strategy on their own company&#39;s risk and capital profile.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPcG5UdGIxVFQ1am9TczFxZ2hONmRLcm5Bc1RHTnFVdjJIMkQ2M2M1VnRoQlk5N25GWmd6Z3c1QzBzVkVJdVEwZUNIVW9ka0MxZERmM09NaWJpY1F5ZVh4RWItRVZuaE5renNMRDNQNzhuZ0FEZTRoNENyYVRPY0NXQ2s3SVl5dW8zaGVxamRRdGk4VEFyb0h5REdhNUxNa0VQamhPQmg2VmlwaXFSUWhLemN2VmtZY1E?oc=5" target="_blank" rel="noopener">Lincoln National in talks for multibillion risk deal - report (LNC:NYSE) - Seeking Alpha</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Lincoln National (LNC:NYSE) is reportedly in talks for a multibillion-dollar risk deal, although details of the deal are not disclosed. • The deal is expected to be significant, with the term &#39;multibillion&#39; implying a transaction value of at least $2 billion. • The report does not specify the counterparty or the type of risk being transferred, but it may involve reinsurance or other forms of risk management.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This potential deal may have implications for L&amp;A consulting actuaries working on reinsurance and risk management projects, as it could signal a shift in the market for risk transfer and impact the demand for reinsurance and other risk management solutions. Actuaries involved in reserving and capital work streams may also need to consider the potential impact of such a deal on Lincoln National&#39;s risk profile and capital requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNUWJiTEFIUTg5WFZNZHBBa0JkMEJ1T1A2bnRJLWxuYTlDLVJOUG5FRmRuTUo4VlVCQTRjWkFpSzBib2FFdTBEOFhXa093SS11QTFkdHNOWXhqS1l0VkR1LVpIZVJHaDZTYjFBY1NobHB2Z09QaVdfTHZ6NkJ2dm1rV1RldF9xZkItZFNnSEJRVHFqZ3pwbm1oZm95YkNrazYwMGNsUjg2amxWZUFoejFzdTJ2OGVid1ZlT1loWHpmY2d1QXU2MG9TMERBTHJZMnNwSGRRQ0ZfOA?oc=5" target="_blank" rel="noopener">Lincoln in talks with Talcott on $5 billion reinsurance deal - Bloomberg - Investing.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial is in talks with Talcott on a $5 billion reinsurance deal. • The deal&#39;s details and timeline have not been disclosed. • Bloomberg is the source of the information, as reported on Investing.com.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This potential reinsurance deal may impact L&amp;A consulting actuaries working on reinsurance and reserving projects, particularly those involved with Lincoln Financial or Talcott. It could also have implications for GAAP and statutory reporting work streams, depending on the deal&#39;s structure and terms.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOUHV3dVRocFAtOHNsTEVaWGlQVHRmNlBzMWZzTlhmQ0FnR1I0OWpXQWtpeFRxcFV1Ml9xM1B0aXFmVDRpalZwMjlBZEUwSllUQkxBNnNLaDE0SDZpM3RiV0VDbVBqMDBkQm5wUWdQNzNJNDF1SVU1RmtzTG1BSkZSNUhEcW1vWFFHclA3RUtfNWN2c0tBSFdnYTRlTGJ4cVNxTG9uRk9xbUtDdGI4VlhoeVk2Qng?oc=5" target="_blank" rel="noopener">Lincoln in Talks With Talcott for Multibillion-Dollar Risk Deal - Bloomberg.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial is in talks with Talcott Resolution for a multibillion-dollar risk deal, • the deal&#39;s specifics and timeline have not been disclosed, • the transaction could have significant implications for Lincoln&#39;s risk profile and capital management</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This potential deal may impact L&amp;A consulting actuaries working on reinsurance and risk transfer projects, as well as those involved in reserving and capital management for Lincoln Financial. It could also have implications for GAAP and statutory reporting, particularly if the deal involves significant risk transfer or capital relief.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxObVNXSlZPbDItV2V4cFN0N1l4NFBGb2lMODJfbUFfeVN6OWMyMVl6WUtNc044dmI4aXpacGdjMGtwYkdkcWM5Vk1FN2hpODJ6NkVPa1pOa0g3aU13QnZ1NjFNc2dEQldXdW1odkZXaTVyYkpPM3YtM00wSE9DdmdoOS16SF8tUEJvYThCdWZTT1RyMWJWZm5KdTltUTcwRU55Y2FRMG42d19FU2Nnb1Y5MXZKTm5iQW9GclRlbFRiaTl3R1JyaWlCOFZUalhJMFdYWWxPd01OaWIzQWVjTFpvSWo2SGt6VWM1cUpESWIydU8?oc=5" target="_blank" rel="noopener">LNC Stock Pops On Report Of Lincoln National’s Potential $5B Reinsurance Deal With Talcott - Stocktwits</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Lincoln National is reportedly in talks for a $5 billion reinsurance deal with Talcott. • The potential deal has caused LNC stock to rise. • The specifics of the deal, including the terms and timeline, have not been publicly disclosed.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This potential reinsurance deal may impact our work in reinsurance and reserving, as it could affect the risk profile and capital requirements of Lincoln National. As L&amp;A consulting actuaries, we should monitor this development for potential implications on our clients&#39; reinsurance strategies and GAAP reporting.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPZjJ5aGNXMDlIMllfUFlHSXZCbE93SHVWeVVlZVdYekNKbm1aY2lFWFhuSkM3d0NnNDNpU0xXeDgzYmxOQ0QyU1NBekJLZ2MyQmgyMzJsMjBQZkRCRmRSQ0ZKTEhsalZtTkprUnJpY21LMlpIY1RwcHVxZzBTSHk3UDNPaXpOV0xick01NWdJUVdza0xSazB5YmkyUDN0b09aUjMwWg?oc=5" target="_blank" rel="noopener">CRBG Maintained by Evercore ISI Group -- Price Target Raised to $43 - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-13
+            </div>
+            
+              <div class="article-summary">• Evercore ISI Group maintained its rating for Corebridge (CRBG) and raised its price target to $43. • The updated price target reflects a potential increase in the company&#39;s value. • The change was reported by GuruFocus, with no specific date mentioned in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on mergers and acquisitions (M&amp;A) and capital projects, particularly those involved in reserving and financial modeling for life insurance companies like Corebridge. The change in price target could influence the valuation and financial projections used in these work streams.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">269.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.56</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.08</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.06</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.55</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.03</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
