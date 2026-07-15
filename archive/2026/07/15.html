@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 15, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 15, 2026 &nbsp;·&nbsp; 3 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/regulators-clear-way-to-rewrite-annuity-illustration-rules" target="_blank" rel="noopener">Regulators clear way to rewrite annuity illustration rules</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-14
+            </div>
+            
+              <div class="article-summary">• The National Association of Insurance Commissioners&#39; Life Insurance and Annuities Illustrations Working Group voted to reopen the annuity disclosure model to revise Model Regulation 245. • Regulators reviewed illustrations from 25 to 30 top annuity leaders, finding that two-thirds showed returns above 10%, with some as high as 27%. • The working group, led by Chairman Ben Slutsker, will consider revisions to illustration length, disclosure requirements, and presentation of non-guaranteed crediting rates.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development directly impacts L&amp;A consulting actuaries involved in product development and modeling, as revised illustration rules may affect how insurers present and disclose annuity products to consumers. The changes may also have implications for reserving and GAAP reporting, as insurers may need to reassess their assumptions and methodologies for annuity products.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPNmItUzh4TXo5dlFGWGh2ZEJPV0x3S3ltdHFXTDFIdUFDOHp3XzZOTFA4RTZucGllMnRoNGJqTXpxMEtJWkV0MmtGbmdHSGZYa3JuVVkyaEFRQXJ1WTZQMlZCRVdXNlVTY0RmamdMNlIzcER6QVpNUkFud3F0dVZNZmpMRXdHN042VGpOeTZNVERraXZKN3lBVHNPRTI4NjA?oc=5" target="_blank" rel="noopener">WTW launches mortality model bringing enhanced predictive capabilities to U.S. pension risk transfer market - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:VM-22 &nbsp;·&nbsp; 2026-07-14
+            </div>
+            
+              <div class="article-summary">• WTW has launched a new mortality model to enhance predictive capabilities in the U.S. pension risk transfer market. • The model aims to improve the accuracy of mortality predictions, which can impact pension plan liabilities and risk transfer decisions. • The launch is expected to support the growing demand for pension risk transfer solutions in the U.S. market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in reserving and modeling, as it may influence the approach to mortality assumptions and predictive analytics in pension plan valuations and risk transfer assessments. The enhanced predictive capabilities of the WTW mortality model may also have implications for GAAP and statutory reporting, as well as reinsurance and product development work streams.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixgJBVV95cUxNR3dvSVdhd2h4LUZpbjM3YURpOEhYRGk5aXJlY2phU1RWUTF2SjZ1YTVYcVBGMmFkazVYcElLaDZIX0JsY3dOUm1XUS13X3RwaXNGeTVQY1lmWlJmelIwM18xa2VrMU5yeTdDemk3dHpvNDRCZXg5QkZjMThzOGRVR3dsRTNGS0R6dThVTFQzX0FVQjNnOEJXaE43b2Z5aWhUWjF5NXhQR0RoOHZUSVI1TWhUUENtTlhNanZ0bHBvWjZTR0NHNWRrNzZVc1loSUJ0SE1HQ2J0Szg3RGo4c3dWYW5mVmloSEVGR3hRelh0MXkzWUYyRjFnX2R3WDFHQWowdGZKTnktM1FDOV9XRVBBZU1Ud3JOVGYzN01tb0xRT1hCdllUZGxXaEZhX1RhUHlCU1U2LXdEMzk4MWdJMjVHaHFhUjBvdw?oc=5" target="_blank" rel="noopener">Lincoln National in talks for multibillion risk deal - report - MSN</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-15
+            </div>
+            
+              <div class="article-summary">• Lincoln National is in talks for a multibillion-dollar risk deal, although details of the deal are not publicly disclosed. • The deal is reportedly a significant transaction that could impact the company&#39;s risk profile and capital position. • No specific timeline or terms of the deal have been announced.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may have implications for L&amp;A consulting actuaries working on reserving, reinsurance, and capital projects, as a large risk transfer deal could impact Lincoln National&#39;s risk-based capital requirements and statutory reserve calculations. Actuaries involved in GAAP and statutory reporting may also need to consider the potential impact on financial statements and disclosures.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">269.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.11</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.10</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.60</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">17.16</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
