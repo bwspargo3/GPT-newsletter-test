@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 17, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 17, 2026 &nbsp;·&nbsp; 3 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5SeEJleXREZHR2dlF4akpyd0E1aDhNMl9PbVlndHpzR1d4Q2ZNNzNjd2x0d2s4aHJYakZlam1YRjRSRGNmazF4YWI0ZTF3bWNESHVhODVTVEQ3ajJXMHdZMzZwWTFXT09EanpfTDhudTFlRDE3aFdLZEV6MGY?oc=5" target="_blank" rel="noopener">Brighthouse Financial (BHF) Q3 2024 earnings summary - Quartr</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-16
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial (BHF) reported Q3 2024 earnings, with specific details not provided in the article summary. • The earnings summary is available on Quartr, a financial news and data platform. • The report may contain information on BHF&#39;s financial performance, including revenue, net income, and other key metrics as of Q3 2024.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This earnings report may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and product development projects, particularly those with clients in the life insurance industry. The report&#39;s details on BHF&#39;s financial performance could inform industry benchmarks and best practices for reserving and financial reporting.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMinwNBVV95cUxQR0ZsNUYxRnJSSDhTSFBfdk9rVndGRzRtRGhSaXdPOGFlRlNPOHoyc3ROMl9zb1cyVFZWZmxXYUxnQVdLUWxWVE1rQUl5QXNzeVltdTlKOHNwZEVJYThNN2tQbHlBRzF4cThfSGZxT0tiS25rbkxFNGlJWnRTS3ctV2ZxR3NLRjQ3QU5VU2R6NlIxTkZETlVMVTYwRjYtSExoanB0dnhmdXJoN0NQYmY5Y1NjaTg3NTl3WnBZbDAxLU9VVkRzeG9mM3hyajAtUFNnMUN2X2NBYktiSEVmdE85MUxfeXQ2MGQwQUVXd1dLOWZLOEJDbUpsbEMxQWsyYnFvbG1QdW1SR01laFExS3M2ZDZtT05Cd2F5SHhtcnBteUNtT3owNXY1U0xVWWNTdU0wVmFtU19xNXlnSFZNVlZ6dkpYNlA1aWlyOE40ajVPWnMzNC03MXYyZ0h4S24tSG16c3R3Y1BMWnlLcjVzVmdtN1FDMjFpdVJ3dGhidklvSHgweFBmUy1teC1RNFMzby05Q0FwVGdiYnYzNERaUDZF?oc=5" target="_blank" rel="noopener">Corebridge and Equitable strike all-stock merger deal valuing combined firm at $22B - MSN</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-17
+            </div>
+            
+              <div class="article-summary">• Corebridge and Equitable have agreed to an all-stock merger deal, valuing the combined firm at $22 billion. • The deal is expected to create a large life insurance company, with significant implications for the industry. • The merger is a major development in the life insurance M&amp;A space, with potential impacts on reserving, reinsurance, and product development strategies.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may impact L&amp;A consulting actuaries working on reserving, reinsurance, and product development projects, as the combined firm&#39;s strategies and operations may change. Actuaries working on GAAP and statutory reporting may also need to consider the implications of the merger on financial reporting and capital management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQdS00WmstYmhpdF9RQTJwcm1PU251VVVEdGs3WmJVUGFjZUk4dTRjbjJ5azhxSmRLUnA0bDVyVE4zVGRPSFQ4U3Y4Q0dFUDVWRnJlMGVpSUZxVFItb3VXX1BicENQZmx4SjF5cWptR1dPU2FfQ1NmU21MdHJmZmlKNkszR282ZTZhYVhCWXdsczZQUGI4U1ktU3ozbGRuVk9qS2RRXw?oc=5" target="_blank" rel="noopener">Form 144 Corebridge Financial For: 16 July By Investing.com - Investing.com Canada</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-16
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial filed a Form 144 on July 16, indicating potential insider trading activity. • The filing is related to the company&#39;s securities, but specific details are not provided in the article. • The news was reported by Investing.com Canada, with the article categorized under Mergers and Acquisitions (M_AND_A).</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects for Corebridge Financial, as changes in the company&#39;s ownership or leadership structure could influence financial reporting and risk management strategies. Actuaries involved in product development and capital management may also need to consider the potential implications of this filing on the company&#39;s overall financial position and regulatory requirements.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">271.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.55</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.07</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.08</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.67</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
