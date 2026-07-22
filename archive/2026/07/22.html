@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 22, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 22, 2026 &nbsp;·&nbsp; 10 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/regulators-no-firm-conclusions-from-first-offshore-reinsurance-filings" target="_blank" rel="noopener">Regulators: ‘No firm conclusions’ from first offshore reinsurance filings</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• State insurance regulators have begun reviewing the first round of reserve adequacy reports required under Actuarial Guideline 55, adopted in 2025. • The guideline requires life insurers to submit reserve adequacy analyses for certain reinsurance agreements with offshore reinsurers. • Regulators aim to eliminate transactions that artificially reduce reserves without a real, transparent drop in underlying liabilities.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development directly impacts L&amp;A consulting actuaries working on reinsurance and reserving projects, as it introduces new requirements for reserve adequacy analyses and may lead to changes in reinsurance transaction structures. The guideline&#39;s focus on transparency and eliminating artificial reserve reductions may also affect GAAP and statutory reporting work streams.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/canvas-steps-into-the-direct-to-consumer-market-that-has-yet-to-take-off" target="_blank" rel="noopener">Canvas steps into the direct-to-consumer market that has yet to take off</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-22
+            </div>
+            
+              <div class="article-summary">• Canvas Annuity, a digital direct-to-consumer annuities provider, launched a new 10-year multi-year guaranteed annuity (MYGA) with an initial 6.3% interest rate. • The product, called the 10-year MYGA Future Fund, aims to provide consumers with a decade of guaranteed stability amidst 4% inflation. • According to Devon Askew, team lead at Canvas Annuity, distribution challenges have hindered wider adoption of such products, not customer demand.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters for L&amp;A consulting actuaries specializing in product development, as it highlights the growing demand for direct-to-consumer annuity products with attractive interest rates. The launch of this new MYGA product may also impact reserving and GAAP reporting work streams, as actuaries will need to consider the potential impact of such products on insurers&#39; balance sheets and financial statements.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPS0tjTWtoT3FENUgtMm53R3BhTGZnTFFLRm5qaVVseFdVUFFQNTA0Rlk2Qm5LaTYxeUwwSExZMnpUc01SRHVfcXQ0Z0VDd2x3QVdIYks5T2poYzNDNVFiVmloWmJlZkpLZkNpcEliUGt1VktsajRfS21FUjdPc0RBeFpwNXFqdHpCNVhzc1BHTHE4TkpyNVlSNmE0M2RhQkJyZFNLejFlc1BnNGc0ekQ0elV1MA?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. Reports Material Event - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. reported a material event, although specific details are not provided in the article. • The event was reported by Stock Titan, with the full details available through a link to Google News. • The material event may impact Corebridge Financial&#39;s financials and operations, potentially affecting its life insurance reserving and GAAP reporting.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This material event may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, particularly those with Corebridge Financial, Inc. as a client or counterparty. Actuaries should monitor the situation for potential impacts on financial reporting, capital requirements, and risk management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUV9OSjlmenJ6VklmaGtNV0phZTZyV2hYRlhnRHE3ZzA1VzhWcy1qZlRuN3JaVWFwcTlkbnltVkRfNzFIb1pCY0p6MmYxQ29DRDlsZjlaazZqRmxnZVdvUmVacU5ZZzM4T1NfVTJMV1JKUU9yUlB0TU8yVFc4aEt0d3RHSm96LUl2NV9BM2FiTG5qVXRGakdkRWFlN1doUDhtazY1WEpSQ20yMlI2bEY2UGZQeXE4dFNZYXRSQmhnbXV2ZTZWa2FPa0pBYlRBd0N1MVpFTWt3?oc=5" target="_blank" rel="noopener">Brighthouse Financial (BHF) Faces Pressure Amid Investigations - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial (BHF) is facing pressure due to ongoing investigations, although specific details of the investigations are not provided. • The company&#39;s stock price and financial performance may be impacted by the investigations. • The outcome of the investigations could potentially affect BHF&#39;s business operations and strategy.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries as it may impact reserving and GAAP reporting for BHF, as well as potentially affecting reinsurance and product development strategies. Actuaries working with BHF or similar companies should be aware of these investigations and their potential implications for financial reporting and risk management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxOTW5DajlIVmJnbHBVS1hybXZiYUFFeE5LdllVTmpDR180Qk9LVjVfbGJKZVZ2X3ptcDZ0eGhkLXo2Y19aemhMVkE3amhraDJCV1Fab0pJUm9WUHVSYW1IWUtfS25oa2xuNEZ4LTlrc01TOWFSMFVIdFEtRldRNjRReWpqUmNJRlpXLWtqREpjWmNEVC1sZVhOYXJldUtRUTZHZzhiTHlRWkw4Uzhjcy1keEdLRjAzRk91VFp5alprZU1xSjZTQkpVaVF3?oc=5" target="_blank" rel="noopener">Lincoln National stock trades steady as investors weigh latest earnings and capital return - Ad-hoc-news.de</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• Lincoln National&#39;s stock is trading steadily as investors assess the company&#39;s latest earnings and capital return. • The company&#39;s earnings and capital return are being closely watched by investors, with no specific numbers or dates mentioned in the article. • The steady stock trade suggests that investors are weighing the company&#39;s financial performance and its impact on the life insurance industry.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news matters to L&amp;A consulting actuaries specializing in life insurance reserving and capital management, as Lincoln National&#39;s financial performance and capital return strategy may influence industry trends and benchmarks. It may also impact reinsurance and product development work streams, as changes in Lincoln National&#39;s financials could affect the overall life insurance market and competitor dynamics.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZ1FHcFJCcW9MY2NmamdCM0JhSDAzRF9QSWN3WG5nN1RwZDdRdUN1eUlDeDZ0UTgwcmFmdVJST2hkZnA1dXI2YjJGZDVRTnZGc091NE1oSHZKZ0VTWnVQM0w5cllsSzZCNzVHalZiQjloSGVfQ1VpT1libXptRklWS19QWXR3anROUHMtTU83ck9sUGhjLTRlVDFCS21JaTRqSFgyTWNydVdPVFFhczJ0cFlsd0dvbmZNRHN6VWlSajRqdVFxRlFXZ1RMSW84T25TeFZz?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. Announces Major Merger and SEC Filings – Key Details and Impact Explained - Minichart</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. announces a major merger, with details disclosed in recent SEC filings. • The merger is expected to have significant implications for the life insurance industry, with potential impacts on reserving and capital requirements. • The exact terms and timeline of the merger are not specified, but the company has provided key details and explanations in its SEC filings.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may affect L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as it could lead to changes in industry practices and regulatory requirements. Actuaries involved in product development and capital management may also need to consider the potential implications of this merger on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQRjUyN0RBMGQyYVR0REEzMXZiWEFiLS10NktDQ2xKa0V2czhfYjJrWWZKSkJtLVllenRsanhlNnRWYzF6WnBfd1NRNFQyVWRmSi1MQkx3M3hrd3BtYm12S2VMZmdFQzZxQjhUT0lsbUxEWEpnbUZFYzJCLU42di1aU1gxWDRfZUNsdjNqMXlWUVZUZHFSYlhKLW9FWFVMc1pnUWwwY0hpdXBuWG5BTmhrQm5ZdkZVMGUxaE9acDZpQXlhazZZLVE?oc=5" target="_blank" rel="noopener">KBC Group NV Grows Stock Position in Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-22
+            </div>
+            
+              <div class="article-summary">• KBC Group NV has increased its stock position in Corebridge Financial, Inc. ($CRBG). • The specific details of the stock position increase are not provided in the article. • Corebridge Financial, Inc. is a company of interest to L&amp;A consulting actuaries due to its presence in the life insurance and financial services industry.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, particularly those involved with Corebridge Financial, Inc. or its affiliates, as changes in ownership structure can impact financial reporting and risk management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOW1MVkQ4NzRUWEw2MDQzazRBY3U4aHRTMnRnV2gwLS04TGdrdnBkTXdkOTU1amNkbnNRYnU2OHdKMTRkM2JMNGxEcHZxWFpvMmtKc0RxcUMzU2hsZU1zOVdPVTgzMUxEUjM2cWY5NDVQblNwRXpwZHI2OXFMWjN0amZ1cXBRN215Z3BrMGF2X2gzdkdPR2trX05lVFpvaWZlWkhLU1dtUVRMLXRWZW41a0h5cjB1cXFmejJvWWM0ZGV1bnhtMjg0ZVY3UUxOVlVvM196bXltTU1kMjJ4MkxMUEJCcmU?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. $CRBG Position Lowered by Arbiter Partners Capital Management LLC - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-22
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. ($CRBG) position was lowered by Arbiter Partners Capital Management LLC, although specific details of the reduction were not provided. • The move may indicate a shift in investor sentiment towards Corebridge Financial. • No specific date or percentage of the position reduction was mentioned in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in investor sentiment can influence reinsurer appetite and capital availability. It may also have implications for GAAP and reserving work streams, particularly if Corebridge Financial&#39;s financial position or strategy is affected by the reduced investment.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxPQnhxV3RjMDVDZ2xXb3Jac0pDT0tiN3lqS0doMjcybVFBbFhlU2tRQWhFX1hkQmdKTFF6VFdpaUxBUnFaTWxqOEJWNFFUN0VyN2dzaVZ6MVk0bUl1MTh0OHViNmlvNGFqei1SS2REU0ZjazIybnBOaktuQUlRZENRVFJNTEJLUEZ5N0R0N1RTZzNCcHFFQ1hJWFBwOUVvZXVhSFo3U0lMVnJiRlFHWU91bExSTDY0b2o0Zk5uU0kyZWVlS1hOYUtDTExhbE00MWZ3Zm5jQlZlMUJjaThXYzNjMU9qdWUzcHVNcHpJ?oc=5" target="_blank" rel="noopener">Corebridge Financial supplements proxy with litigation disclosures, updates advisor valuations - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has supplemented its proxy statement with new disclosures related to ongoing litigation. • The update also includes revised valuations from advisors. • The move is part of the company&#39;s ongoing efforts to provide transparency and comply with regulatory requirements.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and GAAP/stat reporting projects, particularly those involved with Corebridge Financial or similar entities, as it highlights the importance of staying up-to-date with regulatory disclosures and litigation developments that can affect financial reporting and reserving requirements.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Technology</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPNDlKTmJXdlhNV1FmZVMxQThhcmp1cGVVX0d2UTBDTGg4WGlsRHZOMThaSUczVC1rYjVkWWlWRnlOVVJ2VlFhdnBTSktBTUN2djVOWEt2T0UzYlZkSUxJS25KWWpFOTQzUWlva0ttSkhSN1Y5TlJBa2RlQVpVMVZ2LWZmSlAxNFhXU1Y4aURwM0pGMFhpOHIxOVlWVzJmQkxSNEE?oc=5" target="_blank" rel="noopener">WTW launches significant upgrade to market-leading modeling platform with new deferred pension capabilities - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:VM-22 &nbsp;·&nbsp; 2026-07-21
+            </div>
+            
+              <div class="article-summary">• WTW has launched a significant upgrade to its market-leading modeling platform, adding new deferred pension capabilities. • The upgrade aims to enhance the platform&#39;s functionality and provide more accurate modeling outcomes. • The new capabilities will allow users to better manage and analyze deferred pension liabilities.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This upgrade is likely to impact L&amp;A consulting actuaries working on pension and retirement-related projects, particularly those involved in modeling and reserving work streams. The enhanced capabilities may also have implications for actuaries working on product development and capital management projects, where accurate pension liability modeling is crucial.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">269.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.60</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.12</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.11</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.57</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.65</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
