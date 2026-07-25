@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 25, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 25, 2026 &nbsp;·&nbsp; 6 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRFZhc0NXSXFfSU1jd1Nkdjk3aFBPY0ZSOFI3VUVLWkstb3hNWk0zU2lDTjNHazZzZUZpai1tdTZLNDdacS1aMVRBd24yM0h4SW0tNUNZX3c2b0RKcG1WcTlTZGp3TUhJQUFEVHZvVkdFSExINVAwT0J4eGNrUTdUM2tlcDY4ZG5VSlY1WE5OM1FGV3lJSi1jN2xhUUhkNGZ1N2xHbFRESGpqQQ?oc=5" target="_blank" rel="noopener">US annuity industry body backs regulatory overhaul - SRP (Structured Retail Products)</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Actuarial Guidelines &nbsp;·&nbsp; 2026-07-24
+            </div>
+            
+              <div class="article-summary">• The US annuity industry body has expressed support for a regulatory overhaul of Structured Retail Products (SRP). • The overhaul aims to improve transparency and consistency in the regulation of SRP. • The move is expected to impact the US annuity industry, with potential effects on product development and reserving.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This regulatory overhaul may directly impact L&amp;A consulting actuaries working on product development and reserving, as changes to SRP regulations could require updates to actuarial models and reserving methodologies. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of these changes on financial reporting and disclosure requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFBYRnp6bVlqR1hFVjlPMWR5OHJmWThMT1Q2M1FWU0RkdzBkSTV4MUdob0JIRV9iNlhrR2NPNkU1Tks3QVF4YWE5QXFlWmUwX2swdDNLTUJETURmT3dCLW9za3JTdkdQQQ?oc=5" target="_blank" rel="noopener">Corebridge Financial Inc (CRBG) Earnings Forecast: Future EPS &amp; Revenue Growth Estimates - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-24
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) earnings forecast is available, providing insights into future EPS and revenue growth estimates. • The forecast is based on current market trends and economic conditions. • TradingKey is the source of the earnings forecast, offering data-driven estimates for CRBG&#39;s future performance.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This earnings forecast matters to L&amp;A consulting actuaries as it may impact reserving and GAAP reporting work streams, particularly for those working with life insurance companies like Corebridge Financial Inc. The forecast&#39;s revenue growth estimates can inform actuaries&#39; assumptions and models used in financial reporting and reserving.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPREo3SktSNmp3c3lTaUVKd2M3eDREZlFZS0pCeFBKR0pHZE1ESW1yYXBlS0d4NklHMFhFeHhuRkxhb0NXTW1fNUlyaVU4cHNsWlRtbXNVdUx2YzlESjdGc25CWkpkb2VMLU0yXzdYN2xLTjRtd3RNS1NLdEZTVGQ1UXh4MnNnelAwZXJ0bXZXT1lMeGZPTktMaFhSOXhWZG81VF8zUHNsS3NtNno3dF9mN25hUmY5Z080UFRj?oc=5" target="_blank" rel="noopener">Corebridge reports DNP note maturity redemption for subsidiaries (NYSE: DNP) - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-24
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTTdsc1BhclRMc1AwbEVUSXctQXJHYmF4RzFzeEdQTXd6NzNaVTRUY3VMb2Y5d0ZqM1ByOENwMl9sRDZJeXJEQjd3ZnlJVEZXd0ctcGtZbnBLWUZIODZUY0pVM21tTmRteTJUdjNQRW9qYW8zcUEtLWNrekR4VHRHaXB0aERScEVCRkRFOFBQTUY0dWR3cHgyTllRb2pUZ0Vkd1MxSGw4XzhxWmVOMmhINGs2c2drRmdhMjl4a2lBcHQwUjg?oc=5" target="_blank" rel="noopener">Corebridge Financial Redeems $33 Million Series B Senior Secured Notes Due 2026 - Kalkine Media</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-24
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has redeemed $33 million Series B Senior Secured Notes Due 2026. • The redemption indicates a proactive approach to managing debt obligations. • The notes were set to mature in 2026, but Corebridge has chosen to settle them early.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This redemption may impact L&amp;A consulting actuaries working on capital and financial reporting projects, particularly those involved in GAAP and statutory reporting, as it affects the company&#39;s debt profile and financial statements. Actuaries may need to consider the implications of this redemption when assessing Corebridge&#39;s financial position and making recommendations for future financial planning and product development.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZExlUlJOREtpSEk2SkVVc2hQWUxvRFNzenpmWTJjckllelk0UnhEVVNERklFYUpDbEtiNm5UV1RrZ2VvdHpoa1gxak5qTE5wbzNtTVl3X1JRTFlqSHdNSVdBeTIyakp5TXNNSzJtbDVvR1RMeGUxUHppM21OM3R4ZEpkRmo4M3EyNGFIMkNDQmIzR0JPNloxSjNVVlcyR29wYWo3R01US3p2cnAtNDQ2Z3BmT3d3cEFEZGdwcnlvRUFjamx5ajRfZA?oc=5" target="_blank" rel="noopener">Lincoln National stock holds ground as earnings and capital plan shape investor focus - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-25
+            </div>
+            
+              <div class="article-summary">• Lincoln National&#39;s stock has maintained its value despite market fluctuations, with a focus on earnings and capital plan. • The company&#39;s capital plan is a key factor in shaping investor focus, with no specific details provided on the plan&#39;s components or timeline. • The article does not provide explicit earnings figures or dates, but implies a stable financial position for Lincoln National.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on competitor analysis and market research, particularly those involved in reserving and capital planning work streams. The stability of Lincoln National&#39;s stock and focus on earnings and capital plan may influence client expectations and inform consulting strategies for life insurance reserving and capital planning projects.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQd1JmSWlLVEU5VHZBaGpHbFRmejhMWEpsOGhmUHJLeUpDLWM4UTdxYzhITHJWQl9vOHhvZXhzX0Z5bEJoUVJFd2ZjalVBQVk1dDFkTlpUQWJUSlJhYmtva1ZRaHY3MWhNak9iZ3gybVZKVzhXZmR6RGt2d3E5RF9LRnB0bFdWQUg1UGpEQktXc0tGS3RqZ3p6YVoycUxFdmVEdmZ5amxpa0lpOVpWSm5UeGRJZmY?oc=5" target="_blank" rel="noopener">LNC stock gains as earnings and capital remain in focus - AD HOC NEWS</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-24
+            </div>
+            
+              <div class="article-summary">• LNC stock gains as the company&#39;s earnings and capital remain in focus, with no specific numbers or dates mentioned in the article. • The article is categorized under competitor insights, suggesting a potential impact on the life insurance industry. • The article is sourced from Google News, with Lincoln Financial as the subject company.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving, GAAP, and capital projects, as changes in competitor earnings and capital can influence industry trends and regulatory expectations. Actuaries involved in product development and reinsurance may also need to consider the potential implications of LNC&#39;s stock performance on the overall life insurance market.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">277.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.71</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.20</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.17</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.70</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
