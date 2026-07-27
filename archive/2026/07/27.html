@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 27, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 27, 2026 &nbsp;·&nbsp; 9 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/limra-predicts-strong-life-and-annuity-sales-for-the-rest-of-2026" target="_blank" rel="noopener">LIMRA predicts strong life and annuity sales for the rest of 2026</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• LIMRA predicts strong life and annuity sales for the rest of 2026, with new annualized life insurance premium growth expected in every product line except for fixed universal life. • Indexed universal life sales are expected to grow between 8% and 12% by the end of 2026, despite a slowdown in the second quarter. • Final expense is driving the majority of whole life growth, with variable universal life premium growth being driven by private placement and other factors.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This prediction has direct implications for L&amp;A consulting actuaries working on product development and reserving, as strong sales growth may impact reserve requirements and product profitability. Actuaries working on GAAP and statutory reporting may also need to consider the impact of increased sales on financial statements and capital requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPeWNONlU2ZUMxeHpyaWdMOGxNNjBxOUtpdk90d2d0enpkYmVVMXBfYzZpQzdWLTBvdmJOT0Fwand2OG9WSG9FZGwxR3JCWWZGVHZwT1p6am03WmsyanV2X0ZmRVAwb1BWamt2djAwTTNGX3dNdDRfb2xYOHM1XzhtQ2VhQTFGZHZVay1KVEpwUzlzM2x2MHBTVzdqTXA4NU9tU2NfTkpZWWFhUnR3ektkZmZja0lqX1lwU0FuNEViUFcxUTk4aDFvc3BUeFEyWE1uYV9nOWcwc9IB3AFBVV95cUxNM3oydDR2R1JhZ1hfdE1pempFM0p5cS1DcWtDX3FweERQT3VhTzAzTDl1b2p0enFlOWt5OXBReHkya2dCRFQ5UGVjVGRwblJpdVFYNmYxWmpmRTNjREg1M0NYbXlKbmk5ZWE5dGRrNm5BTHREeFZnb2lxczNuelhBUldKUVpHbG95WFQyYUtlN0tjVjhLdDd0bEhianM2cDJfYWdFbVYxNGxQaDU1QlBkWEhuU2s5SHQtVzVsNXcta1piWnJQbk9SdWJfbXM0THAyWmlHSUxnTFBEd0Ra?oc=5" target="_blank" rel="noopener">Is Brighthouse Financial (BHF) Fairly Valued As Annuity Demand Supports Its Growth Story? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial (BHF) is experiencing growth due to increased annuity demand, with the company&#39;s stock performance being closely watched by investors. • The article assesses whether BHF is fairly valued, considering its growth story and market position. • As of the latest available data, BHF&#39;s financial performance and annuity sales are key indicators of its valuation and growth prospects.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This article matters to L&amp;A consulting actuaries specializing in product development and reserving, as it highlights the impact of annuity demand on a life insurer&#39;s growth and valuation. The insights from this article can inform actuaries&#39; work on product pricing, reserving, and capital management for annuity products.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE9FbTFCMlRzdjkwaUZKaUtzTGN4dDlXOVJmTzFGTTZvNDFLa3lQRG5GUmx3TThLc1ZabWs2akhTRU1aaFU2T2RSbmt3eU53cVNQX1p4NzNfVlMxclltaVlORzRMYw?oc=5" target="_blank" rel="noopener">Brighthouse Financial Inc (BHF) Revenue Breakdown: Business Segments, Regional Revenue &amp; Profit Contribution - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial Inc (BHF) has released a revenue breakdown by business segments, regional revenue, and profit contribution. • The breakdown provides insights into the company&#39;s financial performance, with specific numbers and data on revenue and profit contribution from different segments. • The information is available on TradingKey, with a link to the full article for further details.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries as it provides valuable insights into the financial performance of a major life insurance company, which can inform reserving, GAAP reporting, and product development work streams. Actuaries working on reinsurance and capital projects may also find the revenue breakdown and profit contribution data useful for their analyses.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5xdWEtV0tJNVRDZVVNUlFPdzZsc0o5R1BLX2JhZXlmWTZZX21SRzlNcklWc3FOR0JxVDR4U01OQVp6WG5xeEpDS19sTmoxNzhFMFZFLUp3cmN4NkltQWxDUDlnQXhfVGVCNnl1cFBJQQ?oc=5" target="_blank" rel="noopener">Corebridge Financial Inc (CRBG) Dividends &amp; Stock Splits: Historical Payouts and Event Timeline - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-26
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) has a historical record of dividend payouts and stock splits. • The article provides a timeline of these events, but specific details are not available in the provided snippet. • The information can be accessed through the TradingKey link.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information is relevant to L&amp;A consulting actuaries working on reserving, GAAP, and capital projects, as it may impact financial modeling and reporting for clients invested in or affiliated with Corebridge Financial Inc. Actuaries involved in product development and reinsurance may also need to consider the potential effects of dividend payouts and stock splits on policyholder behavior and risk assessment.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQQ2FlSnpoSEFtZW50VE9kWGoybl9nZmRNUmp4azZBb3dGVjVhOXZQRGxRZFFLREhnbTU1R3F4aGFoNmMzc2FNN2tJZzVPbzZISTNIeUprbXNUUFduRFZfTTNhNGZDRTI2T3R1b2VrYjMzOW9qLUdQa3A1bFpRMXYzcjFRNmpIQm8tUmc5ZUl0cF96czZGZXczcXFlQVljQ29HS09KYVlzdlFOQThHam1R?oc=5" target="_blank" rel="noopener">Brighthouse Financial Under Scrutiny Amid Mark Walter Investigat - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial is under scrutiny amid an investigation involving Mark Walter, though specific details of the investigation are not provided. • The investigation may impact Brighthouse Financial&#39;s operations and financials, potentially affecting its reserving and reporting practices. • As of the latest available information, no specific dates or outcomes have been announced regarding the investigation.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries as it may impact reserving and GAAP reporting work streams, particularly for those working with or advising Brighthouse Financial. Actuaries involved in reinsurance and product development may also need to consider potential implications for their clients or projects related to Brighthouse Financial.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxPa191Y1FsVHptXzV4TjlpUzk1Zk5sVHZPZldISFkzU2I2Z002aVpNcUlQbnlmTjlXRUZ5Wk5lUmpPRDhZczY5VmpqVTZ0TnBVdElIdHl6Z1Z4dlZhN1ZHV25LZTE4QlhpSFJQSzMzQ1R0SzdObFg1MXJncWhtWDZYVDhneXoyYVMxaEVTV3JNakhkQVZwaUQzX2dyLTlmRnoyakRLN1ZPZmZHMHJCZDViMS1VZlNYUUhRX3diZlFtS3ExQzBlZTFpTWF2d3dvRktVTXBGdGZUTjRLR2FKT2Y1eQ?oc=5" target="_blank" rel="noopener">1,136,200 Shares in Corebridge Financial, Inc. $CRBG Bought by Troluce Capital Advisors LLC - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Troluce Capital Advisors LLC purchased 1,136,200 shares in Corebridge Financial, Inc. ($CRBG). • The transaction was reported by MarketBeat. • The exact date of the purchase is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ownership or investment in Corebridge Financial, Inc. could influence the company&#39;s strategic decisions and financial position. Actuaries involved in reserving and GAAP reporting may also need to monitor the situation for potential implications on financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPbHYzVmdRMEl1ZXZxS1RNT1FweldDSENuMTBBcUJ0RU5ISmRRVExRLWp2YVF0Z0FXN3VpTllkWm5BeGhiUTFTYWhEVTBsa0dHbnJ1RnJTRW5PZEpWRVJVMjdNVzFwWVhhZHJBUmIwSnFRc3pNNFFSeFBnN0xPcnpvSjNvOGJtTUx3RnpEM21vd2szWEduS2JiUE84QzZpVEVDLTZuajY5eVg2WGJpXzViczQtSVdfYWxMbTgwUURWdkQ3NE53NGF2NENTNzVKNnNGZFE?oc=5" target="_blank" rel="noopener">Entropy Technologies LP Sells 74,404 Shares of Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Entropy Technologies LP sold 74,404 shares of Corebridge Financial, Inc. ($CRBG). • The sale was reported by MarketBeat. • The exact date of the sale is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This transaction may impact the financials and reserving requirements of Corebridge Financial, Inc., which could have implications for L&amp;A consulting actuaries working on GAAP and statutory reporting projects. Actuaries involved in reserving and financial reporting for Corebridge Financial, Inc. should be aware of this development and its potential impact on their work.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxPOGFNX0dlWWFGVXJGY3BTSU50UFlvQkxNOFJrSVJSQ2d6dmZ0aDNvUk1WOEo4OVhISW1yN0hBcVk2WkM0R3pkNENHY1B6M3lsam91SExNTGxyZG5tcXdnVFl5YU1PRUdCU2V5V0l0MjBOLVhCWk9kV3pUZmZ3X01MdVpWVDZlRnRvSVVUTUFRNmJWaTY4RWJKV01fS1NYakdkaXF1QTl1Y05jMDNYNGEtTXNaY09PR0xBam5DWlNLR3hiMC1BbHlyUDFiLWsyMXc?oc=5" target="_blank" rel="noopener">Bank of Nova Scotia Trims Stock Holdings in Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Bank of Nova Scotia reduced its stock holdings in Corebridge Financial, Inc. ($CRBG). • The specific details of the reduction, such as the number of shares sold or the remaining holdings, are not provided in the article. • The transaction is reported by MarketBeat, with the article linked to Google News.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries involved in reinsurance and capital work streams, as changes in ownership or stock holdings can influence a company&#39;s strategic decisions and financial stability. Actuaries working with Corebridge Financial, Inc. or its affiliates may need to consider these changes in their reserving, GAAP, or product development projects.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxNX1NFMXV2a3RjQTBGV2hwcUVFZ09zQnRhcy1Mek44dmM0UlFjdkVtSVB5SVEwNk1qekVsNHFpX3ZQaE51czcxdS1wLTNPeE5SaTlpaGVwYmJYT2NsLTY0WFpxclAzLUhKLVIwelFLMzVPMWY5ZHp6clZJN1NTWk5IWnRLQ194ZFZReWRaX0ZtMjVBVnV3ZkctSTlnbWRLS2Y2ajJTaHM3bXdzM3NvOENZNUhsOVBKY1VicmRoSFRrUzJjSnpuMExxV2lLb3M2UHp4?oc=5" target="_blank" rel="noopener">Caxton Associates LLP Invests $1.34 Million in Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-26
+            </div>
+            
+              <div class="article-summary">• Caxton Associates LLP has invested $1.34 million in Corebridge Financial, Inc. ($CRBG). • The investment is a notable development in the life insurance industry, with Corebridge Financial being a key player. • The exact date of the investment is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This investment may have implications for L&amp;A consulting actuaries working on reinsurance and capital projects, as Corebridge Financial&#39;s financial position and strategy may be impacted by this investment. Actuaries involved in reserving and GAAP reporting may also need to consider the potential effects of this investment on Corebridge Financial&#39;s financial statements.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">277.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.71</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.20</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.17</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.70</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
