@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 28, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 28, 2026 &nbsp;·&nbsp; 9 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxNQ1VMRWtHZTNJUU12cDdrVnlXXzcwcHZpdTVZRFBTZW0zLWpyblQtUmNXYl9nSVFjOHI0a0Fjb3pnOUVySUZtMUlxMHpfT0JyY2dxQ1BydHF2czZ3Wm5SM1BTT3BjMHZlVjNaUndkOURzYkV2aEtUVFczT0FUNC1IQWVvaGpmMnhmcTJsaGJGeWdmLWozc3FqWTlGcjJGdTNEZmNFUy1hQ1BxbnNjVk1MNDZlSk1xU3p6dHJrU1RpQlJVbjZveUhmTHpqbjhRbm85Qm1jcC1oVGVXMmR4UEtLcFpxR3FiQ0RoUm840gHrAUFVX3lxTE1DVUxFa0dlM0lRTXZwN2tWeVdfNzBwdml1NVlEUFNlbTMtanJuVC1SY1diX2dJUWM4cjRrQWNvemc5RXJJRm0xSXEwel9PQnJjZ3FDUHJ0cXZzNndablIzUFNPcGMwdmVWM1pSd2Q5RHNiRXZoS1RUVzNPQVQ0LUhBZW9oamYyeGZxMmxoYkZ5Z2YtajNzcWpZOUZyMkZ1M0RmY0VTLWFDUHFuc2NWTUw0NmVKTXFTenp0cmtTVGlCUlVuNm95SGZMempuOFFubzlCbWNwLWhUZVcyZHhQS0twWnFHcWJDRGhSbzg?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Could Be 16% Below Fair Value As It Expands Annuity Options - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-28
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) may be undervalued by 16% as it expands its annuity options. • The company&#39;s expansion into new annuity products could impact its financial reporting and reserving requirements. • This development may be relevant for L&amp;A consulting actuaries working with Corebridge Financial or similar clients, particularly in the areas of product development and reserving.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on product development and reserving projects, particularly those with clients in the annuity space. It may also have implications for GAAP and statutory reporting, as well as reinsurance and capital management work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPUzVGdDI0V3NOZ19NVkxhczVNZW5QSm40RWpnMk9MNGYydkt6aDMyYTZxZmFMVGdrd3lLejFnaVh4SnZidDNEbjdXUDUzMzlzc3RkNk5kamZuRjNXcHNBcjRzaWhNU0I5ZG5ZdGtkSlhuVVdKaFFWbEo0eEtUSTFodkM0SEFFRFdROUpqOHZodTJaYUViV2MtU3hWUnJLZ2hlMC1CNlBB?oc=5" target="_blank" rel="noopener">Keep Annuity Math and Disclosures Separate, Industry Groups Say - ThinkAdvisor</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Actuarial Guidelines &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Industry groups are advocating for the separation of annuity math and disclosures to improve transparency and clarity. • This separation is intended to prevent confusion and ensure that annuity calculations are not misinterpreted as disclosures. • The initiative aims to standardize annuity math and disclosures, making it easier for consumers to understand annuity products.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development directly impacts L&amp;A consulting actuaries working on product development and reserving, as it may require updates to actuarial models and reporting processes to ensure compliance with the proposed separation of annuity math and disclosures. It may also affect GAAP and statutory reporting work streams, as changes to annuity disclosures could influence financial statement presentations and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxQZkpzVzUyR1VydV82R1pnNExiOE1GT254TjFFMkd0YjkwRXUtNThyd2ZhZTF6YUs0RFNUTlRSYWNQMEFHY3VSelVza2lNTktzUXZIVjR5NmZNaFpxaUgwUDFWdFRXMWhmVUIyTjNuVzFKUGhUNzNhZkZSVFBCTFFqQW5sMVVPZnJaelFzbW1WRzN6Qnc3V19RN0JEa3A5dy1ISURRYS1GeFJ4MHZicVdLV2lEU1pCX2E1MERtMEM0ZWlkajFmVVVURXpUay1tdWtVWXNqdzRRZmNHN1VwOWc4QkNB?oc=5" target="_blank" rel="noopener">Corebridge Financial Enhances The Power Series of Index Annuities® - lifehealth.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has enhanced The Power Series of Index Annuities, although specific details of the enhancements are not provided. • The announcement was reported on lifehealth.com. • No specific dates or numbers are mentioned in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This enhancement may impact product development work streams for L&amp;A consulting actuaries, particularly those involved in designing and pricing index annuities. It may also have implications for reserving and GAAP reporting, depending on the nature of the enhancements made to The Power Series of Index Annuities.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxPUFZhXzZVR1RHY1dDeEw1QmNFalloa1AwdDNEekVmNlVVdDlGRTZiTTA4SGg0c2ZRYkRXSTFOUDk3Szc2VHlLVTl6eURVWWxCT1dtMVc1aHdpZ3psM09JYXltMnFrMjR0dnhPWkY3S2pTcWNCczY0dGt3VUdWdmF1bjBDT1NsdVFiNG9wWElGTmRvWlVlbWpxVXVPQWE3aW1USWNZZWljVzAya0NBVmNrVWZCYm91M2ZtUUFhOFRMVmgya3pOd25QbmJwb3VMbndQMGFfLU9hMjNPV2hPWmtNczZJcFlIZXFj?oc=5" target="_blank" rel="noopener">Corebridge Financial Adds Protected Growth Benefit and Preset Allocation Options to the Power Series of Index Annuities - marketscreener.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has introduced a Protected Growth Benefit to the Power Series of Index Annuities. • The company has also added preset allocation options to the series. • These enhancements aim to provide policyholders with more flexibility and growth potential in their annuity products.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The introduction of the Protected Growth Benefit and preset allocation options may impact reserving and product development work streams for L&amp;A consulting actuaries, as they will need to consider the new features when modeling and pricing these products. This may also have implications for GAAP and statutory reporting, as the new benefits and options may affect the accounting and reserve requirements for these annuities.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQTW1UN0lYQnJPNVhRbHVCQy1UZkxsOEJzSXdMVWV2RHR2NUVuS0JZaTk5WlphYWkzYUxOUkFaN0NMLWM1Q1A2MElieU0tWmFOTXlUeERMUDltRW9XTXVTczQycVNoLUdWMHhDUGRNY2JlSUJ1SlM0a2hTcFJseG11ZDIzN0lnb1FkYnpQUlBwOTFXYzg4MEpxTnFidTcycjlDOGt1Z1hFaTZxY2QyaWc?oc=5" target="_blank" rel="noopener">Corebridge (CRBG) Enhances Index Annuities with New Benefits - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Corebridge (CRBG) has introduced new benefits to enhance its index annuities, although specific details are not provided in the article. • The announcement is reported by GuruFocus, with the full article available via GoogleNews. • The enhancement of index annuities may impact product development and potentially reserving for life insurance companies offering similar products.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may affect L&amp;A consulting actuaries working on product development, as they need to consider the competitive landscape and potentially updated product features. It may also impact reserving work streams, as the introduction of new benefits could lead to changes in policyholder behavior and, consequently, reserve requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBqTUhtbjZXa3ZyTWlSa1BtTEljTmp4NWpPRmdWblU1alQyVG9QMGZpSS1RQ3RnQjV4bUhUTDNweC1UNFdiR0dQWVV1NGh4cHBoNVdyUVFWdXlMdGN5OUZ4Y0J1bjJ4ZE0?oc=5" target="_blank" rel="noopener">Corebridge Financial Inc (CRBG) Technical Analysis: Support, Resistance, Indicators &amp; Moving Averages - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) is the subject of a technical analysis by TradingKey, focusing on support, resistance, indicators, and moving averages. • The analysis is available on GoogleNews and provides insights into CRBG&#39;s market performance. • The article does not provide specific details on the analysis, but rather serves as a gateway to the full report.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This market intelligence may impact L&amp;A consulting actuaries working on product development and capital projects, as it provides insight into the market performance of a key industry player. Actuaries involved in reserving and GAAP reporting may also find the information relevant when assessing the financial health and stability of Corebridge Financial Inc.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1126328/000110465926087091/tm2621379d1_8k.htm" target="_blank" rel="noopener">Principal Financial 8-K Filing – 2026-07-27</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Principal Financial &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMickFVX3lxTE5RQkloUHdYNVpZcWlwcENkc1N6d184QXVLbXhPQ0hGOTAxc0UxdVRLcFdkbHFvWGdHY1BwelFNSWZ3aGpPZ28wOTJDVUNlQkgzUmJqM0c0QnBKcHpHeF9XM2VoTzFhTTlEMk4wUHpnQU9CZw?oc=5" target="_blank" rel="noopener">Corebridge Financial Inc (CRBG) Valuation: PE, PB &amp; Fair Value Analysis - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-28
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) valuation analysis is available, focusing on price-to-earnings (PE), price-to-book (PB), and fair value. • The analysis is provided by TradingKey, a financial news and analysis platform. • The valuation is relevant for investors and analysts assessing CRBG&#39;s financial performance and position in the market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This valuation analysis matters for L&amp;A consulting actuaries involved in reserving, GAAP reporting, and reinsurance work streams, as it provides insights into Corebridge Financial&#39;s financial health and potential implications for their clients&#39; investments and risk management strategies. Actuaries working on product development and capital management may also find the analysis relevant for assessing market trends and competitor performance.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPdk5ucFVuaXpHczBOMTdQcXRVdDF3Um1qSXZOR2U1YTBIZEJEbDRkdzRIT1BfbDFKWU5VZlFzLVhrUklUOFY0WEM1X2h0S29ISDNYSC00NVJCWVVnSWZVU19qWTY0X3FyX3VMOU81bzBhME5nNUlhVW5kd3hJcU1yM3dfM0QwcTJyWVU1UjVuTnNqMnlhSFV5MEI0SVJEYWxhM09KeUc0Y2F5T2h5dHVkSTRXeWpxemNOTFF3WjdMeXd3T05xZF9Cd2VMUQ?oc=5" target="_blank" rel="noopener">BlackRock (CRBD holder) reports 24.6M Corebridge Financial shares on Schedule 13G - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-27
+            </div>
+            
+              <div class="article-summary">• BlackRock, a CRBD holder, has reported 24.6M Corebridge Financial shares on Schedule 13G. • The filing indicates a significant stake in Corebridge Financial, a major life insurance company. • The exact date of the filing is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and product development projects, particularly those involving Corebridge Financial, as BlackRock&#39;s significant stake could influence the company&#39;s strategic decisions. Actuaries involved in reserving and GAAP reporting may also need to monitor the situation for potential implications on Corebridge Financial&#39;s financials and reporting.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">279.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.69</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.18</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.16</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.58</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
