@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 29, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 29, 2026 &nbsp;·&nbsp; 7 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/immediate-care-plan-a-new-solution-for-funding-ltc" target="_blank" rel="noopener">Immediate Care Plan: A new solution for funding LTC</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-29
+            </div>
+            
+              <div class="article-summary">• The Immediate Care Plan is a new financial solution for those currently facing long-term care needs, guaranteeing lifelong care payments for a fraction of what families typically spend on care in 3-5 years. • The plan is built on the chassis of a single-premium immediate annuity, but with fully underwritten individual medical circumstances, unlike traditional SPIAs. • The plan was created by Lumos Insurance, according to Tyler Maddox, owner of Vitannis Care Funding in Greenville, S.C.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This new solution may impact L&amp;A consulting actuaries working on product development, as it introduces a new type of long-term care funding product that requires specialized underwriting and pricing. Actuaries involved in reserving and GAAP reporting may also need to consider the implications of this product on their clients&#39; financial statements and risk profiles.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQWm9ucTNpTl9UMzRYS2FORkY5OGljbUFHQmg2N2FWUGFzei1idzdKb09xdTVwc3ZoNnJDUkNrZjkxamtrTXlrYk1HRHcwMXoxaGNwek94NjRFcE5KTHdEcHpsRG1GV2swYmdMb2UxNmN6dThVUGhxUHkwdEpnQUZWTW5mcUFHM2sxUWRsa0xEN3E5NjlHN1NF?oc=5" target="_blank" rel="noopener">Analysts Estimate Corebridge Financial (CRBG) to Report a Decline in Earnings: What to Look Out for - Yahoo! Finance Canada</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-28
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) is expected to report a decline in earnings, according to analyst estimates. • The decline is likely due to various market and economic factors, although specific details are not provided in the article. • The earnings report is anticipated to be released, although the exact date is not specified.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects, as changes in earnings can affect financial statements and reserving requirements. Actuaries involved in financial modeling and analysis for life insurance companies like Corebridge Financial should be aware of these estimates and their potential implications for clients&#39; financial performance.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE00ZGRSeWtRVEd6ZnhxTGdvVWtIaWc4MkJDUWRaVm1LNzB5YjRVVXI5QVNwX0dnZTRQbUExTVY4X3hTdjk3ZndoSUJoWUVSS0hkbWNwdExKY1VaRkRtXzhINVRhY3c?oc=5" target="_blank" rel="noopener">CRBG|Corebridge Financial Inc|Price:32.310|Chg%:+0.580 - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-28
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) stock price is $32.310, • the stock price has increased by 0.580%, • the information is provided by TradingKey.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects for clients invested in or affiliated with Corebridge Financial Inc, as changes in stock price can affect financial reporting and reserving requirements. Actuaries involved in product development and reinsurance may also need to consider the implications of this market development on their work streams.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOTXVMQmFVeTdvRWhYcjBHRDhFbHFyN0NETUFRY2FiaHotZVJHZTNwcnhleElrQW9ScERTSnBRUHRsUmRrQndlWWlOSEtLdDNESHc5VGZ6VU5JZ09CcHhqRm1aNnJ4YXNuRkVvVGVuZ0hqQ001V3RCU182OHloLXNpSDlfTEdoWmtjSXd0MkprVzVkZWZtc0NidDlFOUw4WnJjTm85ZTJnUDM2TzgxTXVTOTlNUzNQc0VkSnhUaDRZODVrOEMwT1E?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Projected to Post Quarterly Earnings on Tuesday - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-28
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) is expected to post quarterly earnings on Tuesday. • The earnings report may provide insights into the company&#39;s financial performance and outlook. • The report may be released through MarketBeat, a financial news and data provider.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This earnings report may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as it could provide insights into industry trends and competitor performance. The report may also be relevant for actuaries involved in product development and capital management, as it could inform decisions about product pricing and risk management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/5513/000000551326000073/unm-20260728.htm" target="_blank" rel="noopener">Unum Group 8-K Filing – 2026-07-28</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Unum Group &nbsp;·&nbsp; 2026-07-28
+            </div>
+            
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQTlJsTFBUWEhwdC1XcFJZNUljNEUwNzRNdkFVNDQwWUM2amxHazNiTGlod0xJSHRkbXZ0bmVlOEVnTUlTWDNyTEk2ZW9qeVhwTUw2bnlyTUs1OFFDVmdNVTctMlpQNlZpQ3hkbVQxQi15NEw2NG5JS2xjN2tKWHpxTS03eG1UZ1l5X09SUDNENzJjVnBpT0FwbHVtV3NYSGNFMjNoTjFYTjIzWXBBcTh0MEl1SjN6YjNHcDhqTl9tSHpQd21PSEdZcDlHYTRicTQ?oc=5" target="_blank" rel="noopener">Sei Investments Co. Boosts Stock Position in Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-29
+            </div>
+            
+              <div class="article-summary">• Sei Investments Co. has increased its stock position in Corebridge Financial, Inc. ($CRBG). • The specific details of the investment, such as the number of shares or the percentage of ownership, are not provided in the article. • The investment is reported by MarketBeat, a source of real-time financial news and market data.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ownership or investment positions can influence a company&#39;s strategic direction and risk management approach. Actuaries involved in reserving and GAAP reporting may also need to monitor the situation for potential implications on financial reporting and regulatory requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxNbWxieUhvNDBaSFpJSktkeXp6VHQxODlWME1DLVFfallSMmVPUlBQMVNkLUtRR1c3T3dtTTNHZmFNMkVyNC1vUGQ2Skk4am1VeHIzbmlNVjJZM0VoSllkWEt1dU5tWVBBTTJSSjZDS3lfa1lXWjJLN3JuSmc0NzBROUs3SmJBblBNcDNJcHhjYlE2WWdHdjZENnJRcWpsdExFZWpPRGxXNzZaazBSX0pXTG1PRGVORDU0U0RWblZWb2VRbjlDVDd1c29pcmRzRWNBZ05xdmFKTlp6ZHZkM1Z0UUk1WUszT0RUQmxrNGhHcw?oc=5" target="_blank" rel="noopener">Healthcare of Ontario Pension Plan Trust Fund Sells 51,400 Shares of Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-29
+            </div>
+            
+              <div class="article-summary">• Healthcare of Ontario Pension Plan Trust Fund sold 51,400 shares of Corebridge Financial, Inc. ($CRBG). • The sale was reported by MarketBeat. • The specific date of the sale was not provided in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This transaction may have implications for L&amp;A consulting actuaries working on reinsurance and capital projects, particularly those involved with Corebridge Financial, Inc. It may also impact actuaries focused on GAAP and statutory reporting for clients with investments in Corebridge Financial, Inc.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">281.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.15</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.12</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.67</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
