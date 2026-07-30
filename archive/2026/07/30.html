@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 30, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 30, 2026 &nbsp;·&nbsp; 7 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOMkFkSWc0UDlvYTBsN1hVNGpHRlppWTJIdk9Dc3RqM3FseFF2X2NjUGhjOTBKaWZ1YkJZcVU3Tm1jRGszbVdyX3F5UlJtWWdWSjVRM0NVNFhEQlBLOFVVaHhITW53eUh3S2tYYTVYM1dnaWF1WjJFUDdLY3ZZWmhXai1kVmJITmhFNmRyRVYzR3liaXUwTVRzSHh1TlYxSnRub0dNdmRB?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Adds New Annuity Features As The Buy Or Priced In Debate Builds - finance.yahoo.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) has introduced new features for its annuity products. • The move is part of the ongoing debate about whether to buy or price in annuity features. • This development may impact the life insurance and annuity market, with potential effects on product development and pricing strategies.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The introduction of new annuity features by Corebridge Financial may impact L&amp;A consulting actuaries working on product development and reserving, as it could influence pricing strategies and reserve requirements. This development may also have implications for GAAP and statutory reporting, as well as reinsurance treaty design and pricing.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5xaVJER3JBZmx1YWZFd3VOVU53VER6X1RIaFJ6eXFqN3dyN1BKT1ZUOFV3ZGRuYWh4VmNXOFRhUlRYNjJPWmhKemx2YTlocjZWWEQ5SU9fYkYxQ0k1VzREM2ZkUWdrajZtSTh4QlFUNDU?oc=5" target="_blank" rel="noopener">Corebridge Financial Inc (CRBG) Financial Health: Profitability &amp; Balance Sheet Analysis - TradingKey</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) financial health analysis is available, focusing on profitability and balance sheet performance. • The analysis is provided by TradingKey, a market intelligence source. • The report is accessible via Google News, with a link to the full article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This analysis matters to L&amp;A consulting actuaries as it provides insights into the financial health of a key industry player, potentially impacting work streams such as reserving, GAAP reporting, and reinsurance. Actuaries involved in product development and capital management may also find the information relevant for informed decision-making.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9ZLWxmR0pIc0ZlbV9UM2ctT2Q1cFo4THJBUERTaG9tb0VIM1FjY19vWjlpaFhrdkE0R05WZ3cyMFdudlVhaHZFQlZXOGJhbjNTamVlMi1MVkMyNFdweFpOZTROeXFmQ0ktcWQtRUk4cEtGQQ?oc=5" target="_blank" rel="noopener">Brighthouse Financial, Inc. Revenue Breakdown – BMV:BHF - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-29
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial, Inc. revenue breakdown is available on TradingView, providing insights into the company&#39;s financial performance. • The revenue breakdown may include data on premiums, fees, and other income sources, which can be useful for industry analysis and benchmarking. • The information is current as of the latest available data, although the specific date is not provided.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries as it provides market intelligence that can inform reserving, GAAP reporting, and product development work streams, particularly for those working with life insurance companies or analyzing industry trends. The revenue breakdown can also be useful for actuaries involved in reinsurance and capital management projects.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/how-advisors-can-prepare-clients-for-an-uncertain-retirement-landscape" target="_blank" rel="noopener">How advisors can prepare clients for an uncertain retirement landscape</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• 51% of financial professionals expect inflation to remain between 3% and 3.9% over the next 12 months, according to Security Benefit&#39;s Q2 Financial Professional Outlook Index. • The Federal Reserve voted to keep its benchmark interest rate unchanged on July 25-26, but may take action at its next meeting on September 15-16. • New Fed Chair Kevin Warsh stated he has &#39;no tolerance&#39; for elevated inflation, which has been above the 2% target for over five years.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries as it may impact reserving and product development work streams, particularly for fixed index annuities and other interest-rate sensitive products. Actuaries should consider the potential effects of continued high inflation and interest rates on their clients&#39; portfolios and retirement goals.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOeWJoYTUxeEtVOGF2NjkwSndSTTg1Z25RcFJoVzFTbXJIeDZXQ0FNbHIySktDU1ZnMFZfbFBvdkZKWFQ2Y1lIOEh1X0dMbkRfbGVxZjJVWXNrVHpIRFYxUTRweWE4aVEyNUxRQW1PVF9CWHRHS3RwOHFGS09jcmFQN2VYOE9rUldsN0dQWlY1SXZwZmJ0R19wTFlSMWg4WjNxcUtDU0xsVzYwM2R0cXlIM2NtRzlyckJ5YlpOWnJn?oc=5" target="_blank" rel="noopener">Lincoln Financial Announces Reinsurance Transaction with Talcott - Business Wire</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial has announced a reinsurance transaction with Talcott, although specific details of the transaction are not provided in the article. • The transaction is expected to have implications for Lincoln Financial&#39;s risk management and capital management strategies. • Further information on the terms and scope of the transaction is not available at this time.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This announcement matters to L&amp;A consulting actuaries specializing in reinsurance and capital management, as it may signal a shift in Lincoln Financial&#39;s risk management strategy and potentially impact the broader reinsurance market. Actuaries working on reinsurance and capital projects should monitor this development for potential implications on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxQN2w5em5xRWJhcU9vcTBwdExlVGRHSmU2MTBpanQzVm82RzQ0NmtXMFp6OE0tVnM4Wms3WkM1NTFQS05wMzU4QWR1SzdRTTBJbl9LNDRaZ1hxNExoZkFFeWpibTVPSVhMeGFpV0NxbTZEenl1WXRiNEtMd3c3dDJ3RzlhSEJLSVNpRzZiaWcwWjNod3RkTWZlX0NmaFFWNG5NNlY0bEtZYTQ0U1JkekZvdENPNDlsT3Rnb0doVlB6QUt2aENhOG5rVHpsSjdmdnlDVVFENE16UlBlSjJPTlVLVw?oc=5" target="_blank" rel="noopener">Lincoln Financial Group (NYSE:LNC) Reports Sales Below Analyst Estimates In Q2 CY2026 Earnings - StockStory</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial Group (NYSE:LNC) reported Q2 CY2026 earnings with sales below analyst estimates. • The earnings report was released in Q2 CY2026, with specific sales figures not provided in the article. • The report is from StockStory, sourced from GoogleNews:Lincoln Financial.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This report matters to L&amp;A consulting actuaries specializing in life insurance reserving and GAAP/stat reporting, as it may indicate changes in market trends or competitor performance that could impact our clients&#39; business strategies. It may also have implications for product development and reinsurance work streams, as Lincoln Financial Group&#39;s sales performance could influence industry-wide product offerings and risk transfer decisions.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Ratings &amp; Capital</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMigwJBVV95cUxNZmV5Z1pSNW9fc1dPMkloelZGX0pnOU5tMWRzbGp1WVd2LUFLTUhzb3ZlY1lveEV6M0NrSUhxRV8xUDFPTkN6ZmpGejJkeVJUQ2kxUDEzekVfVlQ4SlJ3Y3VwOGpkX2d5QmpSeW5rTVZWMk9zZzl2Um9RX0RSYjd6QnlTSW9IcE1IM1ozNGRaMVJ5WGgyN3FFUnpnQXkzSWlrVTZscmN0NmlSaWs1R20wNWI0LWtXMWlWRUpmMkYwNS12ZmJiYmRqSzd6ZERKVHBIR3NyV3p6Z3ozWHJHZFp2cFlzb3ZfY3czRENab0tfazRiUTMwbU9Qd3hBa2J1cEd0QUtJ?oc=5" target="_blank" rel="noopener">AM Best Maintains Under Review With Negative Implications Status for Brighthouse Financial, Inc. and Its Subsidiaries - Business Wire</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-07-29
+            </div>
+            
+              <div class="article-summary">• AM Best has maintained its Under Review with Negative Implications status for Brighthouse Financial, Inc. and its subsidiaries. • The status reflects ongoing concerns and uncertainties surrounding the company&#39;s financial situation. • The review status may impact the company&#39;s ability to conduct business and maintain relationships with reinsurers and investors.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may affect L&amp;A consulting actuaries working on reserving, reinsurance, and capital projects, as it could lead to changes in Brighthouse Financial&#39;s risk profile and regulatory requirements. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of this rating action on the company&#39;s financial statements and disclosures.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">284.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.61</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.11</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.09</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">18.21</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
