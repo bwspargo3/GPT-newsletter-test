@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — July 31, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">July 31, 2026 &nbsp;·&nbsp; 12 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOUdTX1ptSWMzSzNOUU9qdGlWRi1LZks3MUZiTmlEdTNLa1hyYVYySVR6MHJoelRiZ0I3Y0ZwX0l1QTZYN2kxWW9VdTZ0V3BuamVmdEpoaGFuZHloZUhtNEhyWGhRdnhXc2hDTjBxN1prc0pKckhPZFZoRlozUUltVnUyQWxmSDMyZUdKa1R4VkpuQ0RvdDBWQW1zeU9PcXg5QWo0d3dZQkd4R1lyNDMwQUpfVWx4enJ5c3EzQVhIaElGbURHNnJYUlNMZnVsRWhaMVN30gHTAUFVX3lxTE45R1NfWm1JYzNLM05RT2p0aVZGLUtmSzcxRmJOaUR1M0trWHJhVjJJVHowcmh6VGJnQjdjRnBfSXVBNlg3aTFZb1V1NnRXcG5qZWZ0SmhoYW5keWhlSG00SHJYaFF2eFdzaENOMHE3WmtzSkpySE9kVmhGWjNRSW1WdTJBbGZIMzJlR0prVHhWSm5DRG90MFZBbXN5T09xeDlBajR3d1lCR3hHWXI0MzBBSl9VbHh6cnlzcTNBWEhoSUZtREc2clhSU0xmdWxFaFoxU3c?oc=5" target="_blank" rel="noopener">Lincoln (LNC) Cedes $5.8 Billion GUL Block To Talcott In Reinsurance Deal - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-31
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial (LNC) has ceded a $5.8 billion Guaranteed Universal Life (GUL) block to Talcott in a reinsurance deal. • The deal&#39;s terms and effective date are not specified in the article. • This transaction involves a significant block of GUL business, which may have implications for reserving and capital requirements.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This deal may impact L&amp;A consulting actuaries working on reserving and reinsurance projects, particularly those involving GUL products. The cession of a large block of business may require adjustments to reserving methodologies and capital assessments for Lincoln Financial, and potentially for other insurers with similar blocks of business.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxNeXRTbDhyOVNFMGdfTDBKOGViczI3MG44cW9QOXN6Zmd2N2JfRWdYc0VIREx3VzJiRFFwelQxeXQtamJwRlZJenVDaUdFRmFQVHNDNWZneThvd2xMV1ZPa3NkeGpkb0ZvQzFnbFZYR1Bua2NrdGNDMTFxNXpESHBsLTNjQVQwVlVJMGZ0OG84Zl9PbElFSGRRLV8xaUtGV0dfMjBtZWZMNURkNG90QWt0QjJrUVA4Ql84XzFWU2pR?oc=5" target="_blank" rel="noopener">Lincoln Financial enters $5.8bn reinsurance deal with Talcott to reduce legacy risk exposure - Reinsurance News</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial has entered a $5.8 billion reinsurance deal with Talcott to reduce legacy risk exposure. • The deal aims to mitigate risks associated with Lincoln Financial&#39;s legacy business. • The transaction involves the transfer of risk to Talcott, allowing Lincoln Financial to better manage its legacy portfolio.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This deal has direct implications for L&amp;A consulting actuaries working on reinsurance and reserving projects, as it highlights the ongoing trend of insurers seeking to manage legacy risk exposure through reinsurance transactions. The transaction may also impact GAAP and statutory reporting work streams, as the deal&#39;s terms and risk transfer mechanisms will need to be reflected in financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/market-value-adjusted-annuities-key-considerations-for-advisors" target="_blank" rel="noopener">Market-value adjusted annuities: Key considerations for advisors</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-07-31
+            </div>
+            
+              <div class="article-summary">• Market-value adjusted (MVA) fixed annuities offer potentially higher interest rates, but withdrawals above the free limit during the surrender period may be adjusted based on interest rate changes. • If interest rates have declined since purchase, an early withdrawal may result in a positive adjustment, while an increase in interest rates may result in a negative adjustment. • MVA fixed annuities may be suitable for clients with a longer time horizon who don&#39;t anticipate needing access to funds during the surrender period, according to Tom Buckingham, chief growth officer at Nassau Financial Group.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information is relevant to L&amp;A consulting actuaries working on product development and reserving, as it highlights the trade-offs and considerations for MVA fixed annuities that can impact policy design, pricing, and reserve calculations. Actuaries should consider these factors when developing and pricing MVA products to ensure accurate reserving and GAAP reporting.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxObHY5Z3l5SkRqVlpQTUlZOEtYZUpQSXpkeGdLNkNWeWpNbElkX25sWjh3TTdSZlFZLWZPaUFJRmZtOWJ5b1VkbEVGV1pmRy1jVDRNMWUwS3hSR0d6RmstQ0lpTjhXdVpRUmJPNW9NNUUxSUFZb2t5dzhzUmxHcnpNV184dlNEREtSaWVoZXZVOGRHb2RHSW9RZEdWVThXbXhUUFJUVg?oc=5" target="_blank" rel="noopener">Lincoln Financial Announces Reinsurance Transaction with Talcott - InsuranceNewsNet</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial has announced a reinsurance transaction with Talcott, although specific details of the transaction are not provided in the article. • The transaction is expected to have implications for Lincoln Financial&#39;s risk management and capital management strategies. • Further information on the terms and scope of the transaction is not available at this time.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This announcement may have implications for L&amp;A consulting actuaries working on reinsurance and capital management projects, particularly those involved in assessing counterparty risk and evaluating the impact of reinsurance transactions on financial reporting and reserving. The details of the transaction, once disclosed, may also be relevant to actuaries working on GAAP and statutory reporting engagements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxQOE81QW9QSjhKVnRNT0FlYl9iYmlSN0NsYk5WRm10akcxN2MwWHNURzU3R214RUNrb28tcmlrRUpFLUtCNWFJcnRKdzI1WlJHRFhYNy12ZFExeDdOU1ZXSGJ4S2MtcUlfYjJESWRCXzhPVm91SDJBUW5RbzFIOEw2NmRkaVM3ZnpoOHFpbjl3TUJBX0s0eXNhbnBVOEtDdU5KX3hrYW1PZHlEMnA5S01HUTZBaTh5d3dhaHl1NGh5dnVQZ0RuSVpWbUNUU0N0cFFCRnc?oc=5" target="_blank" rel="noopener">Lincoln Financial Reports 2026 Second Quarter Results - caledonianrecord.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial reported its 2026 second quarter results, although specific details are not provided in the article. • The report is available on the company&#39;s website or through the provided link. • The results may include information on the company&#39;s financial performance, sales, and revenue for the quarter ending June 2026.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This report may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and product development projects, as it provides insight into a competitor&#39;s financial performance and potential market trends. The results may also be relevant for actuaries involved in reinsurance and capital work streams, as they may impact the company&#39;s risk profile and capital management strategies.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxNYm5WdU5HZW95djNXOWV2czlmaWNlZEVYYkI5R1VFSF9mYl9VbWpkRDR3elI0clNOQUxraUFydlJtZUpPeDZKelFNcFVMaDd5ME1hYk9fQ3BJOGpBWVBxYmlIeDBjZjNyTk1VeXVOaGVJU0pCcU1mbHEzalJMMlhhUE1wR3NnNnZNcVVZY2FiU082TnEwb0dITFUwZkViY3hQOFFXT09UbUxsNjBxaGFjNHgxcU1kcERxdjFTMGdNYVdQSnBXMFN4YXl5TktWaldxMnVaZEtNSjVhVnc5RUFPLWFMUXRvb3M?oc=5" target="_blank" rel="noopener">Lincoln Financial cedes 37% of GUL block to Talcott in US$6.3 billion deal - Insurance Business</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-07-31
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial has ceded 37% of its Guaranteed Universal Life (GUL) block to Talcott in a deal worth US$6.3 billion. • The transaction involves a significant portion of Lincoln Financial&#39;s GUL business, with Talcott assuming the associated risks and rewards. • The deal is expected to have a material impact on Lincoln Financial&#39;s financial statements and risk profile.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This transaction has direct implications for L&amp;A consulting actuaries working on reinsurance and reserving projects, as it may lead to changes in risk transfer strategies and reserve requirements for Lincoln Financial and potentially other insurers. The deal may also impact GAAP and statutory reporting work streams, as actuaries will need to consider the effects of the transaction on financial statements and regulatory capital.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPNG5uazZuNWh1MDg0UjhYQWttbFAwYWxjMWlfSngweFh0QmxfZTIwNkgzTGNnZHJKNU40ZVIzbGF0eEh2WWdYb1JZWXVtNXhNV0llMGFMSTc0SjNYa29aTVR1dmxWSlB6SDRuZGk1WFdQd25zUEpJdEtteFlIaTBKUXY4WjhoZWxZTkx2OWdreEZkUVRDbG1IT0ZDT1E1akxldHFubTVfNHlEeTEzMXlRUFpmTFNsMlhXTGEtZWFvZ2dZQXUyNUVr?oc=5" target="_blank" rel="noopener">Corebridge Financial and Equitable Holdings Stockholders Approve Merger - Business Wire</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial and Equitable Holdings stockholders have approved a merger, although specific details of the merger are not provided in the article. • The approval is a significant step towards the completion of the merger, with the exact timeline and terms not disclosed. • The merger is expected to have a significant impact on the life insurance industry, with potential implications for market share and competition.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may impact L&amp;A consulting actuaries working on reinsurance and product development, as the combined entity may have different strategies and needs. Actuaries involved in reserving and GAAP reporting may also need to consider the potential effects of the merger on financial reporting and capital requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNaDNMSXpja0RmUFNrZ1V4Ykw5a0VOQkRkV0hsaXZWVEpfZGwxcDh1dXU0NmRIUE0yQXk2QmczQXdHQjRkT2k5T0ZBREEzSUdkc0p1UW8zMlVnYWRHSEFiOEotbmh1WFA3bml2cmdzcEExUmMtSlFlRENKMU84MXoxai1sSlRibmlBMVllNmgtLVBrV2NpZENNQmhGaV9fV3haNUNrY3RaNFpQWDlWWkJ5aQ?oc=5" target="_blank" rel="noopener">Corebridge Financial, Equitable Stockholders Approve Merger - marketscreener.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial and Equitable stockholders have approved a merger, with details of the transaction not specified in the article. • The approval is a significant step towards the completion of the merger, although the exact timeline and terms are not provided. • The merger is expected to have implications for the life insurance industry, potentially affecting market dynamics and competitor landscapes.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may impact L&amp;A consulting actuaries working on reinsurance and product development, as changes in market dynamics and competitor landscapes could lead to shifts in client needs and opportunities. Actuaries involved in reserving and GAAP reporting may also need to consider the potential effects of the merger on financial reporting and regulatory requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQVmZrdndjcjJGOEdPbFlrY3dMQ2JmeXF6OXZ2bUZiZjJ3a24wSXFqYlhlZWtjOXY2NDIwZW5sb1ptdlY5eVBkZlc4VWFqdlBxX3FDQ08zN3Zrc1NVZndOb3cteUJEYkMzclctaHgyN1JOb091WU1CRWJvM05mN3pBS3RMTFEwV1pRSWctMW5zMDV2UkgwWnFmVDVQeUR4Ri1JdmtjZ1JZX0FjZk1GcW90NmJZNA?oc=5" target="_blank" rel="noopener">Corebridge Financial and Equitable Holdings Merge Approval by Sh - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial and Equitable Holdings have received approval for their merger, • The deal is expected to create a leading life insurance and retirement services company, • Details of the merger, including the approval date and terms, are not specified in the available information</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as the combined entity may require revised reserve calculations, financial reporting, and reinsurance treaty assessments. Actuaries involved in product development and modeling may also need to consider the implications of this merger on future product offerings and risk management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxNOF9VellOTVNlWTZweUZCb1ZfZ1JiM1ZkWEVCWDFpNThvTU13enJjS25mdDZjRXpTSDZnMG9YTVBLd3NzV2UwTk1DWnczV2dySWlrWVAyWFdHU0dMMHBncVlyYUN5T1pnYnZYSENVYzNXN2hGLWxHVFBEZHp1WllMSjVIN1ZlRl9KM1hxaTIzdHpOOV9KalhwaU1QZkNaTHkzZURSSUo1aVJEekcwQ2VKVU5uWUpBOHQtS2xCNE9VRjgyMU9yRjlmX1dvc29GU3gt?oc=5" target="_blank" rel="noopener">Corebridge Financial, Equitable Stockholders Approve Merger - Moomoo</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial and Equitable stockholders have approved a merger, with details of the transaction not specified in the article. • The merger is a significant development in the life insurance industry, with potential implications for market dynamics and competitor strategies. • Further information on the merger&#39;s terms, timeline, and impact on the companies&#39; operations is not provided in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as it could lead to changes in market conditions, competitor strategies, and potentially even client needs. Actuaries working on product development and capital projects may also be affected as the merged entity may explore new product offerings or adjust its capital management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcllocFBHYzZOSmdRZ2JuOWxnLWtfUzNpMjFieDZ0M3lYaHhsSy1aRk5wVnRtejVVMm1SQVRvSzBfWDJTaTRvVzJLR01FNmFvWU90c2hISWNSZmlHc1hfMFNBNElSYzBoUXNicWdFa3lpR2NHRXN5QzFUVVhpWmtfNG9lTFJSS3AzSDJoU3lsTGw5azQzR2ZYQ3gzMVZ0Mi1CTUludllnMkRmbUxfZUN0WVlBeEpEdFVOVVZjUk1NWVRtZjlZa0ZtWklvd1RTallTeUxWTUtLaw?oc=5" target="_blank" rel="noopener">First Trust Advisors LP Has $14.16 Million Stake in Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-31
+            </div>
+            
+              <div class="article-summary">• First Trust Advisors LP has a $14.16 million stake in Corebridge Financial, Inc. ($CRBG). • The investment is reported by MarketBeat. • Corebridge Financial, Inc. is a relevant entity in the life insurance industry, with potential implications for industry trends and M&amp;A activity.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This investment may impact the life insurance industry, particularly in the areas of M&amp;A, reserving, and reinsurance, as Corebridge Financial, Inc. is a significant player in the market. L&amp;A consulting actuaries working on projects related to these areas should be aware of this development and its potential implications for their clients and work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQLVlaeXdremlzTm9RYVN6cnVCX3poNTFsb0hrQjNFRXFmamZkVjduMWFXN2kwalNJeFkzUm4tN2QzaUNFVHQ4dGdMVjB2eFZQTWQyQk8tVzY3SXpFLTc1LVBVSEJMZ0lrdFNoZFlIQzNSb2I0WUtQam5qX19TcG5Qdk91MVlreXBxeVYzU2hQYWlBcHdxUGJNZTRKUnJOS1g0VWJ1eVdreGpKcmdmNDNjOEp5Zw?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE: CRBG) holders back Equitable merger plan - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-07-30
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (NYSE: CRBG) shareholders have approved a merger plan with Equitable, although specific details of the plan and the merger timeline are not provided. • The merger is expected to have significant implications for the life insurance industry, with potential effects on market share and competition. • The exact terms of the merger, including any potential changes to leadership or operations, have not been publicly disclosed.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This merger may impact L&amp;A consulting actuaries working on reinsurance and product development, as changes in market share and competition could lead to shifts in client needs and opportunities. Actuaries involved in GAAP and reserving work streams may also need to consider the potential effects of the merger on financial reporting and reserve requirements for the combined entity.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">287.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.67</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.21</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.20</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">20.66</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
