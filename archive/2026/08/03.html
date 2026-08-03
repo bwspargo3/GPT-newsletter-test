@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 3, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 3, 2026 &nbsp;·&nbsp; 6 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxOQkxaUFNUR1VaUlJCa1phRkMzektNeVA4c3dQUTNEY2J0d2hhRGpVYXJZcUhhcmNuMnpjLUE5STE0eUtKVVRFNExZYlZkYS1WZXZrbm00cjA4NDNzRGRHM3Z3RW1wU1Q0RUdyTWRhT1EyOUp0VGxDSDNLdURhd1FkWTkwVGNVUTMwTXhnaDRKX2hDeHEwdzdtX3R0dm1tLUVVYXZid0FvSHAzU2l3Mkpr?oc=5" target="_blank" rel="noopener">NAIC regulators begin consensus phase on annuity illustration overhaul - InsuranceNewsNet</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Actuarial Guidelines &nbsp;·&nbsp; 2026-08-03
+            </div>
+            
+              <div class="article-summary">• NAIC regulators have begun the consensus phase on overhauling annuity illustrations, aiming to improve transparency and consistency. • The overhaul is expected to impact the way annuity products are illustrated and sold, potentially affecting product development and sales practices. • The changes may require updates to actuarial models and assumptions used in illustrations, with a potential effective date to be determined.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development directly impacts L&amp;A consulting actuaries working on product development, as changes to annuity illustrations may require updates to product designs, pricing, and sales materials. It also affects actuaries involved in reserving and GAAP reporting, as the overhaul may lead to changes in reserve calculations and financial reporting requirements.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxPMFBqV3VfWXhiWlFJYnk1VG5kYng2TkZLYzhQOHNoaFVST3R4Z25UVFdkV2xqTXdFS0ZmbXZUYXFseE5OV3BqUV9uSDRNVmpzNFNWZUxvRHdOLThTUERBZm5jNFRUWVJ2enUya0M4Z29Da3JiQ2pEQjhIdEl5REQ5OGVLMnZhS0FTYWdUUUF4Q21UZXN5Q2lKRVhJYkk4ZTlIYVV2WVZ0cXFqRUhBbzdaU2d5UGVCcDg5SS02V05PU0ExRWhRd1R1blFkTnBNdjhnZkRYak1HaFp3UWhFRDgzcEVCQWdWY1IwM1Nz0gHrAUFVX3lxTE8wUGpXdV9ZeGJaUUlieTVUbmRieDZORktjOFA4c2hoVVJPdHhnblRUV2RXbGpNd0VLRmZtdlRhcWx4Tk5XcGpRX25INE1WanM0U1ZlTG9Ed04tOFNQREFmbmM0VFRZUnZ6dTJrQzhnb0NrcmJDakRCOEh0SXlERDk4ZUsydmFLQVNhZ1RRQXhDbVRlc3lDaUpFWEliSThlOUhhVXZZVnRxcWpFSEFvN1pTZ3lQZUJwODlJLTZXTk9TQTFFaFF3VHVuUWROcE12OGdmRFhqTUdoWndRaEVEODNwRUJBZ1ZjUjAzU3M?oc=5" target="_blank" rel="noopener">Does Corebridge’s New Protected Growth Annuity Feature Reshape the Bull Case for Corebridge Financial (CRBG)? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-03
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) has introduced a new Protected Growth Annuity feature, details of which are not specified in the article. • The feature is expected to impact the company&#39;s financials, although the article does not provide specific numbers or dates. • The introduction of this feature may reshape the bull case for Corebridge Financial, according to simplywall.st.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as the new feature could affect the company&#39;s risk profile and capital requirements. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of this feature on financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPakZXSFBLSlY0aHBVNEoxZ3ppTjJkM3FIa1UtQnZBYkZuU3NxWWxLQk84dmZIeDFIYUNOSlBKYjROZUQ5a2ZCOU9EY3FJbVRkYWxxTUVqbk0xbEZaMjBGc25POTQ5cGVJQklOTkxvRlNKWmpWcGZQQlFVT01hZnB6VGJ2VDZjMU85Q0pXUjNyakJPbnlUWHJaRnNrOWZHZi0xRlAtNlpZMzZYcnd2Y0FfTW04Z2dpeW9wSERYRnRBblVacE1rUWhSbjJGazlrVGhPdHE1Tw?oc=5" target="_blank" rel="noopener">Lincoln Financial reports $1.3 billion net income for second quarter - Insurance Business</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-08-03
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial reported $1.3 billion net income for the second quarter. • The report highlights the company&#39;s financial performance, but specific details are not provided in the article. • The information is available on Google News, with a link to the full article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This report may impact L&amp;A consulting actuaries working on GAAP and statutory reporting projects, as it provides insight into a competitor&#39;s financial performance. It may also be relevant for actuaries involved in reserving and capital management work streams, as they assess industry trends and benchmark their own company&#39;s performance against peers like Lincoln Financial.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/60086/000006008626000045/l-20260803.htm" target="_blank" rel="noopener">Lincoln National 8-K Filing – 2026-08-03</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Lincoln National &nbsp;·&nbsp; 2026-08-03
+            </div>
+            
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxPcEYycng2ei1ibTJJY1BMR2JqXzlKY1ZHZmh0WHpLdkZMMl9rczlxYW5nQWtZbFZuUnp1RE5EaGR6ZWdSM2ZEalBoYkpjeFhzZjFXc1ZZOUhpX2VucEo0ZGM4M0lISmpncUhxaVFkVnpReExBdXhVQ2pxYlpjUk5McWdFbkdRTGxNb1h1bXZ6SlRLYjI1OUZyUVVpTzdTOXNZVGNFV05uRW40aFg0T21SWEFad3M4UVNCVGpvcjhNNUdPaVp5QTZqQWRhTWUtVExSWDdyOXhuZFQwd2VPcEFSMmhXZzB3RkE?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. $CRBG Position Increased by Arrowstreet Capital Limited Partnership - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-03
+            </div>
+            
+              <div class="article-summary">• Arrowstreet Capital Limited Partnership has increased its position in Corebridge Financial, Inc. ($CRBG). • The exact size of the increased position is not specified in the article. • The development may indicate growing investor interest in Corebridge Financial, Inc.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This increase in position may have implications for L&amp;A consulting actuaries working on capital and reinsurance projects, as changes in ownership structure can impact a company&#39;s strategic direction and risk management approach. It may also be relevant for actuaries involved in GAAP and statutory reporting, as changes in investor sentiment can influence financial performance and reporting.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxObkNHTnE1ZTc4X210dWZORUd1OWtVYUc0d0VZc25wR2VaaWJRbDl2UTBrQ2p5ejlKMUNFSTlnZlQteVhEWWoxaE03SXRRVWs5RTJVdjBsZ2Mtdk52a09JcU00cUpIR2RuTmNJaTRuaU5zQkNEVk9lc09DU3BtZlludFVHa0VEZ1UwVUxFaHVRZzRLazZkUTBCWTZlam1VNmg0QlNiZTFFam5CRV9wQkFjaVlnWFJieDNqdHExSWtDUWNvQThPc2VPcTRXcw?oc=5" target="_blank" rel="noopener">Vestor Capital LLC Sells 46,400 Shares of Corebridge Financial, Inc. $CRBG - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-02
+            </div>
+            
+              <div class="article-summary">• Vestor Capital LLC sold 46,400 shares of Corebridge Financial, Inc. ($CRBG). • The sale was reported by MarketBeat. • The exact date of the sale is not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ownership or investment in Corebridge Financial, Inc. could influence the company&#39;s reinsurance strategies and capital management. Actuaries involved in reserving and GAAP reporting may also need to monitor the situation for potential implications on financial reporting and compliance.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">284.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.68</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.22</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.21</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.66</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">17.09</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
