@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 5, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 5, 2026 &nbsp;·&nbsp; 12 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNTmtkZ1hSOXJXeE80bS1qVG5xZWpYamxpWmwxZGRlS1dlOXFiN3Z5dXJpb3c0Q2JnSXRiXzVvQWtFaDB6X01mTFZDb1hYeUdwLUhDVmd5bFhuSU0wVXRGYzhyZ1B1ZmpJSnB1TFlKOVkzb2xTY0tRUFZHY0dMMncyZi1KQ0praGFSYkxvVF8yTnBpbDNQcXQyNVd5STBUVlB5UklVU1VGNXdiVjlvM2poNVo2cEFEeEx4VnJ2aXV4ZkUyUkoxMWQ0?oc=5" target="_blank" rel="noopener">Corebridge Financial earnings matched, revenue fell short of estimates By Investing.com - Investing.com UK</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s earnings matched estimates. • Revenue fell short of estimates. • The company&#39;s financial performance may impact its reinsurance and product development strategies.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reinsurance and product development projects, as Corebridge Financial&#39;s financial performance could influence its risk management and product offerings. Actuaries involved in GAAP and reserving work streams may also need to consider the implications of Corebridge Financial&#39;s revenue shortfall on their clients&#39; financial statements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/jackson-financial-ceo-caps-40-year-career-with-blockbuster-q2" target="_blank" rel="noopener">Jackson Financial CEO caps 40-year career with blockbuster Q2</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Jackson Financial CEO Laura Prieskorn delivered her final quarterly earnings report, with retail annuity sales of $5.9 billion, up 34% from Q2 2025. • Record registered index-linked annuity sales reached $2.3 billion, a 69% increase from the year-ago quarter. • Prieskorn will step down as president, CEO, and board member on September 30, with CFO Don Cummings succeeding her as CEO, effective October 1.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The strong Q2 results and leadership transition at Jackson Financial may impact L&amp;A consulting actuaries working on product development and reserving, as they may need to consider the company&#39;s shifting strategy and growth prospects. This could also have implications for GAAP and statutory reporting, as well as reinsurance treaty negotiations and capital management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPMlpYODhJV3ZEeGVCQVlyNHJ5NXZEbkx2bTk0WFgwb3VrUTBHU1p6eXVpa3VPR21ZUVQ2bW1kWVJyVGJKZTRWLV9vTnYzUGtkd3BWS2x0TjkyeUJpbkdfTE9FSzk0VXByazNDRjZJYjJwckhVdDF6dVpCZ01wRkFpQVFDNlpZanJqRzZoQ0ZOZnIwY3RrYk13QlM5SklFRlVXNUxLZl96Y2J4MHlkc0xQSThZNGREQTdxakxrdWpIWU9iWGMzcEE?oc=5" target="_blank" rel="noopener">Annuity sales hit a record as war and Fed jitters redraw fixed income - InvestmentNews</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:FIA Market &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Annuity sales have reached a record high due to market uncertainty. • The current war and Federal Reserve&#39;s monetary policy have led to a shift in fixed income investments. • Investors are seeking alternative investment options, such as annuities, for more stable returns.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This trend may impact L&amp;A consulting actuaries working on product development and reserving, as increased annuity sales could lead to changes in product design and reserving requirements. Actuaries may need to reassess their models and assumptions to account for the shift in investor behavior and market conditions.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNTDdEMDJYekVmVkRFQ1ljSjYtb1lvMVZlN3hBM21MTmFlclhHUG5kOGQ3QkNSOEtsenlNU2R6V0xJbVVDT1FoaHBINzV4cG9QMF9LMG80Wk01WjkzVmk3SEJveHI1TjN5NXJMUzNUS0tWdG1ySTVKX0s3ZkxPVE8tRVNhVG5lS1cxWXg3VTZ6c0U5TlBQSHNFcVAwYWNsUjhaVDRabU84dEplbmlqUklZYThwS1FWR2Rhd2JWd0pWdGNpZjlINUlMMXpWWUFRTnJTMFNucGlHOA?oc=5" target="_blank" rel="noopener">Jackson posts record RILA quarter as retirement income demand surges - Insurance Business</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Jackson posted a record quarter for Registered Index-Linked Annuities (RILA) due to surging demand for retirement income products. • The surge in demand is driven by consumers seeking guaranteed income in retirement. • The record quarter highlights the growing importance of RILA products in the retirement income market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters for L&amp;A consulting actuaries specializing in product development and reserving, as it may lead to increased demand for expertise in designing and pricing RILA products, as well as reserving and capital management for these products. It may also impact reinsurance work streams, as insurers may seek to manage their risk exposure through reinsurance treaties.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPTnJCRDc0NGYxQUdyMEpzaUhiY21zTHRzQnNBMlJQNXBGc3p3NGZWOG9oRlpKQ3Y3Z0lyNHcyRkdEQTlabWw0ZVloSGRrUm1hT3QzOXY1NGxueGpiN3FUOFI2QkdESGxpTXBCWnpLSFlSeTdUUFRMbFpMSlJ4anFqa2JINU9OZ0FKLWdOWVVIOFpueXpYaWdzOHZlMXRPTTdCMUE?oc=5" target="_blank" rel="noopener">Corebridge (CRBG) Reports Q2 Earnings: What Key Metrics Have to Say - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-05
+            </div>
+            
+              <div class="article-summary">• Corebridge (CRBG) reported Q2 earnings, with key metrics available as of the report date. • The report provides insight into the company&#39;s financial performance, although specific numbers are not provided in the article summary. • The earnings report is available on Yahoo Finance as of the current date.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This report matters to L&amp;A consulting actuaries as it provides competitor insights that can inform reserving, GAAP, and product development work streams. Actuaries can use this information to benchmark Corebridge&#39;s performance against their own clients&#39; and inform strategic decisions related to reinsurance and capital management.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPYUVUS2l2VWhsdzN0RHhweXJFajAwMGtNUzVwWnB6QThtWjRMSUdmQVBBWVRZNjdxbUR5YjNTTkFqYUx2dHV6WVprN1p2M081SDgzRWgtV2VJeGxKUHVmU1k0cmYyXzN1QzA2OUQ4c3IzNWc4N204Z3MyZlFyZUFsT3VwQXJ5R0lMc3p0aEphbl84TEQtOVJhbUdMY3lwOTZQR0ZuVDhDQnhHSHhiUHVj?oc=5" target="_blank" rel="noopener">Corebridge Financial Announces Second Quarter 2026 Results - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial announced its second quarter 2026 results, although specific details are not provided in the article. • The announcement was made available on Yahoo Finance on an unspecified date in 2026. • Further information can be found in the linked article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This announcement may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, particularly those involved with Corebridge Financial or similar entities. The results could impact financial modeling, product development, and capital management work streams, depending on the specifics of the announcement.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNMlNGLVNfejZHS3pzWDhKS0xoamRKQXNmak5PcTBuSVJmYnl6MFRqekdETV9UTF9WbzFmLTdneklnVURzRFZlaUhqSG1qSGZFNWxBMHdmTERZQTVmQ1ZHanFFVm1Gc3daZWVfZWZoZE0xVk1HeGZwM0N5SlRnY2hmTS1halJtREN2a2hXcmFYc1V5cmpqVFNwUw?oc=5" target="_blank" rel="noopener">COREBRIDGE FINANCIAL ($CRBG) Releases Q2 2026 Earnings - Quiver Quantitative</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial ($CRBG) released its Q2 2026 earnings, as reported by Quiver Quantitative on August 5, 2026. • The earnings report is available on Google News. • The release date of the report is August 5, 2026.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This earnings release may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as it provides insight into the financial performance of a key industry competitor. Actuaries involved in product development and capital management may also find the report relevant for benchmarking and market analysis purposes.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNdGhaR0kzZ19sWVpRd08tVXZ5ZVBIRElrRk5JUHdCMjZMQWxJWFVTRTNRQnM0aGluaXRmQWJDbXFTWmRfb0dmVlJhSExiSVlMeW1id0xzS0VQNnI4TkhxWU56bmZlMXdFZHI3NlJFLVVXZC1kZWhzT3J5Wnk2UG9NUWt5RERmalZ1UUZlbDI3QnBxX25WRGJhQVhQaDJUQWpfTllYMjlCakZJOENndE5KSG9CVDNtb1dUbUVEVE9JTFVLVUUxYXc?oc=5" target="_blank" rel="noopener">Corebridge Financial earnings up next after analysts cut forecasts - Investing.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s earnings are expected to be released next, following analysts&#39; cuts to their forecasts. • The exact date of the earnings release is not specified in the article. • Analysts&#39; cuts to forecasts may indicate a potential decline in Corebridge Financial&#39;s financial performance.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving and GAAP/stat reporting projects, as changes in Corebridge Financial&#39;s financial performance could influence industry trends and benchmarks. It may also affect actuaries involved in competitor insights and market analysis, particularly those focused on life insurance and reinsurance.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNXzRxbFFxMllmUG1fZ1VOT0I0LWN3UFBTX0NYZkRXSVRuOXVmTXZwS1BNNDhUcGNhb2xZZW5QZGNUZjBRZGpvc3hsRHNLT1RLX1hCWXFlLXBGRklTbk9kREZXN1o4SVMzcGFib2tyTUFZMUFxY05QWVBsWFJoUGtuZ01JUkVEV1V6M1lxc281OUFtdlBJa2NnLXVfdUZhU1U?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Tops Q2 Earnings Estimates - Yahoo Finance</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) reported Q2 earnings that exceeded estimates, though specific numbers are not provided in the article. • The article is available on Yahoo Finance and was retrieved through Google News. • The earnings report is for Q2, but the specific date of the report is not mentioned.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as Corebridge Financial&#39;s financial performance could influence industry trends and benchmarks. Actuaries involved in competitor analysis and market research may also need to consider Corebridge&#39;s earnings report in their work.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNenFrVXNJVklxU0dDeGlSTnpON3hGak9FMmJ3SG5XNTlwNlJEN1U4SnJYd0V0RlNiWFd0LUxQS3EzWDJFVlpxVE5RMGJOZ3FzM2JIaDNSMENkbDE0NjRXaUw4STIzTGhNNzhaaUNDbUhTSjJJU3RDSHhTYWVPNjA1anAxZ1A4UVVteTgxVnBmOFpNZHpXOUVLTEIzV1BpUmNVZC1VVjhKU0MyRGozU2twVEhoOA?oc=5" target="_blank" rel="noopener">Corebridge Financial Q2 Adjusted Earnings Fall, Revenue Rises - marketscreener.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial reported a fall in Q2 adjusted earnings. • The company&#39;s revenue rose during the same period. • The exact figures and further details can be found in the article from marketscreener.com.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reserving and GAAP/stat reporting projects, as changes in earnings and revenue can affect financial statements and reserving requirements. It may also have implications for product development and reinsurance work streams, as companies like Corebridge Financial adjust their strategies in response to financial performance.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1137774/000113777426000170/pru-20260804.htm" target="_blank" rel="noopener">Prudential Financial 8-K Filing – 2026-08-04</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Prudential Financial &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Prudential Financial filed an 8-K on 2026-08-04 with the SEC, as disclosed on EDGAR. • The filing includes items 2.02, 7.01, and 9.01, with accession number 0001137774-26-000170. • The specific content of the filing is not publicly disclosed, but may impact competitor insights and market analysis.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This filing may have implications for L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as it could provide insight into Prudential Financial&#39;s financial performance and risk management strategies. Actuaries should review the filing to stay informed about industry trends and competitor activity.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPeS1XRXpXc3phNTVWVzdZUEZWdzRzcnhhZmVSbU42d29IcC1ZdGVYcnNpODNNMXFqNElRaTdCT1B5Z1ZNM2NKNXlUUXltWDZVa0RCNWN5dGNrZENmc3Fxa24wN3N2U0xLNndZYUxmcGRKMjNfX2t0SVdwYUtKeXlrR2w1d0tmLXFaS25JOUZZMTlPR0J2S25Rd1FLQnNxT1ZXVUUyWnpHZ0VhRUIt?oc=5" target="_blank" rel="noopener">Brighthouse Financial credit rating stuck in limbo as $4.1B Aquarian buyout drags into ninth month - The Business Journals</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-08-04
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial&#39;s credit rating is uncertain due to the delayed $4.1B Aquarian buyout, now in its ninth month. • The prolonged acquisition process may impact Brighthouse Financial&#39;s financial stability and regulatory standing. • The buyout&#39;s outcome will likely affect the company&#39;s strategic direction and operations, including potential changes to its product offerings and risk management practices.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The delayed buyout and resulting credit rating uncertainty may impact L&amp;A consulting actuaries working on reserving, reinsurance, and capital projects for Brighthouse Financial, as it could lead to changes in the company&#39;s risk profile and regulatory requirements. This may also affect product development and GAAP reporting work streams, as the company&#39;s financial stability and strategic direction are clarified.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">278.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.70</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.23</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.23</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.86</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
