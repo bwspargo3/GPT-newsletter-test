@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 8, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 8, 2026 &nbsp;·&nbsp; 10 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/corebridge-annuity-sales-slip-ahead-of-equitable-marriage" target="_blank" rel="noopener">Corebridge annuity sales slip ahead of Equitable marriage</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s annuity sales declined in the second quarter, but increased 13% sequentially from the first quarter. • The company&#39;s Individual Retirement segment saw a 41% decrease in premiums and deposits from the prior year quarter, primarily due to lower fixed annuity and fixed indexed annuity deposits. • Corebridge finished third in LIMRA&#39;s 2025 annuity sales rankings with $27.4 billion, but slipped to fifth in the first-quarter sales figures.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on product development and reserving, as changes in annuity sales trends can affect product pricing and reserving assumptions. Additionally, actuaries involved in GAAP and statutory reporting may need to consider the implications of declining annuity sales on financial statements and capital requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxONUNzR3RtUU9Sdk85N1ZjVVpxVE9MbmJoc2lHV2p2Z1NEWkt5cF9zNmhvdDBmUjhfaGFteWl4TGEwMjcwb0MwcElCdTFxUEktdldjdWRVZDdMenlBRG9iNldwUnR4OW92NDM2ZnlZdmpmNlNGUEJaeVloc05TbjZUVkNsOXZJejAwdGtRdWs3ZllVQ2FVcTNXd3dkT0NRZw?oc=5" target="_blank" rel="noopener">Corebridge annuity sales slip ahead of Equitable marriage - InsuranceNewsNet</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Corebridge annuity sales have declined ahead of its planned merger with Equitable. • The exact sales figures and decline percentage are not specified in the article. • The merger, referred to as the &#39;Equitable marriage&#39;, is expected to impact the company&#39;s future sales and operations.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reserving and product development projects, particularly those involved with Corebridge or Equitable, as changes in sales trends can affect reserve calculations and product profitability. Actuaries may need to reassess assumptions and models to reflect the potential impact of the merger on future sales and business operations.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxQRUo0dm1vTTIyRDZDdHlDZDYwbmh3dFd4U0ZCcGktcWV0cXFucjRreU5teG9DUE04cHduWmNqT1BRVC02YkwwaVNGNVBlSGtyTnZDVjdMMXFGTE5JVE9hWTFwaGpIMTE3WjdSZVdrb2lxeElGckJybk9YVFdWZVo4c1l2U1FsdTQ4eC1nZ3g1cU5LSXVDVnBRSGgyMHhEaWZnWjFWU1hQd1Z3UG81Y0lzVnZkbEJnS0tzWHV3dWN5aDh2aVRGXzdZNUsyVWJnWE9mUmUtMzhxRQ?oc=5" target="_blank" rel="noopener">Corebridge Financial Insider Sold Shares Worth $422,076, According to a Recent SEC Filing - marketscreener.com</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial insider sold shares worth $422,076 according to a recent SEC filing. • The sale was reported in a recent SEC filing, but the filing date and insider&#39;s name were not specified. • The total value of the shares sold is $422,076.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reinsurance and product development projects with Corebridge Financial, as changes in company ownership or leadership can influence business strategy and risk appetite. Actuaries involved in GAAP and statutory reporting may also need to monitor the situation for potential implications on financial reporting and reserving.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNMlpNOE5JWkZZcXhDRVJTbHl2TTVTcVVRU2VGNElhTHdHSTFaTFo5WlI2SU4ycllvYXJVZFhSVHdYdjQtYXJ6NjJNRVZYUDdsWEF3NTlyR2pVYWJrX19ZdVRDb0kybVVDeDdnbEl6ZFhjeDJ6dzF5RWE1QVJIaHlNU0NaeE5kVXVrUWFBTXRvS3NkYzhWa1ZJeGtaOXFONjlGZFc5SGhkMExBVXd5ajhrcjZJTUw5eWstd2paTnVNdVBNTjlBdjZROW5R?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE: EMO) reports 9.2% stake in EMO preferred shares - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial has reported a 9.2% stake in EMO preferred shares. • The stake is held in the company&#39;s own preferred shares, listed as NYSE: EMO. • The report was announced by Stock Titan, with further details available through Google News.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as Corebridge Financial&#39;s significant stake in its own preferred shares could influence its strategic decisions and financial reporting. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of this stake on financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1527469/000119312526340236/d115353d8k.htm" target="_blank" rel="noopener">Athene Holding 8-K Filing – 2026-08-07</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Athene Holding &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOcEs1RGV2dENENFM4UjVBSElfcXdLbTg2YmJvUkV1UUlrdzloN2FtZ25CVVE5dFJLR2QxX2FXQ21la2NGSXNBdklybkRMcnNoYVF1Z0REYkJoQTNYT0R2b1FuTFIxY0NZZjlVdWFaTXZBN251WkMzZTBWWHY0ay1Cb2F3enlBaUJ3enFvUFQ5MGVLUUp5S004WW9MTlJlWmlMakNvc3l1aEM0UzVvdk5FM0pGUm4?oc=5" target="_blank" rel="noopener">BHF Q2 Earnings Miss Estimates, Investment Income Falls Y/Y - TradingView</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• BHF Q2 earnings missed estimates, with investment income falling year-over-year. • The decline in investment income is a key factor in the earnings miss, with no specific numbers provided in the article. • The earnings miss occurred in Q2, with the exact date of the earnings release not specified in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This earnings miss may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects, particularly those involving investment income and portfolio management. It may also have implications for product development and capital management work streams, as insurers may need to reassess their investment strategies and risk management approaches.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/prudential-to-exit-emerging-markets-and-shift-3b-to-core-businesses" target="_blank" rel="noopener">Prudential to exit emerging markets and shift $3B to core businesses</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Prudential Financial will exit emerging markets and redirect over $3 billion in capital to core businesses, including retirement, asset management, and U.S. insurance. • The company will reduce its retirement and insurance footprint from over a dozen countries to around half that number, focusing on the U.S., Japan, and select European markets. • CEO Andy Sullivan aims to accelerate earnings growth and improve cash generation through this strategy.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reserving, GAAP, and capital projects, as Prudential&#39;s shift in strategy could lead to changes in their business mix and risk profile. Actuaries involved in product development and reinsurance may also need to consider the potential effects of Prudential&#39;s expanded focus on the U.S., Japan, and European markets.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTUhZSk1nRXFQZHI5QkNQbURsVU1JR0F2RWlwRUxVTW1yT3cxWHkzRUdIdUV6RHV6aFdia0NWODh1U1VpRnQwd2kwMWVnVUNqLXdITWVBMnRoLUxtcFFQaGpWbEw3WVFfWXBnQmlwbE1ieHdMV3VNMEV4Ny1hMUJYRVRxQWdHMmdhZGlYTUVlMDMzUGZOamxfZHN4aW1WejJYMzFyOGhmbDhMLThlcEZNUDFJUUVlWWZnYVBmTWduVFJDVTdxdkt4TW9oaVpyUHBlN1JWVWRFNVdOek5H0gHcAUFVX3lxTFBNSFlKTWdFcVBkcjlCQ1BtRGxVTUlHQXZFaXBFTFVNbXJPdzFYeTNFR0h1RXpEdXpoV2JrQ1Y4OHVTVWlGdDB3aTAxZWdVQ2otd0hNZUEydGgtTG1wUVBoalZsTDdZUV9ZcGdCaXBsTWJ4d0xXdU0wRXg3LWExQlhFVHFBZ0cyZ2FkaVhNRWUwMzNQZk5qbF9kc3hpbVZ6MlgzMXI4aGZsOEwtOGVwRk1QMUlRRWVZZmdhUGZNZ25UUkNVN3F2S3hNb2hpWnJQcGU3UlZVZEU1V056Tkc?oc=5" target="_blank" rel="noopener">Brighthouse Financial (BHF) Stock Still Looks Cheap On Earnings While Deal Risk Lingers - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-08-08
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial (BHF) stock is considered undervalued based on earnings, despite lingering deal risk. • The company&#39;s stock price and deal risk may impact M&amp;A activity in the life insurance industry. • BHF&#39;s financial performance and potential deals may influence reserving and capital requirements for life insurers.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in life insurance reserving, GAAP reporting, and reinsurance, as it may impact the financial modeling and capital requirements for life insurers involved in M&amp;A activity. Actuaries working on reserving and capital projects should monitor BHF&#39;s financial performance and deal developments to assess potential implications for their clients.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNTDhKT0lXUlByU3pGTm9FSnpBSTRBM25rdTRPcDIweUxSajdBdnVmLWpMOHRNRktIcnozb1RSSmlCUDJrNWQ0RUxqTmR0SWRkVnVSTnZqZ1dJMXJCRU5TM3B2TU5xdkdGd1hwZHh0STM2MnppcWtnS1BCa2YtbE43N0FMcUdUT3N1Y2tXSC1VdWZjMnZlT0ZhREJqUzliZEFHSHJxUzljVFRwaU5iRDdQYkt4ckNNSWVnWHlQU2xEVE5CMnNJdURuMERIUQ?oc=5" target="_blank" rel="noopener">Nippon Life boosts Corebridge (CRBD) stake plan with 10.9M-share 10b5-1 program - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Nippon Life is increasing its stake in Corebridge (CRBD) through a 10.9M-share 10b5-1 program. • The program is a planned stock purchase, with the exact timeline and completion date not specified in the article. • The move indicates Nippon Life&#39;s continued interest in expanding its investment in Corebridge.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ownership structure can influence reinsurance treaty terms and capital requirements. Actuaries involved in reserving and GAAP reporting may also need to consider the implications of this stake increase on Corebridge&#39;s financial statements and regulatory filings.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUWNWVTNjSDA1MEtTbE03bFc2YUF4OXJRQ3Rwdlg5YzFFUzF6TzNLeXJYajJuV0pSbGdLdUNJYVozNjM5MEdEQkkxTVRNdlg1cGFVYnRSTUlCZXhSQTNMT2tqZkNrTl9jUlpxTFl6UTZudUxDNnhOZjJydC0xb1VuR0xmZl9oZEVnOFE0Mm9kZ0loaS1TRzFsMWpkUldxSGRBQkN1cXM1d2V6TThZLVBMeVVoMVViTUkycmNMY1V3R2pHRGY2YlpSUlo1Q0xiWUtCbTJJMEEtemhWSHRqMTA5UGVSSE10bms2RU80XzkyUHUwaVdjek9OUQ?oc=5" target="_blank" rel="noopener">Merger momentum lifts Corebridge, Equitable stock well ahead of broader market - S&amp;P Global</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-07
+            </div>
+            
+              <div class="article-summary">• Corebridge and Equitable stock have outperformed the broader market due to merger momentum. • The exact details of the merger and its impact on stock prices are not specified in the article. • The article cites S&amp;P Global as the source of the information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in market dynamics and company structures can affect reinsurance treaty negotiations and capital requirements. Actuaries involved in GAAP and statutory reporting may also need to consider the implications of mergers on financial reporting and reserving.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">271.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.69</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.22</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.22</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.15</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
