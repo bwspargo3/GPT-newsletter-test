@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 10, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 10, 2026 &nbsp;·&nbsp; 4 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOemRHdlpTRlljRmNITFBLVFdXRkF4U2dWend3ZVdVNjJFRXljaHVvOUw1M283ZjRxdzRCLUR3ci1uSkZtdmN6TUlpdVRSMGFoUWhDd1FYTlpwaXhLM3VKYWNEQ3ZQN294d0VvUVQ1cnJsN1pmZ0loN1lyTWc1RUJSeXowREZqOVRuakk5SWhLS2RvcnhBcEFDdUZnLUN2NTdUNWRv?oc=5" target="_blank" rel="noopener">Lincoln Financial Shifts $5.8 Billion in Reserves to Talcott - MyChesCo</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial has shifted $5.8 billion in reserves to Talcott. • The move is part of a larger strategy to optimize reserve management and improve overall financial performance. • The transfer of reserves is expected to have a significant impact on Lincoln Financial&#39;s financial reporting and reserving requirements.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This shift in reserves may have implications for L&amp;A consulting actuaries working on reserving and GAAP reporting projects, particularly those involved in reviewing and validating reserve transfers and their impact on financial statements. It may also affect reinsurance work streams, as the transfer of reserves could impact reinsurance treaty terms and conditions.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxOYXBiazA0MHZkUzRSV2xGYnpGVm02azBaWElNZWIwamxVaTc2Z3RUWVcyNGt3TlhpSkJPdTBaeFM2b1lFM1d2NkxVeUZJeDI0VkxSLXV0Q00xZnQwcFlLYUhxRFVjUE5aT1l6OWJqazRick9LdnlLVnhDM1BlNDVpa2NveV9yQzlub3FjVjI0bGg2MmtWeHpPb2paN3pRdVQ2Q2lUSmIyMlpLRjh1N0JwNDNQbmZMd0pVMHhtYlpRVmNhVmJJNWh1OW5aTDFvem1lWHdDVmV1UUVhVWdE?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. (NYSE:CRBG) Given Average Recommendation of &#34;Moderate Buy&#34; by Analysts - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. (NYSE:CRBG) has been given an average recommendation of &#39;Moderate Buy&#39; by analysts. • The recommendation is based on analyst consensus, but specific details on the number of analysts or the time frame of the recommendation are not provided. • The company&#39;s stock is listed on the NYSE under the ticker symbol CRBG.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in life insurance reserving, GAAP/stat reporting, and product development, as it may impact the financial performance and stock price of Corebridge Financial, Inc., a potential client or industry benchmark. The &#39;Moderate Buy&#39; recommendation could influence capital and reinsurance decisions for life insurers, affecting the work of consulting actuaries in these areas.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxQU05GZUNtb0FXS2lUQnZzTEw2M1BFVGFFQWJMZzFsRjBvZ28wR2gwQ2ljanJ4Nk5SU3ZaVFVqeU5nMExaRFlYbkVzU3hyWnU3SV9EVkw5Y1J5dHlBbTVoUGdMaHpjWlFkUUhvcjExQ2xNX3BPWTVheDk3ZFhDSHBLaEExUTY2MVpEc3FrWXppaURZNnF2aWxSRGVOSjh1cnRxdFN5cWtuYlBzZmN0bWt4S1VwUDM2V1cyLWxrWExjdFliLVBRZEtsNi10eEVwNWY4NGdaVnVITjE2MzjSAdsBQVVfeXFMUFNORmVDbW9BV0tpVEJ2c0xMNjNQRVRhRUFiTGcxbEYwb2dvMEdoMENpY2pyeDZOUlN2WlRVanlOZzBMWkRZWG5Fc1N4clp1N0lfRFZMOWNSeXR5QW01aFBnTGh6Y1pRZFFIb3IxMUNsTV9wT1k1YXg5N2RYQ0hwS2hBMVE2NjFaRHNxa1l6aWlEWTZxdmlsUkRlTko4dXJ0cXRTeXFrbmJQc2ZjdG1reEtVcFAzNldXMi1sa1hMY3RZYi1QUWRLbDYtdHhFcDVmODRnWlZ1SE4xNjM4?oc=5" target="_blank" rel="noopener">Did Brighthouse’s (BHF) Q2 Profit Surge and H1 Turnaround Just Recast Its Investment Narrative? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Brighthouse (BHF) reported a Q2 profit surge, recasting its investment narrative. • The company&#39;s H1 turnaround is notable, with specific details on profit and investment performance not provided in the article summary. • The article is available on simplywall.st, with the full story accessible via the provided link.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects, particularly those involving investment-related assumptions and analyses. It could also have implications for product development and capital management work streams, where investment performance and narrative can influence product design and risk management strategies.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxPUEo1Q29Qd0xNbGcyUjBCSHBLMEw5VlN2bjRFV2w0TUZWaEg5UnF1WEZOQmlFMjVmYkVNRU5fb1VhVUNZRW1NeE5jVENfbUh2QUxTY3NaTWc4clpQcUp4eHF5UmhvY0g1NnBrVVJjOFZJcW1QYzZXVUEtb2xPNGwwbjJ1Sl82Vzh0eFRQWkJBNzdsQWwwNTFKdDVlTXVkXzlLajlYN3g4NkVvWjRIQ0hwc2hrNXV2eUJZQlJtc005d1V5eHZXOVUwTUVsR1ZWQQ?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. $CRBG Shares Bought by Janus Henderson Group PLC - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Janus Henderson Group PLC has purchased shares of Corebridge Financial, Inc. ($CRBG). • The exact number of shares and date of purchase are not specified in the article. • Corebridge Financial, Inc. is a relevant company in the life insurance industry, with potential implications for industry trends and competitor activity.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and product development projects, as changes in ownership or investment in industry players can influence market dynamics and competitor strategies. Actuaries involved in reserving and GAAP reporting may also need to monitor the financial performance and reporting of Corebridge Financial, Inc. in light of this investment.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">271.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.69</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.22</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.22</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.15</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
