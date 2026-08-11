@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 11, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 11, 2026 &nbsp;·&nbsp; 9 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOSzlNcVNnRXR6OEZwRVRmVWtaODdmWktuYmdzQTVxU3p2NkhzUHpYeWdpSzAwUkQyVEFtcGxLMU54dk9zaHA3UllWVDQ1M2tTUWluTml6d1dmNWJDdEMzeTJJcDVQakdtTHJYTGZuZ3dxbXJZbXBlMWg3SjJlZTZFdzduV19oSzNfUWc4N2gwSDQzdGcyZ193Q1lOVmZWQjRNOGRJYjJiNGVMTWlVQ2lyNC1TTUd2NWs1ejVpUTk4MFRyYW9DeFFGSWFjeFRJdw?oc=5" target="_blank" rel="noopener">Jackson Financial (JXN) Q2 2026 Earnings Call Transcript - The Globe and Mail</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:RILA &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• Jackson Financial (JXN) reported Q2 2026 earnings, with details available in the transcript. • The earnings call transcript is available on The Globe and Mail website, dated August 2026. • The transcript may contain information on JXN&#39;s financial performance, product development, and reinsurance activities.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information is relevant to L&amp;A consulting actuaries specializing in life insurance reserving, GAAP/stat reporting, and reinsurance, as it may impact their work on financial reporting, risk assessment, and product development for clients in the life insurance industry. The earnings call transcript may provide insights into industry trends and developments that could inform actuaries&#39; work on reserving, reinsurance, and product development projects.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQYThCaV9pMzFhZVNTZnJvN0tvT1gyZ0c5V3RPRFVxbHowbE9ZRUs4UDc1ZnA3MFFOWDBWM1RtWS1jMnVvQkowSm5UT2U4UmRWNklsaDIxcXRubl9lLVdNU0JJV29DcThXVXI4WUdXWWhxeUtWNFRJb04xTmZSdXB2ZllidHZpa2dlbXRHSDdkbFFoUXlCekdXS1ZYTmxoQkZsakdrbTR3NmxuWTc4b0h0eGsxaFdGSlNINUpHbk5KWHU2c19HVlBscGtUTkY?oc=5" target="_blank" rel="noopener">Corebridge Earnings Call: Strong Core, VII Drag - The Globe and Mail</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Corebridge reported strong core earnings, but Variable Interest (VII) drag impacted overall performance. • The company&#39;s earnings call highlighted the contrast between core business strength and VII-related challenges. • Specific financial details were not provided in the article, but the earnings call suggested a mixed outlook for the company.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news matters for L&amp;A consulting actuaries specializing in life insurance reserving and GAAP/stat reporting, as it may impact the financial modeling and reporting for clients with similar business profiles. The VII drag may also have implications for reinsurance and product development work streams, particularly in terms of risk management and capital planning.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQmw4RkZlRGNnRVNLT1VQWU9iMVVNcU1hQ3ZqdG9kaDdsLXpEX1VNYi1ZX21wNmZfZmM5ekd0ZHlwR2dIYl9IN19nZzNfQU1NamhPN245dlRmdEp0OUttQ1hJVEZySDYyNHRFdjRFUTQtQ3ZQcmR1aGhMdEh3aHRmWkg0allYdW4yQVhZRjdYc21YbHBtNnQ3OGRlTWgxb1lSZ3prZVFpVFY4dVpvb3U4WE5SSFpUVmc0Q0JhWWZ6NGphdHctaGNOODh1U09iZE94T3V4Z181LXZnaWU10gHcAUFVX3lxTFBCbDhGRmVEY2dFU0tPVVBZT2IxVU1xTWFDdmp0b2RoN2wtekRfVU1iLVlfbXA2Zl9mYzl6R3RkeXBHZ0hiX0g3X2dnM19BTU1qaE83bjl2VGZ0SnQ5S21DWElURnJINjI0dEV2NEVRNC1DdlByZHVoaEx0SHdodGZaSDRqWVh1bjJBWFlGN1hzbVhscG02dDc4ZGVNaDFvWVJnemtlUWlUVjh1Wm9vdThYTlJIWlRWZzRDQmFZZno0amF0dy1oY044OHVTT2JkT3hPdXhnXzUtdmdpZTU?oc=5" target="_blank" rel="noopener">Brighthouse Financial (BHF) Reversed Prior Losses In Q2, Is The Stock Still A Bargain? - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• Brighthouse Financial (BHF) reversed prior losses in Q2, indicating a potential turnaround for the company. • The stock&#39;s performance may still be considered a bargain, depending on various market and financial factors. • The Q2 results may impact BHF&#39;s financial reporting and reserving requirements, potentially affecting its GAAP and statutory reporting.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on GAAP and statutory reporting, as well as reserving and financial modeling projects for Brighthouse Financial or similar clients. The Q2 results may also have implications for product development and capital management work streams, particularly if BHF&#39;s financial performance continues to improve.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxOMFJjZUFzZEMyYlNGNXZVZmRCVkE5U3oyWE9NSDROWENmS0wzaFhaUGpoSFVfN2FrdFFvWjhHd193XzlySVQtVTNWT24xYUpFV3pDX05sUXVScV9nci1ZUi1BQUlyUVRYZEVjaVMyRndNY0t2OXNFdG9yRHUwUi1QU0c2MTlHNGFVcXBPVFB4dHVaclMzSmgzMEYxSkkxTXZOXzJ1ZUp1YVQxTzVVR1V6LXhPbTA3ZDFRNVdmYTFCNlpIdnk0dS1Bb1luUkFXdWhfdmhLQw?oc=5" target="_blank" rel="noopener">Private credit backs your clients&#39; annuities, but disclosure is thin - Insurance Business</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Actuarial Guidelines &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Private credit is increasingly being used to back annuities, with limited disclosure available to clients and regulators. • The lack of transparency in private credit-backed annuities raises concerns about the potential risks and returns for policyholders. • Insurers and reinsurers may need to reevaluate their reserving and risk management strategies to account for the growing use of private credit in annuity products.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development has significant implications for L&amp;A consulting actuaries working on reserving, reinsurance, and product development, as it may require adjustments to actuarial models and risk assessments to account for the unique characteristics of private credit-backed annuities. Actuaries will need to carefully consider the potential impact on GAAP and statutory reporting, as well as capital requirements, to ensure that their clients are adequately managing these emerging risks.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxOYnotM2VMbUlBNXU0dXBTUjZZZFlBMXlaTE1tT2M0eWxhOFNsT0NDVGpoZUl0M3dTWmI5QWQwOWpCSzdHcERPZ0ktUUdYS1NjUEZibWw4cHE5MDlBTm12WDl6dHlyYWVEMmVTVzREQWVvUGlQa0VXd1ZicnVIUW5yNWJCb0psM2FJbmVZZmFQbG1jUGhWQnJER2xpQzg3Q3hzUmZSWWd5Zzd0Z1JNbUt6OHpvcjV0bDZIYUZjT2lfSURVSFdHQ0pSN2tkQkZjU3QxN1FvUnNVRFR6S25DVl9mWE9SaGMxUdIB6wFBVV95cUxNaHc0bFpSbnRKYTlfVlhiQkV4VDJBZ21HdHdFV01kMXJLWGp4cFlrR0xGaWRuVkVpNTVZOE0wRWRnMW1ZczBwTWxxT1RYY3lmZ2dXNXpYcHo2TFRYQmtaMHVrb2drb2Z5cUF0aC1BTGYzUmQ0OW9FQjFRbEJVRTljTm5uWXJxclpBYmxQZ01xQ1NlajB1VUl1aGh6TFpJcjg1S2NDNnFGMkJrVlZWV2E1QU1EYUthaHlXU1dHeGVDT3BDeFZtaktSRUM3eUd4d2M2Um15RExnSkRCUFpWUkprd05MbFYwdzJJdEs0?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Is Up 7.6% After Q2 Profit, Capital Returns And Annuity Expansion - simplywall.st</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) stock is up 7.6% after Q2 profit, capital returns, and annuity expansion. • The company&#39;s Q2 profit and capital returns indicate a strong financial performance. • The annuity expansion suggests growth in Corebridge&#39;s business, with potential implications for the life insurance and annuity market.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in product development, reserving, and GAAP reporting, as it may indicate a shift in market trends and consumer demand for annuity products. The expansion of Corebridge&#39;s annuity business may also have implications for reinsurance and capital management work streams.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Carrier Watch</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1527469/000152746926000057/ahl-20260810.htm" target="_blank" rel="noopener">Athene Holding 8-K Filing – 2026-08-10</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Athene Holding &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxOTl94a2cxSUhINVpqLVFsTWtTdGhHeHZfUGhkb204NnBKVmxMYnBWZVVaVzF3cmNsZTNlZElzYkZRbWE3OWxXSlNIWGg5R3NaLXJBY0V5MTlPT2FSUHNnNFVUS1doelhPMTJlMlVvd2Q1MnJWU0pQY2o1X0p6VXliRXdUWFA5bmpuSzgzakhibTVKQmwwX0s4cG5JLVRWa19oLTRrME9fTF80TTcyT045UzQ4Z1RlU1JmcDNnMzZfZ0RjeUlfdk9GbFpwZDBQdDFseVhDVFJjVQ?oc=5" target="_blank" rel="noopener">Lincoln Financial CFO exits amid string of senior leadership changes - Insurance Business</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Lincoln Financial &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• Lincoln Financial&#39;s CFO has exited the company amid a string of senior leadership changes. • The changes may impact the company&#39;s financial reporting and strategy. • The exit follows other senior leadership changes, but specific details on the CFO&#39;s replacement and the reasons for the exit are not provided.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                The CFO&#39;s exit at Lincoln Financial may impact their financial reporting and reserving strategies, potentially affecting our work streams in GAAP and statutory reporting. This change could also influence their reinsurance and product development strategies, requiring our attention as L&amp;A consulting actuaries.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE10N21IQ19jaGtIb0tiVDZwSGZ4YnRGbkw5b0tSMzczM29LSkY4MmpWNTMyLV9LNzdaNG56czl4SUxEUUw2bS1oczNJNk4xTVRqRWZHa00ySlZhMXV0UTFpZW5SaWc?oc=5" target="_blank" rel="noopener">KDB Life, Lotte Insurance, Yebyeol Insurance Successively Up for Sale... Capital Emerges as Main Barrier to M&amp;A - 아시아경제</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• KDB Life, Lotte Insurance, and Yebyeol Insurance are successively up for sale. • The main barrier to M&amp;A is emerging as capital. • The sale of these insurance companies may impact the market and create opportunities for consolidation.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on M&amp;A projects, particularly those involved in capital and reinsurance work streams, as it could lead to changes in market dynamics and consolidation opportunities. Actuaries specializing in reserving and GAAP reporting may also be affected as the sale of these companies could result in changes to reporting requirements and reserving practices.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQakdTQ0NhZzJaeS1QYkhWYXdDc0dBYlMwQ3BId2dBRW9YNE9aMkUyejI5VkhTX2JONW93X0Q3ajhsS2JHeGxVR2hTVWFlRzMyVjFrR0cxTklfd3pVeTlZSTcxNlozZS1nQmlGdVRYQzNEdm9DRWNIR1dkclJXWk5PUnV3?oc=5" target="_blank" rel="noopener">CRBG Looks 4.5% Undervalued on GF Value™ - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-10
+            </div>
+            
+              <div class="article-summary">• CRBG is estimated to be 4.5% undervalued based on the GF Value. • The valuation is provided by GuruFocus, a financial news and analysis platform. • The article is categorized under Mergers and Acquisitions (M_AND_A) and is related to Corebridge.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in mergers and acquisitions, as it may impact their work on due diligence and valuation projects, particularly in the areas of reserving and capital management. It may also have implications for product development and reinsurance strategies in the context of potential M&amp;A activity.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">270.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.65</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.20</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.19</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">14.90</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
