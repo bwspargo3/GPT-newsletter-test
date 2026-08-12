@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 12, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 12, 2026 &nbsp;·&nbsp; 6 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRVpKc2tzYWJhWldqaTBDeVlxV0lpTWJJeEdnUm9PME5rVk1EZ2VSbHpaazh5M3FESDI5TVprRTRnTXM1b2kyRDllM0JKWkdKelJwTEh3TWpyMkJlWEU3MGswUFZqbGZZcEF1WXNIRVJ0b1J3S1hnUUk3SXRDb21zb0lLb3E1NWF5M0JTUUI1RHY1WXc0aVFqUllycXpVRkdJUl9XRmd2OTlGbUZuZHdXYWh0cWlWUGpmY3FPcWdwd0c4Z2swak1lYXZ4YlgyOHVqa2ZocHRmdHNnRGN4TFE?oc=5" target="_blank" rel="noopener">Corebridge Financial (CRBG) Q2 2026 Earnings Call Transcript - The Globe and Mail</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-12
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (CRBG) released its Q2 2026 earnings call transcript on August 12, 2026. • The transcript is available on The Globe and Mail website. • The earnings call provides insights into CRBG&#39;s financial performance and outlook for the remainder of 2026.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This earnings call transcript matters to L&amp;A consulting actuaries as it provides valuable insights into the financial performance and strategies of a major life insurance company, which can inform reserving, GAAP, and reinsurance work streams. Actuaries involved in product development and capital management may also find the transcript&#39;s discussion of industry trends and outlook relevant to their work.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQWXVnUnVDd1BNY011WEt4YXpfU2pTRGlqcW1acWxkSjFhRFRoUEZrZllLaU5wWjdITTJYcjVlRE1HeVUxelB4TnNpVks0ZUo5YmE5Vy1HYjVVVFJfS2Q3bmIxRUdjLXlXYklYelMtUTM2My1MOElBbTkyUm0tUEtSRktaYWVnc3JzeFkxM1ZFQjBsaV9tb0RmbHNDMUtkNkQ3RHl6bkdtWl94SXBjZmc?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE:CRBG) Shares Gap Down - Here&#39;s Why - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (NYSE:CRBG) shares experienced a gap down, indicating a significant drop in stock price. • The exact reason for the gap down is not specified in the provided article, but it may be related to market or company-specific factors. • As of the current date, no specific details are available on the cause of the gap down or its potential impact on the company&#39;s financials.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects for Corebridge Financial, as changes in the company&#39;s stock price and financial performance can affect their reserving and reporting requirements. Actuaries involved in product development and capital management may also need to consider the potential implications of this event on the company&#39;s overall financial health and risk profile.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxPOFNTU3VTYjhhWkxwZ29HcmdRNlNwNkZFTE44Y3E3YUdvOUFCTkNQTmMxNGFVbTduMk8zb0p2cXpLNUpzdmVIdHJ6eFFONmhVMkdvWVhDdHhVckM2VUY3Rkw3eTBYenIyOTJmRnIyWTNHRWhZRlVzTGdkTjhFOE56akZfY3h0LVBDenB3aXNDcHhnQm9fUzhySjFZNXZPWEhSc2w3azFBUXota2ladDNmZVpGSTBQRjlFb3JKT1V3?oc=5" target="_blank" rel="noopener">Is Corebridge Financial Inc (CRBG) a Bargain After 3.2% Drop? GF Value Says Undervalued - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial Inc (CRBG) experienced a 3.2% drop, with GF Value indicating the company is undervalued. • The article suggests that CRBG may be a bargain after the drop, but does not provide a specific target price or timeline. • The GF Value metric is used to determine the company&#39;s potential for being undervalued or overvalued.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in life insurance reserving and product development, as it may impact the financial performance and valuation of insurance companies like Corebridge Financial Inc. The undervaluation of CRBG could have implications for reserving and capital requirements, and may be relevant for actuaries working on financial modeling and reporting projects.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxPVGl3M2VMd3ZDU3l6RkhHeDFEVjVmS3RQb1dRTDUwTDc4dVY1c29MMG9zeTF2dDdhWTNWUkNmU1QzR1paTUtIR1ljRk9rX3M3ZVdjTGJoVFYwLXNBZnJmRG00R3Z1TkZBLUJVenNuVHVLWDU5WGZBMHBMdi04TG9scXNTejZ0eGZnczh4VXNuZjUyb3hYbmp2WjZfLWwtZWVXZ3hnOTRlaHV5YndMeFo5NFRaRU12RHZ1SVVGVXBSbVhZeVZ5b0JVdkYtRWlJaGpB?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE:CRBG) Price Target Raised to $43.00 at Keefe, Bruyette &amp; Woods - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial&#39;s (NYSE:CRBG) price target has been raised to $43.00 by Keefe, Bruyette &amp; Woods. • The change reflects the analyst&#39;s updated outlook on the company&#39;s performance. • The new target represents a specific valuation of the company&#39;s stock.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on reserving and GAAP reporting projects for Corebridge Financial, as changes in stock price targets can influence financial reporting and reserving assumptions. Actuaries involved in product development and reinsurance may also need to consider the implications of this updated valuation on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQNFJpT3ZVYW1XSWFfdUEwYVlVVG9hYjFCN080dWFBaEZpdTktMmYycXp2amdGVFJXQXowSG16cnFUNFdOcEk2TXl2QlhWSV90ckFPMVFiRzd4dUEteTAwdExucFFHQjc3N2x2V0dyRURfdldHdG5Vam1xTnNIWUFMYjBjUUhhSU5icGZ3OHNiSEhVSjZZYWlFVWxTQ0dvVHh0MjdSRzdrZw?oc=5" target="_blank" rel="noopener">CRBG Maintained by Keefe, Bruyette &amp; Woods -- Price Target Raised to $43 - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• Keefe, Bruyette &amp; Woods maintained their rating for Corebridge (CRBG) and raised the price target to $43. • The updated price target indicates a potential increase in the company&#39;s value. • This change was reported by GuruFocus, with no specific date mentioned in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This update may impact L&amp;A consulting actuaries working on reserving and capital projects, as changes in a company&#39;s value can affect financial modeling and reporting. It may also be relevant for actuaries involved in product development and reinsurance, as they consider the financial health and stability of Corebridge.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOdkktWWJFR1dBakZfaG9Nb213UFdnOHFiaXNzRlFTcEdxbEp5SWVESTRUWklvODJIZlp3eW1oNS1WQndacWZrcGN5eG1qLVJTdmpsTHpXNkQ1V2FwMWw3eENuQjJ5RG05OGJEd2lmRzVWSldGZFVmWUpiMGMyQ0JQa3B1UUl2akdmelFtazVZQ3JaM1hrcjFCOHo3eHhpT2FnZGhRTw?oc=5" target="_blank" rel="noopener">CRBG Looks 4.5% Undervalued on GF Value™ with Solid Dividend Yie - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-11
+            </div>
+            
+              <div class="article-summary">• CRBG is estimated to be 4.5% undervalued based on the GF Value. • The company has a solid dividend yield, although the specific yield percentage is not provided in the article. • The article is sourced from GuruFocus and was found through GoogleNews:Corebridge.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This information matters to L&amp;A consulting actuaries specializing in product development and capital management, as it may impact the attractiveness of Corebridge&#39;s stock and influence decisions related to investments and dividend strategies. It may also have implications for reserving and GAAP reporting, particularly if the undervaluation affects the company&#39;s financial statements or regulatory filings.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">270.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.72</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.25</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.25</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.63</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.46</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
