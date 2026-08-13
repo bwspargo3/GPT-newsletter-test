@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 13, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 13, 2026 &nbsp;·&nbsp; 4 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/a-hybrid-approach-outperforms-the-4-rule-researchers-find" target="_blank" rel="noopener">A hybrid approach outperforms the 4% Rule, researchers find</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-08-13
+            </div>
+            
+              <div class="article-summary">• Research by Mark Warshawsky, PhD, and Gaobo Pang, PhD, commissioned by the American Council of Life Insurers, challenges the traditional 4% Rule for retirement fund withdrawals. • The study finds that a hybrid approach outperforms the 4% Rule, offering a better third way for retirees to manage their funds. • The research was conducted in 2026, with findings published on InsuranceNewsNet.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This research has direct implications for L&amp;A consulting actuaries working on product development and reserving, as it suggests that alternative withdrawal strategies may be more effective for retirees, potentially impacting the design and pricing of annuity products. The findings may also inform GAAP and statutory reporting, as actuaries consider the potential impact on retirement fund liabilities and asset management strategies.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxNMWF5bzF1a2xwSlBXcHJhNUNFa2RScDlOT0c2RE9tVkkxVXFkRTJ4Y3hSaXF4S1MxMmEyNVc2OTYwTmlHUFVScUtKeTFVSEp0dkxSMXlpN2t1emhkdFBNNVF1T0lHOEFsckRqWVhMTzN1aWxwSEZ0cy1TVkkwaEFsbHJiMXJwUHpFRG82ekZDazB6clhSdnJNZnVpcVNieDlITTdNeUlPSE9NakdJQkpDUFhsSGpsV2E1MW5kVFcyRWViSXJHZ2ZRRU1nVjBQbGFab0VyMHVn?oc=5" target="_blank" rel="noopener">Corebridge Financial (NYSE:CRBG) Stock Price Expected to Rise, Piper Sandler Analyst Says - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-12
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial (NYSE:CRBG) stock price is expected to rise according to a Piper Sandler analyst. • The analyst&#39;s statement was reported by MarketBeat. • No specific details on the expected stock price or timeline were provided in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in Corebridge Financial&#39;s stock price could influence their clients&#39; investment strategies and overall financial performance. Actuaries involved in GAAP and statutory reporting may also need to consider the potential effects on their clients&#39; financial statements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWm9ZQS1pbUtYd3d3bXN0MW5ScERNYTJIMzU5RUhzaXkyWWVJbG5LUFhRMVo4MEZKYVZhN1dDYlk3Mk9kWFI1Mm8xSHFxeHZUTTF6eWdKdGFwQlZhQVFGOHhUOEo1MGJpRDRqXzA4NjlsLTBwVW9TWk16YTRrZmhDbWp0MGdpWlNRMHlfTUhGYjdMdVctQzdzMnVkRm9QSmpjXzR2SmU1bGsyOTBJY2FudDZwaUg2Zl9ETEJncXhsY1pQRDc1eDZUUGR3SmZjUktSUklfU3BCYw?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. (CRBG) Receives a Buy from KBW - The Globe and Mail</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-12
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. (CRBG) has received a Buy rating from KBW, as reported by The Globe and Mail. • The article does not provide specific details on the reasoning behind the rating or the potential impact on the company&#39;s financials. • The rating may be relevant for investors and analysts tracking the company&#39;s performance.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This news may be relevant for L&amp;A consulting actuaries involved in reserving, GAAP reporting, and reinsurance work streams, as it could impact the financial stability and creditworthiness of Corebridge Financial, Inc. The Buy rating from KBW may also be considered in product development and capital management projects involving the company.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPTC1VSm4tamd5YjNURW9fTHdoektsbWdVaDBtTjBPckc3RzVkRFg1Q2tyRThLczRJakg4bXJGODJjRFpRU1d1RDVmbkNzaVczQU1sQ1RrYmZIX3o3c0E4VG91UzRZNlJBRkM5bTkwemEzV1JzSlBGZV9JZXAwd2Z6R2pJeHp3VGFEVHJfV2ZqWjB5clczLUk0bno0VE5Hc3BSU1YteVpseWZrRzFpRncwSEJaZm9lUnhRUnc?oc=5" target="_blank" rel="noopener">Blackstone affiliates trim Corebridge stake in 14.5M-share sale (CRBD) - Stock Titan</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-12
+            </div>
+            
+              <div class="article-summary">• Blackstone affiliates sold 14.5 million shares of Corebridge (CRBD) in a recent transaction, reducing their stake in the company. • The sale was reported by Stock Titan, with no specific date mentioned in the article. • The exact implications of the sale on Corebridge&#39;s operations and financials are not detailed in the provided information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ownership structure can influence a company&#39;s strategic decisions and risk management approach. Actuaries involved in reserving and GAAP reporting may also need to monitor the situation for potential effects on Corebridge&#39;s financial reporting and reserving requirements.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">272.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.70</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.25</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.24</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.64</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">15.28</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
