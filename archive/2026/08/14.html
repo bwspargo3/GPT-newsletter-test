@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&A Actuarial Intelligence — August 14, 2026</title>
+  <style>
+    /* ── Reset ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Georgia, serif;
+      background: #f4f4f1;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f2744;
+      padding: 28px 36px 22px;
+      border-bottom: 4px solid #c8a84b;
+    }
+    .header-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8a84b;
+    }
+    .header-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 4px 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #8facc8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Intro strip ── */
+    .intro {
+      background: #f0f4f8;
+      padding: 12px 36px;
+      border-bottom: 1px solid #dde3ea;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+
+    /* ── Main content ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0f2744;
+      display: inline-block;
+      background: #eaf0f7;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── Article card ── */
+    .article {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 3px solid #c8a84b;
+      background: #fafafa;
+    }
+    .article + .article {
+      margin-top: 10px;
+    }
+    .article-title a {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #0f2744;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .article-title a:hover {
+      text-decoration: underline;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: #8a9ab0;
+      margin: 3px 0 8px;
+    }
+    .article-summary {
+      font-size: 0.85rem;
+      color: #2d3748;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .article-why {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fffbf0;
+      border-left: 2px solid #c8a84b;
+      font-size: 0.82rem;
+      color: #5a4a1a;
+      line-height: 1.5;
+    }
+    .article-why strong {
+      color: #0f2744;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Economic snapshot ── */
+    .econ-section {
+      margin: 28px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8ecf0;
+    }
+    .econ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .econ-tile {
+      background: #f0f4f8;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px 14px;
+      min-width: 110px;
+      text-align: center;
+    }
+    .econ-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5a7a99;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .econ-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2744;
+      margin-top: 2px;
+    }
+    .econ-unit {
+      font-size: 0.68rem;
+      color: #8a9ab0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f2744;
+      padding: 18px 36px;
+      font-size: 0.75rem;
+      color: #6a8aaa;
+      border-top: 4px solid #c8a84b;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer a {
+      color: #c8a84b;
+      text-decoration: none;
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 32px 0;
+      text-align: center;
+      color: #8a9ab0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Life &amp; Annuity</div>
+    <div class="header-name">Actuarial Intelligence</div>
+    <div class="header-date">August 14, 2026 &nbsp;·&nbsp; 8 items</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Daily briefing for life &amp; annuity actuarial consultants. Regulatory, market, and economic intelligence curated by AI — reviewed for relevance to PBR, LDTI, reinsurance, and carrier developments.
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    
+      
+        <div class="section-header">
+          <span class="section-label">Regulatory Pulse</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://us.milliman.com/en/insight/life-regulatory-updates-july-2026" target="_blank" rel="noopener">Summary of regulatory developments: Updates for July 2026</a>
+            </div>
+            <div class="article-meta">
+              Milliman (Insight) &nbsp;·&nbsp; 2026-08-14
+            </div>
+            
+              <div class="article-summary">• The NAIC has proposed changes to the life insurance reserving rules, effective January 1, 2027, which may impact approximately 70% of life insurers. • The SEC has issued guidance on the use of aggregated data for GAAP reporting, applicable to filings due after July 1, 2026. • Revisions to the Valuation Manual are expected to be finalized by the end of Q3 2026, affecting reserving and capital requirements for life insurers.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                These regulatory developments have significant implications for L&amp;A consulting actuaries working on reserving, GAAP reporting, and reinsurance projects, as they may require updates to valuation models, reserving methodologies, and financial reporting processes. Actuaries involved in product development and capital management will also need to consider the potential impact of these changes on their work streams.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://insurancenewsnet.com/innarticle/insurers-rating-firms-push-back-on-naic-credit-rating-oversight-plan" target="_blank" rel="noopener">Insurers, rating firms push back on NAIC credit rating oversight plan</a>
+            </div>
+            <div class="article-meta">
+              InsuranceNewsNet &nbsp;·&nbsp; 2026-08-13
+            </div>
+            
+              <div class="article-summary">• The NAIC&#39;s Credit Rating Provider Working Group received about 90 pages of feedback from insurers, credit rating agencies, and trade groups on its plan to increase oversight of credit rating agencies. • The working group, chaired by Jake Garn, aims to implement a due diligence process for evaluating credit rating providers to ensure insurance companies are not hiding high-risk assets behind inflated credit grades. • The proposal is intended to align with the 2006 Credit Rating Agency Reform Act and will not regulate nationally recognized statistical rating organizations (NRSROs), a responsibility reserved for the Securities and Exchange Commission.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development matters to L&amp;A consulting actuaries specializing in reserving and capital work streams, as changes to credit rating agency oversight may impact the determination of regulatory capital requirements and the evaluation of asset risk. Actuaries involved in GAAP and statutory reporting may also be affected, as the proposed framework could influence the accounting treatment and disclosure of credit-sensitive assets.
+              </div>
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">Market Intelligence</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOQTRaREJtVHo0alZIbjh5ZU1TUHpRMmZIUkZLdXdTdGRINDlOd250Z1kwaTlueGZ0UjBXRjlyZnk3cXdLbDFKTkZ4cGZ4cEpNSVRTSjBpNkV0WkRaWU50cUNKa3hzWE9CQkxpVnlxQUxXZy1ZXzYyN3NuUU12cFlhdk94YUloU2o0VFh0a2JzTG9yT0t4SlpLYmlmTdIBVkFVX3lxTFA2YTc5WHBCOXZXdXJLMnpJalVPd0ozT1FzNnJFeVBCWmQxMF9RY1lNaFZUdWdsb3IxVjN3WnljYXVqVkk0TEEwdGNGcE9ZYUwwTnQ3ZjlR?oc=5" target="_blank" rel="noopener">Brighthouse Strikes $9.25M Deal In Life Policy Rate Suit - Law360</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Brighthouse &nbsp;·&nbsp; 2026-08-13
+            </div>
+            
+              <div class="article-summary">• Brighthouse has agreed to a $9.25 million settlement in a lawsuit related to life policy rates. • The lawsuit&#39;s details and settlement terms are not fully disclosed, but the deal marks a resolution to the dispute. • The settlement amount is specific, but the date of the agreement and other terms are not provided in the available information.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This settlement may impact L&amp;A consulting actuaries working on reserving and GAAP reporting, as it could influence how life policy rates are assessed and reflected in financial statements. The outcome may also have implications for product development and reinsurance, as insurers may need to revisit pricing strategies and risk assessments in light of the settlement.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi6wJBVV95cUxOblpsaG5JOGh5Y0hNN3p5NGc5VzJtWjdqSkdiMDc4elpNUlZ4dnpWaXhZU3l5VjloTDRNMXdibzhSX2VGaVpSakJWUGRScG9GMUZNYU5JOWQ4VjktNHA4SV93Uzcxd3Nja1l3aUgwaHZ5WC1QZzB5NFZveTlXclJyM2hFR2FxWjFpWUllMFdWV1paQ3JaZWJqNWtZR1k2bmh0LVRQQjlRYjRBX1hja2cxVXlDdnFMM19Cc09laVNLMUtJcFc2UEp2Yzh3QXY5V3M0OG1XMzBNQ2pmUW5lZks5aWpvR2hiRFNZRmxwbGJiQnNDZnpLQ2dDc2o3ZUhoV1ZjcktZNzJnNV9kUjJjM3hvbnNPb1JQUGdvVWVBLUxPdlVjRWtNMXNDcnAtZ3JtVFJZV1dYbDNwbnlmVTVnMjBrVl9Tb0ZtRmNncmJSMmFhbEJJS1pyQVpKVFNhQ0ZQalZQU0ZnQjMxZUtTM2s?oc=5" target="_blank" rel="noopener">Analysts Have Conflicting Sentiments on These Financial Companies: MidCap Financial Investment Corporation (MFIC), American Express (AXP) and Corebridge Financial, Inc. (CRBG) - The Globe and Mail</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-13
+            </div>
+            
+              <div class="article-summary">• Analysts have conflicting sentiments on MidCap Financial Investment Corporation (MFIC), American Express (AXP), and Corebridge Financial, Inc. (CRBG). • The article does not provide specific details on the sentiments or the potential impact on the companies. • The article is from The Globe and Mail, with no specific date mentioned.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This article may have implications for L&amp;A consulting actuaries working on reinsurance and product development, as Corebridge Financial, Inc. (CRBG) is a financial company that may be involved in life insurance and reinsurance transactions. The conflicting sentiments of analysts may impact the financial stability and risk profile of these companies, affecting reserving and capital requirements for life insurers.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://www.sec.gov/Archives/edgar/data/1527469/000152746926000063/ahl-20260813.htm" target="_blank" rel="noopener">Athene Holding 8-K Filing – 2026-08-13</a>
+            </div>
+            <div class="article-meta">
+              EDGAR:Athene Holding &nbsp;·&nbsp; 2026-08-13
+            </div>
+            
+            
+          </div>
+        
+
+      
+        <div class="section-header">
+          <span class="section-label">M&amp;A</span>
+        </div>
+
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQek05RFduWVluX250SE5UbXZIZUZCYTV1aWtBby1kWmd1a3kyRXM1RHptdm51VlJJMk1CdTZiazZOVmxPR1UwOU90eXRicTFfcmk4SEp2STVBdU1TMm93STBBVFU2TE9ZY0Y0SHJLMlhMeVJCdmhJSVZwc2lJbWx6QTZDOFhZNWlDM2hhbEpGNTBwalpYaDNfV0tITHo0ZWVydTV6N1ZwSXdjME0xUk5lT2QyNDQ0aldlYmdMdWJ5T1RGZ1Za?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. $CRBG Shares Sold by Royal Bank of Canada - MarketBeat</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-14
+            </div>
+            
+              <div class="article-summary">• Royal Bank of Canada sold shares of Corebridge Financial, Inc. ($CRBG). • The sale was reported by MarketBeat. • No specific details on the number of shares or sale price were provided in the article.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This development may impact L&amp;A consulting actuaries working on reinsurance and capital projects, as changes in ownership or shareholding can influence a company&#39;s strategic direction and risk management approach. Actuaries involved in reserving and GAAP reporting may also need to monitor the situation for potential implications on financial reporting and regulatory requirements.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxNOEh1dEE5RlliYUljS3g2YnBHSXdua0hNQ1NYV1J5MzhEbHduZ3BIX1JHSU5KWF9rQ1M4bzMxeG9JeTBXcG1yZ2stV1ItNUNCYmp5OXVsaEF0Y3NZaHFtN01USUxJckNDVXRsV3p4RVIwT242MFVTMGxmYkhXOC1PVVlIOGpLVUhoZTN0YTZHY0tRbkRoR1JRMkJmR2x2cEZ2V0QxVzA3TXBWYi1nRWZBMWFZUzBHTG5JcTBJWFVyYWhBbUF1LW9FdmxFbVBYakVhWnB4elptX05rbzltRWFxNUF0M3hmSmxWTmlGdDBoaHBPeFE?oc=5" target="_blank" rel="noopener">Corebridge Financial, Inc. Buys ClearBridge Energy Midstream Opp - GuruFocus</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Corebridge &nbsp;·&nbsp; 2026-08-14
+            </div>
+            
+              <div class="article-summary">• Corebridge Financial, Inc. has acquired ClearBridge Energy Midstream Opportunity. • The terms of the deal were not disclosed in the available information. • This acquisition may indicate a strategic expansion by Corebridge Financial, Inc. into new investment areas.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This acquisition may have implications for L&amp;A consulting actuaries working on reinsurance and product development, as it could lead to new investment opportunities and strategies for life insurance companies. Actuaries involved in reserving and GAAP reporting may also need to consider the potential impact of this acquisition on Corebridge Financial, Inc.&#39;s financial statements and risk profile.
+              </div>
+            
+          </div>
+        
+          <div class="article">
+            <div class="article-title">
+              <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNTjdWbl9Zbm9BQTZ3b1kycXh0OUNJQjZ0Z01rRVZCWEFxc0M4elphVmdNV3pybEZHc1p6bmRIRjJQZ3lKUDhxTnoteUpvY19hdU5Sd1FhRGdyRTg4dzQxdnNrRHRmcDRQbXlCMmFycHRveGZKTDkyR0lFNjdYOVNxcHozX2JXekViZnBpMlhYMjhPeE95a3FEUTBpRU5MNkt3dUs5c2YtSm5CbXZ6NThPVg?oc=5" target="_blank" rel="noopener">ManhattanLife Acquires Union Security Life Insurance Company of New York - citybiz.co</a>
+            </div>
+            <div class="article-meta">
+              GoogleNews:Life Insurance M&amp;A &nbsp;·&nbsp; 2026-08-13
+            </div>
+            
+              <div class="article-summary">• ManhattanLife has acquired Union Security Life Insurance Company of New York, although the terms of the deal were not disclosed. • The acquisition is expected to expand ManhattanLife&#39;s presence in the life insurance market. • The deal may involve the transfer of Union Security Life&#39;s policies, assets, and liabilities to ManhattanLife, potentially affecting reserving and GAAP reporting requirements.</div>
+            
+            
+              <div class="article-why">
+                <strong>Why it matters</strong><br>
+                This acquisition may impact L&amp;A consulting actuaries working on reserving, GAAP, and reinsurance projects, as they may need to consider the combined entity&#39;s risk profile, asset portfolio, and regulatory requirements. Actuaries involved in product development may also be affected, as the acquisition could lead to changes in product offerings and pricing strategies.
+              </div>
+            
+          </div>
+        
+
+      
+    
+
+    <!-- Economic Snapshot -->
+    
+      <div class="econ-section">
+        <span class="section-label">Economic Snapshot</span>
+      </div>
+      <div class="econ-grid">
+        
+          <div class="econ-tile">
+            <div class="econ-label">HY OAS Spread</div>
+            <div class="econ-value">271.00</div>
+            <div class="econ-unit">bps</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">10Y Treasury</div>
+            <div class="econ-value">4.68</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">20Y Treasury</div>
+            <div class="econ-value">5.24</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">30Y Treasury</div>
+            <div class="econ-value">5.24</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">SOFR</div>
+            <div class="econ-value">3.62</div>
+            <div class="econ-unit">%</div>
+          </div>
+        
+          <div class="econ-tile">
+            <div class="econ-label">VIX</div>
+            <div class="econ-value">14.55</div>
+            <div class="econ-unit">index</div>
+          </div>
+        
+      </div>
+    
+
+  </div><!-- /content -->
+
+  <!-- Footer -->
+  <div class="footer">
+    L&amp;A Actuarial Intelligence &nbsp;·&nbsp; Automated daily briefing<br>
+    <a href="https://github.com">View Archive</a>
+    &nbsp;·&nbsp; You're receiving this as a subscriber.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
